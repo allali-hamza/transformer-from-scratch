@@ -215,7 +215,7 @@ class EncoderBlock(nn.Module):
         )
 
     def forward(self, x, mask):
-        attention_function = lambda x: self.self_attention(x, x, x, self.mask)
+        attention_function = lambda x: self.self_attention(x, x, x, mask)
         x = self.residual_connections[0](x, attention_function)
 
         feed_forward_function = lambda x: self.feed_forward_block(x)
@@ -227,7 +227,7 @@ class EncoderBlock(nn.Module):
 
 class Encoder(nn.Module):
 
-    def __ini__(self, layers: nn.ModuleList):
+    def __init__(self, layers: nn.ModuleList):
         super().__init__()
         self.layers = layers
         self.norm = LayerNormalization()
@@ -236,3 +236,48 @@ class Encoder(nn.Module):
         for layer in self.layers:
             x = layer(x, mask)
         return self.norm(x)
+
+
+class DecoderBlock(nn.Module):
+
+
+    def __init__(self, masked_self_attention_block: MultiHeadAttentionBlock, cross_attention_block: MultiHeadAttentionBlock, feed_forward: FeedForwardBlock, dropout: float):
+        super().__init__()
+
+        self.masked_self_attention_block = masked_self_attention_block
+        self.cross_attention_block = cross_attention_block
+        self.feed_forward = feed_forward
+
+
+        self.residual_connections = nn.ModuleList(
+            ResidualConnection(dropout) for _ in range(3)
+        )
+
+
+
+    def forward(self, x, encoder_output, src_mask, target_mask):
+
+        first_layer_forward = lambda x: self.masked_self_attention_block(x, x, x, target_mask)
+        x = self.residual_connections[0](x, first_layer_forward)
+
+        second_layer_forward = lambda x: self.cross_attention_block(x, encoder_output, encoder_output, src_mask)
+        x = self.residual_connections[1](x, second_layer_forward)
+
+        x = self.residual_connections[2](x, self.feed_forward)
+
+
+        return x
+
+
+class Decoder(nn.Module):
+
+    def __init__(self, layers: nn.ModuleList):
+        super().__init__()
+
+        self.layers = layers
+        self.normalize = LayerNormalization()
+
+    def forward(self, x, encoder_output, source_mask, target_mask):
+        for layer in self.layers:
+            x = layer(x, encoder_output, source_mask, target_mask)
+        return self.normalize(x)
