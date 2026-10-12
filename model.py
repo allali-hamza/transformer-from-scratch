@@ -281,3 +281,165 @@ class Decoder(nn.Module):
         for layer in self.layers:
             x = layer(x, encoder_output, source_mask, target_mask)
         return self.normalize(x)
+
+
+class ProjectionLayer(nn.Module):
+
+    def __init__(self, d_model: int, vocabulary_size: int):
+        super().__init__()
+        self.d_model = d_model
+        self.vocabulary_size = vocabulary_size
+
+        self.linear = nn.Linear(
+            in_features=d_model,
+            out_features=vocabulary_size
+        )
+
+    def forward(self, x):
+        x = self.linear(x)
+        return torch.log_softmax(self.linear(x), dim=-1)
+
+
+
+class Transformer(nn.Module):
+
+    def __init__(
+            self,
+            input_embedding: InputEmbeddings,
+            out_embedding: InputEmbeddings,
+            source_positional_embedding: PositionalEncoding,
+            target_positional_embedding: PositionalEncoding,
+            encoder: Encoder,
+            decoder: Decoder,
+            projection_layer: ProjectionLayer
+    ):
+        super().__init__()
+
+        self.input_embedding = input_embedding
+        self.out_embedding = out_embedding
+        self.source_positional_embedding = source_positional_embedding
+        self.target_positional_embedding = target_positional_embedding
+        self.encoder = encoder
+        self.decoder = decoder
+        self.projection_layer = projection_layer
+
+
+
+    def encode(self, x, mask):
+
+
+        matrix_embedding = self.input_embedding(x)
+        matrix_embedding_with_pos = self.source_positional_embedding(matrix_embedding)
+
+        encoder_output = self.encoder(matrix_embedding_with_pos, mask)
+
+        return encoder_output
+
+
+    def decode(self, x, encoder_output, source_mask, target_mask):
+
+        matrix_embedding = self.out_embedding(x)
+        matrix_embedding_with_pos = self.target_positional_embedding(matrix_embedding)
+
+        decoder_output = self.decoder(matrix_embedding_with_pos, encoder_output, source_mask, target_mask)
+
+        return decoder_output
+
+
+    def project(self, x):
+        return self.projection_layer(x)
+
+
+def build_transformer(
+    src_vocab_size: int,
+    tgt_vocab_size: int,
+    src_seq_len: int,
+    tgt_seq_len: int,
+    d_model: int = 512,
+    N: int = 6,
+    h: int = 8,
+    dropout: float = 0.1,
+    d_ff: int = 2048
+
+) -> Transformer:
+
+    # the embedding layers
+    src_embedding = InputEmbeddings(
+        d_model=d_model,
+        vocab_size=src_vocab_size
+    )
+    tgt_embedding = InputEmbeddings(
+        d_model=d_model,
+        vocab_size=tgt_vocab_size
+    )
+
+    # Positional encoding layers
+    src_pos = PositionalEncoding(
+        d_model=d_model,
+        max_seq_len=src_seq_len,
+        dropout=dropout
+    )
+    tgt_pos = PositionalEncoding(
+        d_model=d_model,
+        max_seq_len=tgt_seq_len,
+        dropout=dropout
+    )
+
+    # The encoder blocks
+    encoder_blocks = []
+    for _ in range(N):
+
+        encoder_self_attention = MultiHeadAttentionBlock(
+            d_model=d_model,
+            h=h,
+            dropout=dropout
+        )
+
+        feed_forward_block = FeedForwardBlock(
+            d_model=d_model,
+            d_ff=d_ff,
+            dropout=dropout
+        )
+
+        encoder_block = EncoderBlock(
+            self_attention=encoder_self_attention,
+            feed_forward_block=feed_forward_block,
+            dropout=dropout
+        )
+
+        encoder_blocks.append(encoder_blocks)
+
+
+    # the decoder blocks
+    decoder_blocks = []
+    for _ in range(N):
+
+        decoder_self_attention = MultiHeadAttentionBlock(
+            d_model=d_model,
+            h=h,
+            dropout=dropout
+        )
+
+        decoder_cross_attention = MultiHeadAttentionBlock(
+            d_model=d_model,
+            h=h,
+            dropout=dropout
+        )
+
+        feed_forward_block = FeedForwardBlock(
+            d_model=d_model,
+            d_ff=d_ff,
+            dropout=dropout
+        )
+
+        decoder_block = DecoderBlock(
+            masked_self_attention_block=decoder_self_attention,
+            cross_attention_block=decoder_cross_attention,
+            feed_forward=feed_forward_block,
+            dropout=dropout
+        )
+
+        decoder_blocks.append(decoder_block)
+
+
+
