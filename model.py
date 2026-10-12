@@ -441,5 +441,31 @@ def build_transformer(
 
         decoder_blocks.append(decoder_block)
 
+    # create the encoder and the decoder
+    encoder = Encoder(layers=nn.ModuleList(encoder_blocks))
+    decoder = Decoder(layers=nn.ModuleList(decoder_blocks))
+
+    # create the projection layer
+    projection_layer = ProjectionLayer(
+        d_model=d_model,
+        vocabulary_size=tgt_vocab_size
+    )
 
 
+    # create the Transformer
+    transformer = Transformer(
+        input_embedding=src_embedding,
+        out_embedding=tgt_embedding,
+        source_positional_embedding=src_pos,
+        target_positional_embedding=tgt_pos,
+        encoder=encoder,
+        decoder=decoder,
+        projection_layer=projection_layer
+    )
+
+    # initialize the parameters 
+    for p in transformer.parameters():
+        if p.dim > 1:
+            nn.init.xavier_uniform_(p)
+
+    return transformer
