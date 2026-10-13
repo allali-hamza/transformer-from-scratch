@@ -1,0 +1,3186 @@
+[
+  {
+    "input":"Search for pdfs in Documents folder",
+    "output":"locate \/Documents\/*.pdf"
+  },
+  {
+    "input":"Compress model.pkl using bzip2",
+    "output":"bzip2 model.pkl"
+  },
+  {
+    "input":"Alias 'q' to exit terminal",
+    "output":"alias q='exit'"
+  },
+  {
+    "input":"Alias to go to root",
+    "output":"alias root='cd \/'"
+  },
+  {
+    "input":"Assign tommy to own nginx.conf",
+    "output":"chown tommy nginx.conf"
+  },
+  {
+    "input":"Sleep for long-running delay",
+    "output":"sleep 10000"
+  },
+  {
+    "input":"Change to the \/bin directory",
+    "output":"cd \/bin"
+  },
+  {
+    "input":"Reset shell password for docker_runner",
+    "output":"passwd docker_runner"
+  },
+  {
+    "input":"Remove a file named 'backup.tar.gz' in the current folder",
+    "output":"rm backup.tar.gz"
+  },
+  {
+    "input":"Display memory usage in bytes, update every 15 seconds indefinitely",
+    "output":"free -b -s 15"
+  },
+  {
+    "input":"Mount systemd automount unit",
+    "output":"systemctl start mnt-data.mount"
+  },
+  {
+    "input":"Show top 10 memory-consuming processes",
+    "output":"ps -eo pid,ppid,cmd,%mem --sort=-%mem | head -n 11"
+  },
+  {
+    "input":"Who is connected via SSH",
+    "output":"who | grep ssh"
+  },
+  {
+    "input":"List files in my home folder, sorted by size, smallest first",
+    "output":"ls -Sr ~"
+  },
+  {
+    "input":"Change to the \/var\/log\/fsck directory",
+    "output":"cd \/var\/log\/fsck"
+  },
+  {
+    "input":"Traceroute to github.com showing version info",
+    "output":"traceroute -V github.com"
+  },
+  {
+    "input":"Go to the \/var\/log directory",
+    "output":"cd \/var\/log"
+  },
+  {
+    "input":"Use env to simulate cron job environment",
+    "output":"env -i PATH=\/usr\/bin:\/bin .\/cron_script.sh"
+  },
+  {
+    "input":"Change credentials of remote_user",
+    "output":"passwd remote_user"
+  },
+  {
+    "input":"Display memory usage in human-readable format with wide output and total, update every 4 seconds, 4 times",
+    "output":"free -h -w -t -s 4 -c 4"
+  },
+  {
+    "input":"Copy file and remove carriage returns",
+    "output":"dd if=input.txt of=output.txt conv=notrunc,unblock"
+  },
+  {
+    "input":"Get user sessions for current machine",
+    "output":"who"
+  },
+  {
+    "input":"Switch to last session",
+    "output":"tmux switch-client -l"
+  },
+  {
+    "input":"Restrict employee45's password login",
+    "output":"passwd -l employee45"
+  },
+  {
+    "input":"Delete an empty directory called 'weekly' in \/var\/log\/backup",
+    "output":"rmdir \/var\/log\/backup\/weekly"
+  },
+  {
+    "input":"Display memory usage in bytes, update every 5 seconds, 5 times",
+    "output":"free -b -s 5 -c 5"
+  },
+  {
+    "input":"Open file with numbers left-justified",
+    "output":"LESS='-N -L' less file.txt"
+  },
+  {
+    "input":"Set guest group to welcome_note.txt",
+    "output":"chgrp guest welcome_note.txt"
+  },
+  {
+    "input":"Delete python_devs",
+    "output":"groupdel python_devs"
+  },
+  {
+    "input":"Create ext4 on \/dev\/nvme0n1p1",
+    "output":"mkfs.ext4 \/dev\/nvme0n1p1"
+  },
+  {
+    "input":"Lock frontend_dev's password",
+    "output":"passwd -l frontend_dev"
+  },
+  {
+    "input":"Assign operations group to metrics.json",
+    "output":"chgrp operations metrics.json"
+  },
+  {
+    "input":"Unmount USB in read-only mode",
+    "output":"umount \/mnt\/ro"
+  },
+  {
+    "input":"Wait for 2 minutes",
+    "output":"sleep 120"
+  },
+  {
+    "input":"Display open ports",
+    "output":"watch 'ss -tuln'"
+  },
+  {
+    "input":"Set a device to managed mode",
+    "output":"nmcli device set eth0 managed yes"
+  },
+  {
+    "input":"Query the A record for google.com and display statistics",
+    "output":"nslookup -stats google.com"
+  },
+  {
+    "input":"Copy all files in \/var\/log\/alternatives.log to \/backup\/alternatives",
+    "output":"cp \/var\/log\/alternatives.log\/* \/backup\/alternatives\/"
+  },
+  {
+    "input":"Delete a file called 'news.log' in \/var\/log\/news",
+    "output":"rm \/var\/log\/news\/news.log"
+  },
+  {
+    "input":"Install specific version",
+    "output":"sudo apt install nginx=1.18.0-0ubuntu1"
+  },
+  {
+    "input":"Delete user guest",
+    "output":"sudo userdel guest"
+  },
+  {
+    "input":"Download a file and specify a certificate file",
+    "output":"wget --ca-certificate=ca.pem https:\/\/example.com\/file.zip"
+  },
+  {
+    "input":"Download a file and delete after download",
+    "output":"wget --delete-after http:\/\/example.com\/file.zip"
+  },
+  {
+    "input":"Run top in default mode",
+    "output":"top"
+  },
+  {
+    "input":"Run mtr to google.com and set the number of pings per hop to 3",
+    "output":"mtr -c 3 google.com"
+  },
+  {
+    "input":"Lock access for tempuser",
+    "output":"usermod -L tempuser"
+  },
+  {
+    "input":"Connect to a remote server using SSH",
+    "output":"ssh user@hostname"
+  },
+  {
+    "input":"Run temperature monitor every 2 minutes",
+    "output":"crontab -e # *\/2 * * * * \/temp.sh"
+  },
+  {
+    "input":"Display files opened by process ID 4321",
+    "output":"lsof -p 4321"
+  },
+  {
+    "input":"Reenable the ssh service",
+    "output":"systemctl reenable ssh"
+  },
+  {
+    "input":"Create a swap partition on \/dev\/sdg",
+    "output":"parted \/dev\/sdg mkpart primary linux-swap 2GiB 4GiB"
+  },
+  {
+    "input":"Find idle users",
+    "output":"w | awk '$5 ~ \/[0-9]+\/ {print $1, $5}'"
+  },
+  {
+    "input":"Show logs in pretty JSON format",
+    "output":"journalctl -o json-pretty"
+  },
+  {
+    "input":"View filesystem label of \/dev\/sdg2",
+    "output":"blkid \/dev\/sdg2"
+  },
+  {
+    "input":"Revoke all permissions from others on private.doc",
+    "output":"chmod o= private.doc"
+  },
+  {
+    "input":"Format partition 7 as xfs",
+    "output":"mkfs.xfs \/dev\/sdf7"
+  },
+  {
+    "input":"Query the A record for example.com and set search domain to .",
+    "output":"nslookup example.com ."
+  },
+  {
+    "input":"Move all files in \/var\/tmp to \/backup\/tmp and force overwrite",
+    "output":"mv -f \/var\/tmp\/* \/backup\/tmp\/"
+  },
+  {
+    "input":"Show load average from w output",
+    "output":"w | head -1"
+  },
+  {
+    "input":"Check the version of the `pwd` binary on your system.",
+    "output":"\/bin\/pwd --version"
+  },
+  {
+    "input":"Locate the sudoers file",
+    "output":"locate sudoers"
+  },
+  {
+    "input":"Delete beta_user with home dir",
+    "output":"userdel -r beta_user"
+  },
+  {
+    "input":"Delete saved command logs",
+    "output":"history -c"
+  },
+  {
+    "input":"Send SIGCONT to jobs in current shell",
+    "output":"kill -CONT %1 %2"
+  },
+  {
+    "input":"Temporarily disable password for user1",
+    "output":"passwd -l user1"
+  },
+  {
+    "input":"Capitalize the word 'hello'",
+    "output":"sed 's\/hello\/HELLO\/g' file.txt"
+  },
+  {
+    "input":"Change to the \/var\/log\/mail.err directory",
+    "output":"cd \/var\/log\/mail.err"
+  },
+  {
+    "input":"Calculate product of values in column 1",
+    "output":"awk '{p *= $1} END {print p}' file.txt"
+  },
+  {
+    "input":"Copy all files in \/mnt\/usb to \/media\/backup",
+    "output":"cp \/mnt\/usb\/* \/media\/backup\/"
+  },
+  {
+    "input":"Query the A record for yahoo.com and save output to file",
+    "output":"host yahoo.com > yahoo_dns.txt"
+  },
+  {
+    "input":"Create a directory called 'test' in \/var\/spool",
+    "output":"mkdir \/var\/spool\/test"
+  },
+  {
+    "input":"Make request with custom socket timeout",
+    "output":"curl --max-time 30 --connect-timeout 10 http:\/\/example.com"
+  },
+  {
+    "input":"Delete a file called 'wtmp' in \/var\/log",
+    "output":"rm \/var\/log\/wtmp"
+  },
+  {
+    "input":"Start a new partition table with msdos on \/dev\/sdp",
+    "output":"parted \/dev\/sdp mklabel msdos"
+  },
+  {
+    "input":"Set gallery group to artwork.png",
+    "output":"chgrp gallery artwork.png"
+  },
+  {
+    "input":"Create node_admins group",
+    "output":"groupadd node_admins"
+  },
+  {
+    "input":"Update without prompts",
+    "output":"sudo apt update -y"
+  },
+  {
+    "input":"Create a directory called 'videos' in \/media\/usb",
+    "output":"mkdir \/media\/usb\/videos"
+  },
+  {
+    "input":"Reattach screen with partial name",
+    "output":"screen -r myjob"
+  },
+  {
+    "input":"Sync files and set specific permissions",
+    "output":"rsync -avz --chmod=644 source_dir\/ destination_dir\/"
+  },
+  {
+    "input":"Identify filesystem on \/dev\/sda7",
+    "output":"blkid \/dev\/sda7"
+  },
+  {
+    "input":"Traceroute to github.com with IPv6 source address",
+    "output":"traceroute -S 2001:db8::1 github.com"
+  },
+  {
+    "input":"Inspect disk partitions of \/dev\/nvme2n1",
+    "output":"fdisk -l \/dev\/nvme2n1"
+  },
+  {
+    "input":"Assign outreach team to invites.doc",
+    "output":"chgrp outreach invites.doc"
+  },
+  {
+    "input":"List files with details and sort by change time (ctime)",
+    "output":"ls -lc"
+  },
+  {
+    "input":"Include sean in experiments group",
+    "output":"gpasswd -a sean experiments"
+  },
+  {
+    "input":"Create a file called 'man' in your home",
+    "output":"touch ~\/man"
+  },
+  {
+    "input":"Display memory usage in human-readable format with detailed stats and wide output, update every 9 seconds, 9 times",
+    "output":"free -h -l -w -s 9 -c 9"
+  },
+  {
+    "input":"Format nvme partition \/dev\/nvme0n1p2 to ext2",
+    "output":"mkfs.ext2 \/dev\/nvme0n1p2"
+  },
+  {
+    "input":"Copy a file 'index.html' to \/var\/www\/html and keep timestamps",
+    "output":"cp -p index.html \/var\/www\/html\/"
+  },
+  {
+    "input":"Change niceness of Xorg process",
+    "output":"sudo renice +5 -p $(pgrep Xorg)"
+  },
+  {
+    "input":"Exclude tara from dev group",
+    "output":"gpasswd -d tara dev"
+  },
+  {
+    "input":"Query A record for google.com and set +besteffort",
+    "output":"dig google.com +besteffort"
+  },
+  {
+    "input":"Keep only lines that contain '@gmail.com'",
+    "output":"sed -n '\/@gmail\\.com\/p' emails.txt"
+  },
+  {
+    "input":"Get partition UUID for \/dev\/sdf4",
+    "output":"blkid \/dev\/sdf4"
+  },
+  {
+    "input":"Query PTR record for 8.8.8.8 with +short output",
+    "output":"dig -x 8.8.8.8 +short"
+  },
+  {
+    "input":"Query A record for google.com and set +cmd",
+    "output":"dig google.com +cmd"
+  },
+  {
+    "input":"Ping yahoo.com 10 times",
+    "output":"ping -c 10 yahoo.com"
+  },
+  {
+    "input":"Add test.txt to myarchive.zip",
+    "output":"zip myarchive.zip test.txt"
+  },
+  {
+    "input":"Make a request with bearer token authentication",
+    "output":"curl -H 'Authorization: Bearer your_token_here' http:\/\/example.com\/api"
+  },
+  {
+    "input":"Split tmux window horizontally",
+    "output":"Ctrl-b \""
+  },
+  {
+    "input":"Display memory usage in pebibytes",
+    "output":"free --pebi"
+  },
+  {
+    "input":"Make terminal display empty",
+    "output":"clear"
+  },
+  {
+    "input":"Archive all docs and PDFs",
+    "output":"zip documents.zip *.doc *.pdf"
+  },
+  {
+    "input":"Fetch block info of \/dev\/sdh5",
+    "output":"blkid \/dev\/sdh5"
+  },
+  {
+    "input":"Query the A record for google.com with verbose output",
+    "output":"host -v google.com"
+  },
+  {
+    "input":"Find the maximum value in the third column",
+    "output":"awk 'max < $3 {max=$3} END {print max}' file.txt"
+  },
+  {
+    "input":"Rename 'messages' to 'messages.old' in \/var\/log",
+    "output":"mv \/var\/log\/messages \/var\/log\/messages.old"
+  },
+  {
+    "input":"Display who is currently connected",
+    "output":"who"
+  },
+  {
+    "input":"Run npm start detached",
+    "output":"nohup npm start &"
+  },
+  {
+    "input":"Run mtr to facebook.com and display only numeric IPs",
+    "output":"mtr -n facebook.com"
+  },
+  {
+    "input":"Pause for 42 seconds",
+    "output":"sleep 42"
+  },
+  {
+    "input":"Wait for command that outputs PID",
+    "output":"command & pid=$!; wait $pid"
+  },
+  {
+    "input":"Change to a directory called 'test' in the current directory",
+    "output":"cd test"
+  },
+  {
+    "input":"Sleep for 1.5 minutes",
+    "output":"sleep 90"
+  },
+  {
+    "input":"Identify all block devices with UUID",
+    "output":"blkid"
+  },
+  {
+    "input":"Sync files and don't preserve group",
+    "output":"rsync -avz --no-g source_dir\/ destination_dir\/"
+  },
+  {
+    "input":"Query the CNAME record for www.google.com",
+    "output":"nslookup -query=CNAME www.google.com"
+  },
+  {
+    "input":"Change niceness of monitoring agent",
+    "output":"sudo renice +5 -p $(pgrep prometheus)"
+  },
+  {
+    "input":"Use screen to test code interactively",
+    "output":"screen -S testenv python3"
+  },
+  {
+    "input":"Remove an empty directory called '2025' inside \/srv\/www",
+    "output":"rmdir \/srv\/www\/2025"
+  },
+  {
+    "input":"Restore crontab from backup",
+    "output":"crontab mycron.backup"
+  },
+  {
+    "input":"Change GID of user george to 2000",
+    "output":"usermod -g 2000 george"
+  },
+  {
+    "input":"Transfer file using SCP with specific port",
+    "output":"scp -P 2222 file.txt user@hostname:\/remote\/path\/"
+  },
+  {
+    "input":"Copy a file 'archive.tar.gz' to \/opt and preserve attributes",
+    "output":"cp -a archive.tar.gz \/opt\/"
+  },
+  {
+    "input":"Display disk usage summary for each subdirectory in \/root",
+    "output":"du -h --max-depth=1 \/root"
+  },
+  {
+    "input":"Create a directory called 'src' in your home",
+    "output":"mkdir ~\/src"
+  },
+  {
+    "input":"Open file and show invisibles",
+    "output":"vim -c 'set list' file.txt"
+  },
+  {
+    "input":"Download a file and set referer to another site",
+    "output":"wget --referer=http:\/\/referrer.com http:\/\/example.com\/file.zip"
+  },
+  {
+    "input":"Download a file and ignore certificate errors",
+    "output":"wget --no-check-certificate https:\/\/example.com\/file.zip"
+  },
+  {
+    "input":"Check the smbd status",
+    "output":"service smbd status"
+  },
+  {
+    "input":"Find all directories at the top level of \/",
+    "output":"find \/ -maxdepth 1 -type d"
+  },
+  {
+    "input":"Get list of active users",
+    "output":"who"
+  },
+  {
+    "input":"Run mtr to example.com and set the number of pings per hop to 60",
+    "output":"mtr -c 60 example.com"
+  },
+  {
+    "input":"Copy a file 'user.log' to \/var\/log",
+    "output":"cp user.log \/var\/log\/"
+  },
+  {
+    "input":"Sleep for 2700 seconds",
+    "output":"sleep 2700"
+  },
+  {
+    "input":"Change to the \/var\/log\/mysql directory",
+    "output":"cd \/var\/log\/mysql"
+  },
+  {
+    "input":"Query A record for google.com and set +adflag",
+    "output":"dig google.com +adflag"
+  },
+  {
+    "input":"Create a file called 'kern.log' in \/var\/log",
+    "output":"touch \/var\/log\/kern.log"
+  },
+  {
+    "input":"Create a directory called 'fonts' in your home",
+    "output":"mkdir ~\/fonts"
+  },
+  {
+    "input":"Make teachers group for exam_results.csv",
+    "output":"chgrp teachers exam_results.csv"
+  },
+  {
+    "input":"Unmount SSHFS",
+    "output":"fusermount -u \/local\/mountpoint"
+  },
+  {
+    "input":"Create user frontenddev with group frontend",
+    "output":"useradd -g frontend frontenddev"
+  },
+  {
+    "input":"Enable password access for alice_dev",
+    "output":"passwd -u alice_dev"
+  },
+  {
+    "input":"Use parted to set lvm flag on second partition",
+    "output":"parted \/dev\/sdf set 2 lvm on"
+  },
+  {
+    "input":"Query the ANY record for example.com",
+    "output":"host -t ANY example.com"
+  },
+  {
+    "input":"Download a file and mirror a website with no parent directories",
+    "output":"wget --mirror --no-parent http:\/\/example.com\/"
+  },
+  {
+    "input":"Unmount devtmpfs from \/dev",
+    "output":"umount \/dev"
+  },
+  {
+    "input":"List the contents of the current directory",
+    "output":"ls"
+  },
+  {
+    "input":"Assign owner of file1.txt to user9",
+    "output":"chown user9 file1.txt"
+  },
+  {
+    "input":"Transfer file using SCP",
+    "output":"scp file.txt user@hostname:\/remote\/path\/"
+  },
+  {
+    "input":"Run Jenkins CLI with niceness +8",
+    "output":"nice -n 8 java -jar jenkins-cli.jar -s http:\/\/localhost:8080 build job"
+  },
+  {
+    "input":"Delete super_admins group",
+    "output":"groupdel super_admins"
+  },
+  {
+    "input":"Re-enable login for user helpline",
+    "output":"passwd -u helpline"
+  },
+  {
+    "input":"Temporarily lock password for backend_admin",
+    "output":"passwd -l backend_admin"
+  },
+  {
+    "input":"Run R script detached from terminal",
+    "output":"nohup Rscript analysis.R &"
+  },
+  {
+    "input":"Run a python script with custom ENV",
+    "output":"env ENV=dev python script.py"
+  },
+  {
+    "input":"Unmount folder with lazy mode",
+    "output":"umount -l \/mnt\/folder"
+  },
+  {
+    "input":"List all TCP sockets with process and timer info",
+    "output":"ss -t -p -o"
+  },
+  {
+    "input":"Connect without agent forwarding",
+    "output":"ssh -a user@hostname"
+  },
+  {
+    "input":"Delete all partitions and print table on \/dev\/sdg",
+    "output":"parted \/dev\/sdg mklabel gpt print"
+  },
+  {
+    "input":"Run node server with screen",
+    "output":"screen -S node node server.js"
+  },
+  {
+    "input":"Show environment settings used by shell",
+    "output":"env"
+  },
+  {
+    "input":"Find 'ssh' in service logs",
+    "output":"grep 'ssh' \/var\/log\/messages"
+  },
+  {
+    "input":"Sleep for 77 seconds",
+    "output":"sleep 77"
+  },
+  {
+    "input":"Make user buildengine with UID 6000",
+    "output":"useradd -u 6000 buildengine"
+  },
+  {
+    "input":"Blank the screen before next output",
+    "output":"clear"
+  },
+  {
+    "input":"Change to the \/usr\/local\/bin directory",
+    "output":"cd \/usr\/local\/bin"
+  },
+  {
+    "input":"Create backend_team group",
+    "output":"groupadd backend_team"
+  },
+  {
+    "input":"Change to the directory \/usr\/share\/locale",
+    "output":"cd \/usr\/share\/locale"
+  },
+  {
+    "input":"Search JSON files for 'token'",
+    "output":"grep 'token' *.json"
+  },
+  {
+    "input":"Download a file with a specific referer",
+    "output":"wget --referer=http:\/\/google.com http:\/\/example.com\/file.zip"
+  },
+  {
+    "input":"Grant write access to group for log.txt",
+    "output":"chmod g+w log.txt"
+  },
+  {
+    "input":"Append all commands to history file",
+    "output":"history -a && history -w"
+  },
+  {
+    "input":"Run top and display processes sorted by memory usage",
+    "output":"top -o %MEM"
+  },
+  {
+    "input":"Empty the terminal buffer",
+    "output":"clear"
+  },
+  {
+    "input":"Force kill all sshd processes",
+    "output":"killall -9 sshd"
+  },
+  {
+    "input":"Reset the password for student7",
+    "output":"passwd student7"
+  },
+  {
+    "input":"Traceroute to google.com sending 5 probes per hop",
+    "output":"traceroute -q 5 google.com"
+  },
+  {
+    "input":"Match exact name",
+    "output":"pkill -x bash"
+  },
+  {
+    "input":"Query the CNAME record for www.github.com",
+    "output":"nslookup -query=CNAME www.github.com"
+  },
+  {
+    "input":"List all users on tty2",
+    "output":"who | grep tty2"
+  },
+  {
+    "input":"List all sockets for IPv4",
+    "output":"ss -4"
+  },
+  {
+    "input":"Ping google.com with 5 second timeout and 3 times",
+    "output":"ping -W 5 -c 3 google.com"
+  },
+  {
+    "input":"List large files (>1GB) in \/var with details",
+    "output":"find \/var -size +1G -exec ls -lh {} \\;"
+  },
+  {
+    "input":"Show me the three newest files in the current directory",
+    "output":"ls -t | head -n 3"
+  },
+  {
+    "input":"Search for 'usb' in kernel logs",
+    "output":"dmesg | grep 'usb'"
+  },
+  {
+    "input":"Traceroute to 8.8.8.8 with wait time 2 seconds",
+    "output":"traceroute -w 2 8.8.8.8"
+  },
+  {
+    "input":"Flush shell history",
+    "output":"history -c"
+  },
+  {
+    "input":"Check cron job run success",
+    "output":"grep 'CRON' \/var\/log\/syslog | grep 'CMD'"
+  },
+  {
+    "input":"Start tmux session with shell script",
+    "output":"tmux new -s backup '.\/backup.sh'"
+  },
+  {
+    "input":"Ping google.com with 7 second timeout and 75 times",
+    "output":"ping -W 7 -c 75 google.com"
+  },
+  {
+    "input":"Create a directory called 'test_output' in your home",
+    "output":"mkdir ~\/test_output"
+  },
+  {
+    "input":"Fetch URLs with alphanumeric pattern",
+    "output":"curl http:\/\/example.com\/file{a,b,c}.txt"
+  },
+  {
+    "input":"Make 'gl' show git log",
+    "output":"alias gl='git log'"
+  },
+  {
+    "input":"Print today\u2019s user count",
+    "output":"echo \"Logged in: $(who | wc -l) users\""
+  },
+  {
+    "input":"Kill group of processes by group name",
+    "output":"killall -g mygroup"
+  },
+  {
+    "input":"Run background bash block and wait",
+    "output":"{ echo 1; sleep 2; } & wait"
+  },
+  {
+    "input":"Remove root_access group",
+    "output":"groupdel root_access"
+  },
+  {
+    "input":"Use bzip2 to compress the metadata.xml",
+    "output":"bzip2 metadata.xml"
+  },
+  {
+    "input":"Show last lines of tar listing",
+    "output":"tar tzf archive.tar.gz | tail"
+  },
+  {
+    "input":"Delete rootclone",
+    "output":"userdel rootclone"
+  },
+  {
+    "input":"Rename user beta to betatest",
+    "output":"usermod -l betatest beta"
+  },
+  {
+    "input":"Extract IPv4 addresses from text",
+    "output":"awk '\/[0-9]+(\\.[0-9]+){3}\/' file.txt"
+  },
+  {
+    "input":"Create a directory called 'include' in your home",
+    "output":"mkdir ~\/include"
+  },
+  {
+    "input":"Allow ssh_admin to use password again",
+    "output":"passwd -u ssh_admin"
+  },
+  {
+    "input":"Truncate file by overwriting with zeroes",
+    "output":"dd if=\/dev\/zero of=file.txt bs=1K count=1 conv=notrunc"
+  },
+  {
+    "input":"List all log files in \/var\/log, with details and human sizes",
+    "output":"ls -lh \/var\/log\/*.log"
+  },
+  {
+    "input":"Display kernel name and hardware platform",
+    "output":"uname -si"
+  },
+  {
+    "input":"Assign chris to own all files in \/data",
+    "output":"chown chris \/data\/*"
+  },
+  {
+    "input":"Create a file called 'clamav.log' in \/var\/log\/clamav",
+    "output":"touch \/var\/log\/clamav\/clamav.log"
+  },
+  {
+    "input":"Get a clear shell",
+    "output":"clear"
+  },
+  {
+    "input":"Install build-essential",
+    "output":"sudo apt install build-essential"
+  },
+  {
+    "input":"Display disk usage summary for each subdirectory in \/opt",
+    "output":"du -h --max-depth=1 \/opt"
+  },
+  {
+    "input":"Start a script with sudo and wait",
+    "output":"sudo .\/admin_script.sh & wait"
+  },
+  {
+    "input":"Create a zip named user_data.zip containing user.csv",
+    "output":"zip user_data.zip user.csv"
+  },
+  {
+    "input":"Print the command history",
+    "output":"history"
+  },
+  {
+    "input":"Create intern account internship2025",
+    "output":"useradd internship2025"
+  },
+  {
+    "input":"Interactive mode: set query type to ANY and look up example.com",
+    "output":"nslookup\nset type=ANY\nexample.com"
+  },
+  {
+    "input":"Display login environment",
+    "output":"env"
+  },
+  {
+    "input":"Make a group called dev_team",
+    "output":"groupadd dev_team"
+  },
+  {
+    "input":"Display disk usage for all files in \/etc, excluding README files",
+    "output":"du -h --exclude=\"README*\" \/etc"
+  },
+  {
+    "input":"Move to the Documents folder inside the current directory",
+    "output":"cd Documents"
+  },
+  {
+    "input":"Traceroute to github.com without resolving IP addresses to hostnames",
+    "output":"traceroute -n github.com"
+  },
+  {
+    "input":"Print kernel version",
+    "output":"echo \"Kernel: $(uname -r)\""
+  },
+  {
+    "input":"Sync files and filter using patterns from a file",
+    "output":"rsync -avz --filter='merge filter_rules.txt' source_dir\/ destination_dir\/"
+  },
+  {
+    "input":"Install unzip tool",
+    "output":"sudo apt install unzip"
+  },
+  {
+    "input":"Ping amazon.com with 65507 byte packets and 45 times",
+    "output":"ping -s 65507 -c 45 amazon.com"
+  },
+  {
+    "input":"Use wait with multiple PIDs",
+    "output":"cmd1 & pid1=$!; cmd2 & pid2=$!; wait $pid1 $pid2"
+  },
+  {
+    "input":"Show all open UDP ports",
+    "output":"netstat -uan | grep 'LISTEN'"
+  },
+  {
+    "input":"Quiet mode",
+    "output":"pkill -q sshd"
+  },
+  {
+    "input":"Move the entire 'Documents' folder to \/mnt\/usb",
+    "output":"mv ~\/Documents \/mnt\/usb\/"
+  },
+  {
+    "input":"Find previous npm commands",
+    "output":"history | grep npm"
+  },
+  {
+    "input":"Run job once a year",
+    "output":"crontab -e # @yearly \/yearly_job.sh"
+  },
+  {
+    "input":"Erase scrollback content",
+    "output":"clear"
+  },
+  {
+    "input":"Clear command history from memory",
+    "output":"history -c"
+  },
+  {
+    "input":"Copy a directory 'images' to \/var\/www\/html",
+    "output":"cp -r images \/var\/www\/html\/"
+  },
+  {
+    "input":"Connect with maximum keep-alive count",
+    "output":"ssh -o ServerAliveCountMax=3 user@hostname"
+  },
+  {
+    "input":"Display only the total disk usage for \/var",
+    "output":"du -sh \/var"
+  },
+  {
+    "input":"Change golang_team to go_dev",
+    "output":"groupmod -n go_dev golang_team"
+  },
+  {
+    "input":"Remove unwanted_user from system",
+    "output":"userdel unwanted_user"
+  },
+  {
+    "input":"Get the last 20 commands from history",
+    "output":"history | tail -n 20"
+  },
+  {
+    "input":"Create a directory called 'images' in the Desktop directory",
+    "output":"mkdir ~\/Desktop\/images"
+  },
+  {
+    "input":"List all partitions with details",
+    "output":"fdisk -l"
+  },
+  {
+    "input":"Show last 5 lines of find output",
+    "output":"find . -type f | tail -n 5"
+  },
+  {
+    "input":"Display disk usage in blocks of 512 bytes",
+    "output":"du -B 512"
+  },
+  {
+    "input":"Use gzip on log_2020.log",
+    "output":"gzip log_2020.log"
+  },
+  {
+    "input":"Switch to finance account",
+    "output":"su finance"
+  },
+  {
+    "input":"Rename 'logfile' to 'logfile.old' in \/var\/log",
+    "output":"mv \/var\/log\/logfile \/var\/log\/logfile.old"
+  },
+  {
+    "input":"Unlock data_input user",
+    "output":"passwd -u data_input"
+  },
+  {
+    "input":"Get blkid for \/dev\/sdi3",
+    "output":"blkid \/dev\/sdi3"
+  },
+  {
+    "input":"Traceroute to yahoo.com with IPv6 source address",
+    "output":"traceroute -S 2001:db8::1 yahoo.com"
+  },
+  {
+    "input":"Assign social group to announcement.doc",
+    "output":"chgrp social announcement.doc"
+  },
+  {
+    "input":"Change to the \/dev directory",
+    "output":"cd \/dev"
+  },
+  {
+    "input":"Show kernel messages and pipe to less for paging",
+    "output":"dmesg | less"
+  },
+  {
+    "input":"Show all processes for a group 'admin'",
+    "output":"ps -G admin"
+  },
+  {
+    "input":"Remove all files in \/var\/log\/postgresql",
+    "output":"rm \/var\/log\/postgresql\/*"
+  },
+  {
+    "input":"Alias to edit crontab",
+    "output":"alias crontabedit='crontab -e'"
+  },
+  {
+    "input":"Edit SSH config file",
+    "output":"sudo nano \/etc\/ssh\/sshd_config"
+  },
+  {
+    "input":"Ping github.com and set deadline to 20 seconds",
+    "output":"ping -w 20 github.com"
+  },
+  {
+    "input":"Make a 512MB partition on \/dev\/sdc",
+    "output":"parted \/dev\/sdc mkpart primary ext4 0% 512MB"
+  },
+  {
+    "input":"Restart the computer",
+    "output":"sudo reboot"
+  },
+  {
+    "input":"Run sleep command with nohup",
+    "output":"nohup sleep 1000 &"
+  },
+  {
+    "input":"Change to the directory \/usr\/share\/vim",
+    "output":"cd \/usr\/share\/vim"
+  },
+  {
+    "input":"Use bzip2 to shrink setup.cfg",
+    "output":"bzip2 setup.cfg"
+  },
+  {
+    "input":"Show help screen",
+    "output":"less -h"
+  },
+  {
+    "input":"Download a file and enable following FTP links from HTML",
+    "output":"wget --follow-ftp http:\/\/example.com\/"
+  },
+  {
+    "input":"Give editor full control of article.docx",
+    "output":"chown editor article.docx"
+  },
+  {
+    "input":"Remove analytics_group",
+    "output":"groupdel analytics_group"
+  },
+  {
+    "input":"Create user ankit with groups wheel and docker",
+    "output":"useradd -G wheel,docker ankit"
+  },
+  {
+    "input":"Send SIGXFSZ to PID 3839",
+    "output":"kill -XFSZ 3839"
+  },
+  {
+    "input":"Locate music files",
+    "output":"locate '*.mp3'"
+  },
+  {
+    "input":"Run mtr to google.com with TCP, 200 cycles, interval 0.5s, and output in JSON format",
+    "output":"mtr --tcp --json -c 200 -i 0.5 google.com"
+  },
+  {
+    "input":"Interactive mode: set query type to NS and look up example.com",
+    "output":"nslookup\nset type=NS\nexample.com"
+  },
+  {
+    "input":"Query A record for google.com with TCP",
+    "output":"dig google.com +tcp"
+  },
+  {
+    "input":"Change niceness of mail services",
+    "output":"sudo renice +5 -p $(pgrep postfix) $(pgrep smbd)"
+  },
+  {
+    "input":"Create a directory called 'data' inside \/var\/log",
+    "output":"mkdir \/var\/log\/data"
+  },
+  {
+    "input":"Show kernel messages related to errors",
+    "output":"dmesg | grep -i error"
+  },
+  {
+    "input":"Ping google.com with default settings",
+    "output":"ping google.com"
+  },
+  {
+    "input":"Make owner of image.jpg as user19",
+    "output":"chown user19 image.jpg"
+  },
+  {
+    "input":"Make a request with custom DNS server",
+    "output":"curl --dns-servers 8.8.8.8 http:\/\/example.com"
+  },
+  {
+    "input":"Show the latest commands used",
+    "output":"history"
+  },
+  {
+    "input":"Send enter key to pane",
+    "output":"tmux send-keys -t dev C-m"
+  },
+  {
+    "input":"Unmount USB safely",
+    "output":"umount \/media\/usb"
+  },
+  {
+    "input":"Follow kernel ring buffer",
+    "output":"dmesg --follow"
+  },
+  {
+    "input":"Create new session and run bash",
+    "output":"tmux new-session -s shell bash"
+  },
+  {
+    "input":"Alias to open nautilus file explorer",
+    "output":"alias open='nautilus .'"
+  },
+  {
+    "input":"Locate VSCode settings",
+    "output":"locate settings.json"
+  },
+  {
+    "input":"Traceroute to example.com with AS lookups enabled",
+    "output":"traceroute -A example.com"
+  },
+  {
+    "input":"Make a request and show timing information",
+    "output":"curl -w '%{time_total}\\n' http:\/\/example.com"
+  },
+  {
+    "input":"Show user login dates",
+    "output":"who"
+  },
+  {
+    "input":"Check the version of the pwd binary on your system.",
+    "output":"\/bin\/pwd --version"
+  },
+  {
+    "input":"Show logged in users sorted by idle time",
+    "output":"w | sort -k5"
+  },
+  {
+    "input":"Remove all permissions from group",
+    "output":"chmod g= filename"
+  },
+  {
+    "input":"Query MX record for google.com and display only answer section",
+    "output":"dig google.com MX +noall +answer"
+  },
+  {
+    "input":"Remove a file called 'error.log' inside \/var\/log",
+    "output":"rm \/var\/log\/error.log"
+  },
+  {
+    "input":"Watch a directory for new files",
+    "output":"watch 'ls -lh \/path\/to\/dir'"
+  },
+  {
+    "input":"Assign dev group to app.py",
+    "output":"chgrp dev app.py"
+  },
+  {
+    "input":"Show logs for the last hour",
+    "output":"journalctl --since '1 hour ago'"
+  },
+  {
+    "input":"Dry run auto-remove",
+    "output":"sudo apt autoremove --dry-run"
+  },
+  {
+    "input":"Find files opened by process ID 1234",
+    "output":"lsof -p 1234"
+  },
+  {
+    "input":"Find a file named main.cpp",
+    "output":"locate main.cpp"
+  },
+  {
+    "input":"Remove mount at \/mnt\/shared",
+    "output":"umount \/mnt\/shared"
+  },
+  {
+    "input":"Run mtr to amazon.com and set the number of pings per hop to 9",
+    "output":"mtr -c 9 amazon.com"
+  },
+  {
+    "input":"Add students2025 group",
+    "output":"groupadd students2025"
+  },
+  {
+    "input":"Download only",
+    "output":"sudo apt autoremove --download-only"
+  },
+  {
+    "input":"Find all symbolic links in \/usr",
+    "output":"find \/usr -type l"
+  },
+  {
+    "input":"Show all connections and append output to a file",
+    "output":"netstat -an >> netstat_output.txt"
+  },
+  {
+    "input":"Run mtr to amazon.com and show both hostnames and IP addresses",
+    "output":"mtr -b amazon.com"
+  },
+  {
+    "input":"Ping amazon.com and use IPv4 only",
+    "output":"ping -4 amazon.com"
+  },
+  {
+    "input":"Remove project_guest and delete home",
+    "output":"userdel -r project_guest"
+  },
+  {
+    "input":"Rename voice_test group to voice_team",
+    "output":"groupmod -n voice_team voice_test"
+  },
+  {
+    "input":"Make a zip file called images.zip with photo1.jpg and photo2.jpg",
+    "output":"zip images.zip photo1.jpg photo2.jpg"
+  },
+  {
+    "input":"List all files in the current folder with a .txt extension",
+    "output":"ls *.txt"
+  },
+  {
+    "input":"Monitor number of SSH connections",
+    "output":"watch 'netstat -tn | grep :22 | wc -l'"
+  },
+  {
+    "input":"Rename mobile_team to mobile_dev",
+    "output":"groupmod -n mobile_dev mobile_team"
+  },
+  {
+    "input":"Find hidden files in home directory",
+    "output":"locate \/home\/.*"
+  },
+  {
+    "input":"Block user dev_ux from logging in",
+    "output":"passwd -l dev_ux"
+  },
+  {
+    "input":"Run htop and show only processes with CPU usage > 50%",
+    "output":"htop | awk '$9 > 50'"
+  },
+  {
+    "input":"Run mtr to facebook.com and set the number of pings per hop to 2",
+    "output":"mtr -c 2 facebook.com"
+  },
+  {
+    "input":"Find lines containing digits",
+    "output":"grep '[0-9]' file.txt"
+  },
+  {
+    "input":"Download a file and save with a different name",
+    "output":"wget -O newname.zip http:\/\/example.com\/file.zip"
+  },
+  {
+    "input":"Run a script that modifies system settings",
+    "output":"sudo .\/setup.sh"
+  },
+  {
+    "input":"Change to the directory \/usr\/share\/zoneinfo\/Africa",
+    "output":"cd \/usr\/share\/zoneinfo\/Africa"
+  },
+  {
+    "input":"Show kernel messages for specific level and facility",
+    "output":"dmesg -l err -f kern"
+  },
+  {
+    "input":"Display all system information except kernel name and processor type",
+    "output":"uname -arvmio"
+  },
+  {
+    "input":"Run mtr to google.com and set interval to 0.1 second",
+    "output":"mtr -i 0.1 google.com"
+  },
+  {
+    "input":"Temporarily prevent linuxuser from logging in",
+    "output":"passwd -l linuxuser"
+  },
+  {
+    "input":"Traceroute to 8.8.8.8 with wait time 10 seconds and 5 probes per hop",
+    "output":"traceroute -w 10 -q 5 8.8.8.8"
+  },
+  {
+    "input":"Show all network devices",
+    "output":"nmcli device"
+  },
+  {
+    "input":"Copy all files in the current directory to \/tmp and keep everything and do not overwrite existing files",
+    "output":"cp -an * \/tmp\/"
+  },
+  {
+    "input":"Query the A record for example.com with 5 retries",
+    "output":"nslookup -retry=5 example.com"
+  },
+  {
+    "input":"Remove password lock for observer_1",
+    "output":"passwd -u observer_1"
+  },
+  {
+    "input":"Start xargs in background and wait",
+    "output":"cat files.txt | xargs -n1 -P4 cp & wait"
+  },
+  {
+    "input":"Display history with date and time",
+    "output":"HISTTIMEFORMAT=\"%c \" history"
+  },
+  {
+    "input":"Query A record for google.com and set +all",
+    "output":"dig google.com +all"
+  },
+  {
+    "input":"Get full partition list",
+    "output":"fdisk -l"
+  },
+  {
+    "input":"Create a directory called 'applications' in your home",
+    "output":"mkdir ~\/applications"
+  },
+  {
+    "input":"Download a file and append to a log file (append mode)",
+    "output":"wget -a download.log http:\/\/example.com\/file.zip"
+  },
+  {
+    "input":"Compress all markdown and HTML files",
+    "output":"zip web_docs.zip *.md *.html"
+  },
+  {
+    "input":"Kill processes using older than given age",
+    "output":"killall -o nginx"
+  },
+  {
+    "input":"Mount ISO with exec option",
+    "output":"mount -o loop,exec image.iso \/mnt\/iso"
+  },
+  {
+    "input":"Install npm",
+    "output":"sudo apt install npm"
+  },
+  {
+    "input":"Run Docker container restart script",
+    "output":"nohup .\/restart_docker.sh &"
+  },
+  {
+    "input":"Ping amazon.com with 3 second timeout and 47 times",
+    "output":"ping -W 3 -c 47 amazon.com"
+  },
+  {
+    "input":"Kill processes by full path name",
+    "output":"killall \/usr\/bin\/python3"
+  },
+  {
+    "input":"Move to pane on the bottom",
+    "output":"Ctrl-b \u2193"
+  },
+  {
+    "input":"Change owner to alice for app.py",
+    "output":"chown alice app.py"
+  },
+  {
+    "input":"Ping facebook.com with 5 second timeout and 150 times",
+    "output":"ping -W 5 -c 150 facebook.com"
+  },
+  {
+    "input":"Display disk usage for all files and directories, using block size of 16M",
+    "output":"du -B 16M"
+  },
+  {
+    "input":"Make a PATCH request with data",
+    "output":"curl -X PATCH -d 'field=newvalue' http:\/\/example.com\/api\/resource\/123"
+  },
+  {
+    "input":"Connect with host-based authentication",
+    "output":"ssh -o HostbasedAuthentication=yes user@hostname"
+  },
+  {
+    "input":"Run top and show only running processes",
+    "output":"top -i"
+  },
+  {
+    "input":"Make request with rate limiting",
+    "output":"curl --limit-rate 50k --max-time 60 http:\/\/example.com\/largefile"
+  },
+  {
+    "input":"Query the A record for github.com and append output to file",
+    "output":"host github.com >> github_dns.txt"
+  },
+  {
+    "input":"Traceroute to github.com with AS lookups enabled",
+    "output":"traceroute -A github.com"
+  },
+  {
+    "input":"Create a directory called 'jobs' in \/var\/spool\/cron",
+    "output":"mkdir \/var\/spool\/cron\/jobs"
+  },
+  {
+    "input":"Make setup.sh executable only by group",
+    "output":"chmod 010 setup.sh"
+  },
+  {
+    "input":"Update api_dev to api_team",
+    "output":"groupmod -n api_team api_dev"
+  },
+  {
+    "input":"Display all system information except processor type",
+    "output":"uname -asrvmoin"
+  },
+  {
+    "input":"Move all files in the current directory to \/tmp and keep ownership",
+    "output":"mv --preserve=ownership * \/tmp\/"
+  },
+  {
+    "input":"Show last lines of Markdown",
+    "output":"tail -n 20 README.md"
+  },
+  {
+    "input":"Remove julie including her home folder",
+    "output":"userdel -r julie"
+  },
+  {
+    "input":"Display memory usage in gigabytes with total, update every 20 seconds, 6 times",
+    "output":"free -g -t -s 20 -c 6"
+  },
+  {
+    "input":"Change owner to webmaster for \/var\/www\/html",
+    "output":"chown webmaster \/var\/www\/html"
+  },
+  {
+    "input":"Copy all files in the \/media directory to \/backup\/media",
+    "output":"cp \/media\/* \/backup\/media\/"
+  },
+  {
+    "input":"Delete ubuntu account",
+    "output":"userdel ubuntu"
+  },
+  {
+    "input":"Comment out all lines",
+    "output":"sed 's\/^\/#\/' file.txt"
+  },
+  {
+    "input":"Query the TXT record for github.com and use short output",
+    "output":"host -t TXT github.com | awk -F'\"' '{print $2}'"
+  },
+  {
+    "input":"Create system bot user pushbot with no shell",
+    "output":"useradd -r -s \/sbin\/nologin pushbot"
+  },
+  {
+    "input":"Create a file called 'index.html' in \/var\/www\/html",
+    "output":"touch \/var\/www\/html\/index.html"
+  },
+  {
+    "input":"Combine pwd with an error message if a directory does not exist.",
+    "output":"if [ ! -d \"\/some\/dir\" ]; then echo \"Not found, current: $(pwd)\"; fi"
+  },
+  {
+    "input":"Download a file using IPv4 only",
+    "output":"wget -4 http:\/\/example.com\/file.zip"
+  },
+  {
+    "input":"Find all logged in SSH users",
+    "output":"who | grep ssh"
+  },
+  {
+    "input":"Show me a detailed list sorted by extension",
+    "output":"ls -lX"
+  },
+  {
+    "input":"Copy all files in \/var\/log\/exim4 to \/backup\/exim4",
+    "output":"cp \/var\/log\/exim4\/* \/backup\/exim4\/"
+  },
+  {
+    "input":"Login as system user logs",
+    "output":"su logs"
+  },
+  {
+    "input":"Assign read permission to everyone on changelog.md",
+    "output":"chmod a+r changelog.md"
+  },
+  {
+    "input":"Gzip user.log file",
+    "output":"gzip user.log"
+  },
+  {
+    "input":"Compress the file data.txt using bzip2",
+    "output":"bzip2 data.txt"
+  },
+  {
+    "input":"Change niceness of virtualization processes",
+    "output":"sudo renice +5 -p $(pgrep qemu)"
+  },
+  {
+    "input":"Display memory usage in bytes with old format and detailed stats, update every 5 seconds, 5 times",
+    "output":"free -b -o -l -s 5 -c 5"
+  },
+  {
+    "input":"Show logs for a specific group (GID 100)",
+    "output":"journalctl _GID=100"
+  },
+  {
+    "input":"Display disk usage with last modification time in human-readable format",
+    "output":"du --time -h"
+  },
+  {
+    "input":"Start camera recording via script",
+    "output":"nohup .\/record.sh &"
+  },
+  {
+    "input":"Only see command column from w",
+    "output":"w | awk '{print $8}'"
+  },
+  {
+    "input":"Show all open files under \/var\/log",
+    "output":"lsof +D \/var\/log"
+  },
+  {
+    "input":"Sync files and preserve all attributes (ACLs, xattrs, hard links)",
+    "output":"rsync -avzHAX source_dir\/ destination_dir\/"
+  },
+  {
+    "input":"List active connections",
+    "output":"nmcli connection show --active"
+  },
+  {
+    "input":"Show all established connections",
+    "output":"netstat | grep ESTABLISHED"
+  },
+  {
+    "input":"Change niceness of processes using network on port 22",
+    "output":"sudo renice +5 -p $(lsof -i:22 -t)"
+  },
+  {
+    "input":"Display disk usage in megabytes",
+    "output":"du -m"
+  },
+  {
+    "input":"Show open files on port 3306",
+    "output":"lsof -i :3306"
+  },
+  {
+    "input":"Download only files larger than 1MB",
+    "output":"wget --quota=1m -r http:\/\/example.com\/"
+  },
+  {
+    "input":"List all partition tables",
+    "output":"fdisk -l"
+  },
+  {
+    "input":"Display memory usage in human-readable format, update every 30 seconds indefinitely",
+    "output":"free -h -s 30"
+  },
+  {
+    "input":"Run mtr to 1.1.1.1 and show maximum 15 hops",
+    "output":"mtr -m 15 1.1.1.1"
+  },
+  {
+    "input":"Empty shell view for cleaner output",
+    "output":"clear"
+  },
+  {
+    "input":"List all cron timers",
+    "output":"systemctl list-timers"
+  },
+  {
+    "input":"Add simon to proxy group",
+    "output":"gpasswd -a simon proxy"
+  },
+  {
+    "input":"Run top and display only the header",
+    "output":"top -b -n 1 | head -n 5"
+  },
+  {
+    "input":"Move 'resume.pdf' to your home directory",
+    "output":"mv resume.pdf ~\/"
+  },
+  {
+    "input":"Create ops_team group",
+    "output":"groupadd ops_team"
+  },
+  {
+    "input":"Download large file without hangup",
+    "output":"nohup wget http:\/\/example.com\/bigfile.zip &"
+  },
+  {
+    "input":"Screen session for machine learning training",
+    "output":"screen -S training python train.py"
+  },
+  {
+    "input":"Test write speed of disk",
+    "output":"dd if=\/dev\/zero of=testfile bs=1G count=1 oflag=dsync"
+  },
+  {
+    "input":"Show the configuration of a wireless interface (e.g., wlan0)",
+    "output":"ifconfig wlan0"
+  },
+  {
+    "input":"Install Git",
+    "output":"sudo apt install git"
+  },
+  {
+    "input":"Make exact image of disk",
+    "output":"dd if=\/dev\/sda of=disk.img bs=512"
+  },
+  {
+    "input":"Add finance group",
+    "output":"groupadd finance"
+  },
+  {
+    "input":"Display machine hardware name and hardware platform",
+    "output":"uname -mi"
+  },
+  {
+    "input":"Remove spaces from end of lines",
+    "output":"sed 's\/ *$\/\/' file.txt"
+  },
+  {
+    "input":"Delete an empty directory called 'docs' in \/usr\/local\/share",
+    "output":"rmdir \/usr\/local\/share\/docs"
+  },
+  {
+    "input":"Find directories in \/data larger than 2GB",
+    "output":"find \/data -size +2G -type d"
+  },
+  {
+    "input":"After changing to \/var\/log, display your location.",
+    "output":"cd \/var\/log && pwd"
+  },
+  {
+    "input":"Display a detailed list of all files in my home directory, including hidden ones",
+    "output":"ls -la ~"
+  },
+  {
+    "input":"Inspect storage volume \/dev\/vdi",
+    "output":"fdisk -l \/dev\/vdi"
+  },
+  {
+    "input":"Compress the script.sh file",
+    "output":"gzip script.sh"
+  },
+  {
+    "input":"Run atop and show only sleeping processes",
+    "output":"atop | grep sleeping"
+  },
+  {
+    "input":"Make image.jpg readable and writable only by owner",
+    "output":"chmod 600 image.jpg"
+  },
+  {
+    "input":"Sync files and specify a custom daemon outgoing chmod",
+    "output":"rsync -avz --daemon --outgoing-chmod=Du=rwx,go=rx,Fu=rw,go=r source_dir\/ destination_dir\/"
+  },
+  {
+    "input":"Move all files in \/var\/log\/zypper.log to \/backup\/zypper",
+    "output":"mv \/var\/log\/zypper.log\/* \/backup\/zypper\/"
+  },
+  {
+    "input":"Show all processes and pipe to most for scrolling",
+    "output":"ps aux | most"
+  },
+  {
+    "input":"Initialize a new NTFS partition on \/dev\/sde1",
+    "output":"mkfs.ntfs \/dev\/sde1"
+  },
+  {
+    "input":"Print fields if line starts with 'user:'",
+    "output":"awk '\/^user:\/ {print $2, $3}' file.txt"
+  },
+  {
+    "input":"Disable developer99's authentication temporarily",
+    "output":"passwd -l developer99"
+  },
+  {
+    "input":"Add execute permission for the owner to run.py",
+    "output":"chmod u+x run.py"
+  },
+  {
+    "input":"Make zip file configs.zip with config.yaml and settings.ini",
+    "output":"zip configs.zip config.yaml settings.ini"
+  },
+  {
+    "input":"Find a file named README.md",
+    "output":"locate README.md"
+  },
+  {
+    "input":"Set group leadteam for dashboard.py",
+    "output":"chgrp leadteam dashboard.py"
+  },
+  {
+    "input":"Traceroute to example.com using ICMP echo requests",
+    "output":"traceroute -I example.com"
+  },
+  {
+    "input":"Delete all files in the current directory that start with 'temp'",
+    "output":"rm temp*"
+  },
+  {
+    "input":"Check if smbd is running",
+    "output":"service smbd status"
+  },
+  {
+    "input":"Show logs in JSON format",
+    "output":"journalctl -o json"
+  },
+  {
+    "input":"Change document.docx owner to linda",
+    "output":"chown linda document.docx"
+  },
+  {
+    "input":"Query the TLSA record for yahoo.com",
+    "output":"nslookup -type=TLSA yahoo.com"
+  },
+  {
+    "input":"Allow devuser2 to log in again",
+    "output":"passwd -u devuser2"
+  },
+  {
+    "input":"Change user neil's shell to nologin",
+    "output":"usermod -s \/usr\/sbin\/nologin neil"
+  },
+  {
+    "input":"Store the present working directory in a variable called dir and print it.",
+    "output":"dir=$(pwd); echo $dir"
+  },
+  {
+    "input":"Delete the interns group",
+    "output":"groupdel interns"
+  },
+  {
+    "input":"Parallel kill multiple PIDs",
+    "output":"kill -9 11131 & kill -9 12141 & wait"
+  },
+  {
+    "input":"Change to the Downloads directory in your home folder",
+    "output":"cd ~\/Downloads"
+  },
+  {
+    "input":"Make a file system of type exfat on \/dev\/sdg1",
+    "output":"mkfs.exfat \/dev\/sdg1"
+  },
+  {
+    "input":"Query the A record for example.com and display output in color",
+    "output":"host example.com | lolcat"
+  },
+  {
+    "input":"Run atop and show only processes with network usage > 10MB",
+    "output":"atop | awk '$12 > 10240'"
+  },
+  {
+    "input":"Display kernel name, machine hardware name, and hardware platform",
+    "output":"uname -smi"
+  },
+  {
+    "input":"Show usernames and remote connections",
+    "output":"who"
+  },
+  {
+    "input":"Copy all files in the current directory to \/tmp and keep everything and force overwrite",
+    "output":"cp -a -f * \/tmp\/"
+  },
+  {
+    "input":"Kill screen by name",
+    "output":"screen -X -S training quit"
+  },
+  {
+    "input":"Delete old_user account",
+    "output":"userdel old_user"
+  },
+  {
+    "input":"Add a connection with a specific IPv4 DHCP hostname",
+    "output":"nmcli connection add type ethernet con-name \"My Ethernet\" ifname eth0 ipv4.dhcp-hostname \"myhost\""
+  },
+  {
+    "input":"Find media files",
+    "output":"locate '*.mp4'"
+  },
+  {
+    "input":"Load a specific connection file",
+    "output":"nmcli connection load \/etc\/NetworkManager\/system-connections\/my-connection.nmconnection"
+  },
+  {
+    "input":"Assign IP 10.0.0.2 and enable promiscuous mode on eth5",
+    "output":"sudo ifconfig eth5 10.0.0.2 promisc"
+  },
+  {
+    "input":"Display available system updates",
+    "output":"watch 'apt update'"
+  },
+  {
+    "input":"Make a PUT request with data",
+    "output":"curl -X PUT -d 'data' http:\/\/example.com\/api\/resource"
+  },
+  {
+    "input":"Run background command in screen",
+    "output":"screen -dmS backup .\/backup.sh"
+  },
+  {
+    "input":"Display memory usage in gigabytes with all options, update every 13 seconds, 13 times",
+    "output":"free -g -o -l -w -t -s 13 -c 13"
+  },
+  {
+    "input":"Delete a connection",
+    "output":"nmcli connection delete \"My Connection\""
+  },
+  {
+    "input":"Print lines where the length is greater than 20",
+    "output":"awk 'length($0) > 20' file.txt"
+  },
+  {
+    "input":"Move all files in \/var\/log\/lightdm to \/backup\/lightdm",
+    "output":"mv \/var\/log\/lightdm\/* \/backup\/lightdm\/"
+  },
+  {
+    "input":"Display all system information except kernel name and operating system",
+    "output":"uname -a"
+  },
+  {
+    "input":"Rename 'sa.log' to 'sa.log.old' in \/var\/log\/sa",
+    "output":"mv \/var\/log\/sa\/sa.log \/var\/log\/sa\/sa.log.old"
+  },
+  {
+    "input":"Traceroute to yahoo.com using UDPLITE protocol",
+    "output":"traceroute -UL yahoo.com"
+  },
+  {
+    "input":"Create a file called 'cron' in \/var\/log",
+    "output":"touch \/var\/log\/cron"
+  },
+  {
+    "input":"Match processes younger than 5 seconds",
+    "output":"pkill -n sleep"
+  },
+  {
+    "input":"List all sockets and filter for FIN-WAIT-2 state",
+    "output":"ss state fin-wait-2"
+  },
+  {
+    "input":"Sync files and specify a custom daemon group",
+    "output":"rsync -avz --daemon --gid=nogroup source_dir\/ destination_dir\/"
+  },
+  {
+    "input":"Find 'config' in all .conf files",
+    "output":"grep 'config' *.conf"
+  },
+  {
+    "input":"Change to the \/var\/log\/clamav directory",
+    "output":"cd \/var\/log\/clamav"
+  },
+  {
+    "input":"Show partition summary for virtual disk \/dev\/vdb",
+    "output":"parted \/dev\/vdb print"
+  },
+  {
+    "input":"Display all tmux key bindings",
+    "output":"Ctrl-b ?"
+  },
+  {
+    "input":"Copy 'report.pdf' to the Documents folder",
+    "output":"cp report.pdf ~\/Documents\/"
+  },
+  {
+    "input":"Create a file called 'icons' in your home",
+    "output":"touch ~\/icons"
+  },
+  {
+    "input":"Run htop inside tmux",
+    "output":"tmux new -s sys htop"
+  },
+  {
+    "input":"Delete k8s_demo_user",
+    "output":"userdel k8s_demo_user"
+  },
+  {
+    "input":"Send SIGSTOP to PID 2627",
+    "output":"kill -STOP 2627"
+  },
+  {
+    "input":"Query the ANY record for github.com",
+    "output":"nslookup -query=ANY github.com"
+  },
+  {
+    "input":"Fork a subshell process and wait",
+    "output":"(echo hello; sleep 2) & wait"
+  },
+  {
+    "input":"Set control as owner of router.cfg",
+    "output":"chown control router.cfg"
+  },
+  {
+    "input":"Show all processes with more than 10% CPU usage",
+    "output":"ps -eo pid,ppid,cmd,%cpu --sort=-%cpu | awk '$4 > 10'"
+  },
+  {
+    "input":"Monitor sudo usage logs",
+    "output":"watch 'grep sudo \/var\/log\/auth.log'"
+  },
+  {
+    "input":"Create a directory called 'logs' in your home",
+    "output":"mkdir ~\/logs"
+  },
+  {
+    "input":"Run bash with root privileges",
+    "output":"sudo bash"
+  },
+  {
+    "input":"Run sudo command with clean environment",
+    "output":"sudo env -i command"
+  },
+  {
+    "input":"List all files ending in .log in the current directory, sorted by size",
+    "output":"ls -S *.log"
+  },
+  {
+    "input":"Add guest user guest123 with UID 2222",
+    "output":"useradd -u 2222 guest123"
+  },
+  {
+    "input":"Sleep before retrying a command",
+    "output":"sleep 2"
+  },
+  {
+    "input":"Create frontend_leads group",
+    "output":"groupadd frontend_leads"
+  },
+  {
+    "input":"Display all system information except kernel name and kernel release",
+    "output":"uname -avmpi"
+  },
+  {
+    "input":"Ping google.com using IPv6",
+    "output":"ping6 google.com"
+  },
+  {
+    "input":"Delete debug_team",
+    "output":"groupdel debug_team"
+  },
+  {
+    "input":"Backup current crontab to a file",
+    "output":"crontab -l > mycron.backup"
+  },
+  {
+    "input":"Run mtr to yahoo.com with IPv6, 75 cycles, interval 0.25s, and output in raw format",
+    "output":"mtr -6 --raw -c 75 -i 0.25 yahoo.com"
+  },
+  {
+    "input":"Set login password for internal_user",
+    "output":"passwd internal_user"
+  },
+  {
+    "input":"Use bzip2 for compressing the text.txt",
+    "output":"bzip2 text.txt"
+  },
+  {
+    "input":"Query the SRV record for _sip._tcp.google.com",
+    "output":"nslookup -query=SRV _sip._tcp.google.com"
+  },
+  {
+    "input":"Check if TERM is set",
+    "output":"env | grep TERM"
+  },
+  {
+    "input":"Add a connection with a specific IPv4 DHCP use routes",
+    "output":"nmcli connection add type ethernet con-name \"My Ethernet\" ifname eth0 ipv4.dhcp-use-routes yes"
+  },
+  {
+    "input":"Use su to switch to analytics",
+    "output":"su analytics"
+  },
+  {
+    "input":"Use wait in a bash trap handler",
+    "output":"trap 'wait' EXIT"
+  },
+  {
+    "input":"Start gunicorn server safely",
+    "output":"nohup gunicorn app:app &"
+  },
+  {
+    "input":"Remove an empty directory called 'cache' in \/var",
+    "output":"rmdir \/var\/cache"
+  },
+  {
+    "input":"Run top and show only idle processes",
+    "output":"top -I"
+  },
+  {
+    "input":"Check nginx status",
+    "output":"service nginx status"
+  },
+  {
+    "input":"Pause for 0.001 seconds",
+    "output":"sleep 0.001"
+  },
+  {
+    "input":"Delete batch1_training group",
+    "output":"groupdel batch1_training"
+  },
+  {
+    "input":"Find files in \/etc where user has execute permission",
+    "output":"find \/etc -perm \/u+x"
+  },
+  {
+    "input":"Make a GET request with verbose output",
+    "output":"curl -v http:\/\/example.com"
+  },
+  {
+    "input":"Bind mount \/mnt\/source to \/mnt\/target",
+    "output":"mount --bind \/mnt\/source \/mnt\/target"
+  },
+  {
+    "input":"Run mtr to yahoo.com with IPv6, 75 cycles, and output in raw format",
+    "output":"mtr -6 --raw -c 75 yahoo.com"
+  },
+  {
+    "input":"Query ANY record for google.com",
+    "output":"dig google.com ANY"
+  },
+  {
+    "input":"Copy a file 'data.json' to \/srv\/www and keep permissions",
+    "output":"cp -p data.json \/srv\/www\/"
+  },
+  {
+    "input":"Traceroute to example.com using a loose source route gateway",
+    "output":"traceroute -g 192.168.1.1 example.com"
+  },
+  {
+    "input":"Search for missing.txt",
+    "output":"locate missing.txt"
+  },
+  {
+    "input":"Fetch block device info of \/dev\/sdi6",
+    "output":"blkid \/dev\/sdi6"
+  },
+  {
+    "input":"Show disk usage for all filesystems, sorted by available space",
+    "output":"df -h | sort -k 4 -h"
+  },
+  {
+    "input":"Show processes running as root (real & effective ID) in user format",
+    "output":"ps -U root -u root u"
+  },
+  {
+    "input":"Remove flask_backend group",
+    "output":"groupdel flask_backend"
+  },
+  {
+    "input":"Query TXT record for google.com and display only answer section",
+    "output":"dig google.com TXT +noall +answer"
+  },
+  {
+    "input":"Query the DS record for example.com",
+    "output":"host -t DS example.com"
+  },
+  {
+    "input":"Copy all files in \/var\/log\/auth to \/backup\/auth",
+    "output":"cp \/var\/log\/auth\/* \/backup\/auth\/"
+  },
+  {
+    "input":"Run sleep and echo in background, then wait",
+    "output":"sleep 3 & echo done & wait"
+  },
+  {
+    "input":"Remove all files in \/var\/log\/Xorg.1.log",
+    "output":"rm \/var\/log\/Xorg.1.log\/*"
+  },
+  {
+    "input":"Run Flask app in tmux",
+    "output":"tmux new -s flask 'flask run'"
+  },
+  {
+    "input":"Check if admin is logged in",
+    "output":"who | grep admin"
+  },
+  {
+    "input":"Zip data directory recursively",
+    "output":"zip -r data.zip data"
+  },
+  {
+    "input":"Zip the images and thumbnails folders together",
+    "output":"zip -r pics.zip images thumbnails"
+  },
+  {
+    "input":"Copy all files and subdirectories from 'build' to 'release'",
+    "output":"cp -r build\/* release\/"
+  },
+  {
+    "input":"Start background ffmpeg recording",
+    "output":"nohup ffmpeg -i input.mp4 output.avi &"
+  },
+  {
+    "input":"Run atop and read from a log file",
+    "output":"atop -r atop.log"
+  },
+  {
+    "input":"Use env to simulate clean environment",
+    "output":"env -i VAR=1 command"
+  },
+  {
+    "input":"Run atop and show only processes with TTY",
+    "output":"atop | grep -v '?'"
+  },
+  {
+    "input":"Show disk usage for all filesystems in human-readable POSIX format",
+    "output":"df -Ph"
+  },
+  {
+    "input":"Connect with connection sharing",
+    "output":"ssh -o ControlMaster=auto -o ControlPath=~\/.ssh\/master-%r@%h:%p user@hostname"
+  },
+  {
+    "input":"Delete nodebot_user",
+    "output":"userdel nodebot_user"
+  },
+  {
+    "input":"Login to integration user",
+    "output":"su integration"
+  },
+  {
+    "input":"Stop nginx server now",
+    "output":"service nginx stop"
+  },
+  {
+    "input":"Restart the apache2 service",
+    "output":"service apache2 restart"
+  },
+  {
+    "input":"Kill all instances of mousepad",
+    "output":"killall mousepad"
+  },
+  {
+    "input":"Create a directory called 'archive' in \/var\/mail",
+    "output":"mkdir \/var\/mail\/archive"
+  },
+  {
+    "input":"Copy a file 'aptitude.log' to \/var\/log\/aptitude",
+    "output":"cp aptitude.log \/var\/log\/aptitude\/"
+  },
+  {
+    "input":"Disable nginx from starting automatically",
+    "output":"systemctl disable nginx"
+  },
+  {
+    "input":"Clean shell terminal for new work",
+    "output":"clear"
+  },
+  {
+    "input":"Change to the \/var\/log\/apt directory",
+    "output":"cd \/var\/log\/apt"
+  },
+  {
+    "input":"Run gem install with niceness +8",
+    "output":"nice -n 8 gem install rails"
+  },
+  {
+    "input":"Make request and follow redirects with max count",
+    "output":"curl -L --max-redirs 5 http:\/\/example.com"
+  },
+  {
+    "input":"Make file confidential.txt accessible to user and group",
+    "output":"chmod 660 confidential.txt"
+  },
+  {
+    "input":"Exit from screen completely",
+    "output":"exit"
+  },
+  {
+    "input":"List all UDP sockets",
+    "output":"ss -u"
+  },
+  {
+    "input":"Find all files in \/tmp but skip old directories",
+    "output":"find \/tmp -path \"*\/old\" -prune -o -type f -print"
+  },
+  {
+    "input":"Sort the current directory's contents by file extension",
+    "output":"ls -X"
+  },
+  {
+    "input":"Add executable permission to script",
+    "output":"sudo chmod +x script.sh"
+  },
+  {
+    "input":"Connect with specific cipher",
+    "output":"ssh -c aes256-ctr user@hostname"
+  },
+  {
+    "input":"Display memory usage in human-readable format, no buffers\/cache line",
+    "output":"free -h -o"
+  },
+  {
+    "input":"Unmount USB attached to \/mnt\/usb",
+    "output":"umount \/mnt\/usb"
+  },
+  {
+    "input":"Become prod_user",
+    "output":"su prod_user"
+  },
+  {
+    "input":"Show all connections for a specific interface (e.g., eth0)",
+    "output":"netstat -i eth0"
+  },
+  {
+    "input":"Continuously display memory usage every 5 seconds",
+    "output":"free -s 5"
+  },
+  {
+    "input":"Create zip file bin.zip with all executables in \/usr\/bin",
+    "output":"zip bin.zip \/usr\/bin\/*"
+  },
+  {
+    "input":"Find a copy of python3",
+    "output":"locate python3"
+  },
+  {
+    "input":"List all TCP sockets in the CLOSED state",
+    "output":"ss -t state closed"
+  },
+  {
+    "input":"Chop long lines",
+    "output":"less -S file.txt"
+  },
+  {
+    "input":"Run fdisk on SATA drive",
+    "output":"fdisk \/dev\/sda"
+  },
+  {
+    "input":"Format \/dev\/sde2 with ntfs",
+    "output":"mkfs.ntfs \/dev\/sde2"
+  },
+  {
+    "input":"Ping google.com and set packet size to 1500 bytes",
+    "output":"ping -s 1500 google.com"
+  },
+  {
+    "input":"Check terminal activity",
+    "output":"who"
+  },
+  {
+    "input":"Query the AAAA (IPv6) record for google.com",
+    "output":"host -t AAAA google.com"
+  },
+  {
+    "input":"Run atop and show only the top 5 CPU-consuming processes",
+    "output":"atop | head -n 10 | tail -n 5"
+  },
+  {
+    "input":"Attach disk with noexec option",
+    "output":"mount -o noexec \/dev\/sdm1 \/mnt"
+  },
+  {
+    "input":"Send SIGINT to PID 91011",
+    "output":"kill -2 91011"
+  },
+  {
+    "input":"Background rsync and wait for it",
+    "output":"rsync -a \/src \/dst & wait"
+  },
+  {
+    "input":"Check blkid for partition \/dev\/sdh8",
+    "output":"blkid \/dev\/sdh8"
+  },
+  {
+    "input":"Create a file called 'test' in \/tmp",
+    "output":"touch \/tmp\/test"
+  },
+  {
+    "input":"Change to the \/var\/log\/user.log directory",
+    "output":"cd \/var\/log\/user.log"
+  },
+  {
+    "input":"Open fdisk for inspection of bootable partitions",
+    "output":"fdisk \/dev\/sda"
+  },
+  {
+    "input":"Show logs for a specific boot ID",
+    "output":"journalctl --boot=abcd1234"
+  },
+  {
+    "input":"Traceroute to yahoo.com with wait time 2 seconds",
+    "output":"traceroute -w 2 yahoo.com"
+  },
+  {
+    "input":"List all UDP sockets using IPv6",
+    "output":"ss -6 -u"
+  },
+  {
+    "input":"Match by session ID",
+    "output":"pkill -s 1234 myapp"
+  },
+  {
+    "input":"Remove read permission from everyone",
+    "output":"chmod a-r data"
+  },
+  {
+    "input":"Create a deeply nested directory structure 'a\/b\/c\/d\/e\/f'",
+    "output":"mkdir -p a\/b\/c\/d\/e\/f"
+  },
+  {
+    "input":"Display all system information except kernel name and network node hostname",
+    "output":"uname -arvmpio"
+  },
+  {
+    "input":"Display disk usage for all files in \/var, excluding backup directory",
+    "output":"du -a --exclude=\"\/var\/backup\" \/var"
+  },
+  {
+    "input":"Run top with a custom delay of 3 seconds",
+    "output":"top -d 3"
+  },
+  {
+    "input":"Mount remote NFS with version 3",
+    "output":"mount -t nfs -o nfsvers=3 192.168.1.100:\/data \/mnt\/nfs"
+  },
+  {
+    "input":"Create a directory called 'themes' in your home",
+    "output":"mkdir ~\/themes"
+  },
+  {
+    "input":"List all files and their inode numbers, including hidden ones",
+    "output":"ls -ai"
+  },
+  {
+    "input":"Create a directory called 'backup' inside \/etc\/ssl",
+    "output":"mkdir \/etc\/ssl\/backup"
+  },
+  {
+    "input":"Remove helpdesk_demo account",
+    "output":"userdel helpdesk_demo"
+  },
+  {
+    "input":"Create user_ops group",
+    "output":"groupadd user_ops"
+  },
+  {
+    "input":"Search for 'localhost' in hosts file",
+    "output":"grep 'localhost' \/etc\/hosts"
+  },
+  {
+    "input":"Add user devtest to ci group",
+    "output":"gpasswd -a devtest ci"
+  },
+  {
+    "input":"Query the A record for google.com",
+    "output":"nslookup google.com"
+  },
+  {
+    "input":"Print only unique values from the first column",
+    "output":"awk '!seen[$1]++' data.txt"
+  },
+  {
+    "input":"Copy a directory 'backup' to \/tmp and preserve all attributes",
+    "output":"cp -a backup \/tmp\/"
+  },
+  {
+    "input":"Delete preet from system",
+    "output":"userdel preet"
+  },
+  {
+    "input":"Send custom command to running pane",
+    "output":"tmux send-keys -t logs 'df -h' C-m"
+  },
+  {
+    "input":"Launch fdisk to manage storage",
+    "output":"fdisk \/dev\/sda"
+  },
+  {
+    "input":"Enable auto updates",
+    "output":"sudo dpkg-reconfigure unattended-upgrades"
+  },
+  {
+    "input":"Delete final_years group",
+    "output":"groupdel final_years"
+  },
+  {
+    "input":"Display all system information except kernel name and processor type",
+    "output":"uname -arv"
+  },
+  {
+    "input":"Remove junior_dev group",
+    "output":"groupdel junior_dev"
+  },
+  {
+    "input":"Display memory usage in human-readable format with detailed stats, update every 25 seconds, 7 times",
+    "output":"free -h -l -s 25 -c 7"
+  },
+  {
+    "input":"Run database dump with niceness +11",
+    "output":"nice -n 11 pg_dump mydb > dump.sql"
+  },
+  {
+    "input":"Delete an empty directory called 'build' in the current directory",
+    "output":"rmdir build"
+  },
+  {
+    "input":"Rename user userx to user_x1",
+    "output":"usermod -l user_x1 userx"
+  },
+  {
+    "input":"Inspect MBR of \/dev\/sda",
+    "output":"fdisk -l \/dev\/sda"
+  },
+  {
+    "input":"Find all readme files in \/opt using case-insensitive regex",
+    "output":"find \/opt -iregex \".*\/readme.*\""
+  },
+  {
+    "input":"Run make with CFLAGS defined in env",
+    "output":"env CFLAGS=-O2 make"
+  },
+  {
+    "input":"Delete a file called 'lastlog' in \/var\/log",
+    "output":"rm \/var\/log\/lastlog"
+  },
+  {
+    "input":"Identify blkid for \/dev\/sdh6",
+    "output":"blkid \/dev\/sdh6"
+  },
+  {
+    "input":"Open fdisk for embedded flash storage",
+    "output":"fdisk \/dev\/mmcblk0"
+  },
+  {
+    "input":"Signal by number",
+    "output":"pkill -2 bash"
+  },
+  {
+    "input":"Traceroute to 8.8.8.8 using TCP SYN packets and destination port 8080",
+    "output":"traceroute -T -p 8080 8.8.8.8"
+  },
+  {
+    "input":"Show multicast group memberships",
+    "output":"netstat -g"
+  },
+  {
+    "input":"Open with case-insensitive patterns",
+    "output":"less -I file.txt"
+  },
+  {
+    "input":"Display a detailed, human-readable list of files in the root directory",
+    "output":"ls -lh \/"
+  },
+  {
+    "input":"Create test file with pattern",
+    "output":"yes | tr -d '\\n' | dd bs=1024 count=100 of=testfile"
+  },
+  {
+    "input":"Remove albert from r&d group",
+    "output":"gpasswd -d albert r&d"
+  },
+  {
+    "input":"Change to the \/var\/log\/boot.log directory",
+    "output":"cd \/var\/log\/boot.log"
+  },
+  {
+    "input":"Delete a file called 'btmp' in \/var\/log",
+    "output":"rm \/var\/log\/btmp"
+  },
+  {
+    "input":"Create a new ext4 filesystem on disk \/dev\/sdf1",
+    "output":"mkfs.ext4 \/dev\/sdf1"
+  },
+  {
+    "input":"Query the TXT record for github.com with verbose output",
+    "output":"host -v -t TXT github.com"
+  },
+  {
+    "input":"Use `type -a pwd` to find all locations of the `pwd` executable.",
+    "output":"type -a pwd"
+  },
+  {
+    "input":"Run atop and show only the first 10 processes",
+    "output":"atop | head -n 10"
+  },
+  {
+    "input":"Sleep for 15 seconds",
+    "output":"sleep 15"
+  },
+  {
+    "input":"Run htop and show process tree with user 'bob'",
+    "output":"htop -t -u bob"
+  },
+  {
+    "input":"Stop the cron daemon",
+    "output":"service cron stop"
+  },
+  {
+    "input":"Set read and write permission for user on myfile",
+    "output":"chmod u+rw myfile"
+  },
+  {
+    "input":"Switch group legal to legal_team",
+    "output":"groupmod -n legal_team legal"
+  },
+  {
+    "input":"List all UNIX sockets with process info",
+    "output":"ss -x -p"
+  },
+  {
+    "input":"Compress backup_2024.tar with bzip2",
+    "output":"bzip2 backup_2024.tar"
+  },
+  {
+    "input":"Install skipping triggers",
+    "output":"sudo dpkg -i --skip-same-depends package.deb"
+  },
+  {
+    "input":"Copy all files in \/var\/log\/installer to \/backup\/installer",
+    "output":"cp \/var\/log\/installer\/* \/backup\/installer\/"
+  },
+  {
+    "input":"View logs from screen session",
+    "output":"less screenlog.0"
+  },
+  {
+    "input":"Sort files by modification time, newest first",
+    "output":"ls -t"
+  },
+  {
+    "input":"Run mtr to amazon.com and set the number of pings per hop to 25",
+    "output":"mtr -c 25 amazon.com"
+  },
+  {
+    "input":"Interactive mode: set query type to TXT and look up yahoo.com",
+    "output":"nslookup\nset type=TXT\nyahoo.com"
+  },
+  {
+    "input":"Open file in less",
+    "output":"less file.txt"
+  },
+  {
+    "input":"Start a detached tmux session running top",
+    "output":"tmux new -d -s top 'top'"
+  },
+  {
+    "input":"Display memory usage in kilobytes, update every 4 seconds indefinitely",
+    "output":"free -k -s 4"
+  },
+  {
+    "input":"Copy public key to remote server",
+    "output":"ssh-copy-id user@hostname"
+  },
+  {
+    "input":"Sync files and specify a custom daemon fake super",
+    "output":"rsync -avz --daemon --fake-super source_dir\/ destination_dir\/"
+  },
+  {
+    "input":"List all partitions of \/dev\/sds using parted",
+    "output":"parted \/dev\/sds print"
+  },
+  {
+    "input":"Connect with quiet mode",
+    "output":"ssh -q user@hostname"
+  },
+  {
+    "input":"Assign researchers group to paper.pdf",
+    "output":"chgrp researchers paper.pdf"
+  },
+  {
+    "input":"Install zip tool",
+    "output":"sudo apt install zip"
+  },
+  {
+    "input":"Backup crontab",
+    "output":"sudo crontab -l > backup.txt"
+  },
+  {
+    "input":"Block mark from logging in using password",
+    "output":"passwd -l mark"
+  },
+  {
+    "input":"Run mtr to 8.8.8.8 and set maximum TTL to 64",
+    "output":"mtr -m 64 8.8.8.8"
+  },
+  {
+    "input":"Query the A record for yahoo.com with 10 retries",
+    "output":"nslookup -retry=10 yahoo.com"
+  },
+  {
+    "input":"Find files in \/data larger than 1GB",
+    "output":"find \/data -size +1G -type f"
+  },
+  {
+    "input":"Show only listening UNIX domain sockets",
+    "output":"netstat -lx"
+  },
+  {
+    "input":"Open multiple files",
+    "output":"less file1.txt file2.txt"
+  },
+  {
+    "input":"Print all files in \/srv and sort the list",
+    "output":"find \/srv -type f -print | sort"
+  },
+  {
+    "input":"Display memory usage in megabytes with wide output, update every 4 seconds, 2 times",
+    "output":"free -m -w -s 4 -c 2"
+  },
+  {
+    "input":"Assign ownership of folder to john",
+    "output":"chown john folder"
+  },
+  {
+    "input":"Check the structure of \/dev\/sda1",
+    "output":"fdisk -l \/dev\/sda1"
+  },
+  {
+    "input":"Gzip the tarball.tar",
+    "output":"gzip tarball.tar"
+  },
+  {
+    "input":"Assign ankita to marketing group",
+    "output":"gpasswd -a ankita marketing"
+  },
+  {
+    "input":"Show disk usage for all filesystems in human-readable format",
+    "output":"df -ah"
+  },
+  {
+    "input":"Print label of \/dev\/sdi4",
+    "output":"blkid \/dev\/sdi4"
+  },
+  {
+    "input":"Restart the network service",
+    "output":"service networking restart"
+  },
+  {
+    "input":"Compress gpu_stats.txt using gzip",
+    "output":"gzip gpu_stats.txt"
+  },
+  {
+    "input":"Ping github.com with 3 second timeout and 9 times",
+    "output":"ping -W 3 -c 9 github.com"
+  },
+  {
+    "input":"Keep only lines that do not contain numbers",
+    "output":"sed -n '\/[^0-9]\/p' file.txt"
+  },
+  {
+    "input":"Generate SSH key pair with specific filename",
+    "output":"ssh-keygen -t rsa -f ~\/.ssh\/mykey"
+  },
+  {
+    "input":"Create an NTFS partition on \/dev\/sda",
+    "output":"parted \/dev\/sda mkpart primary ntfs 100MiB 5GiB"
+  },
+  {
+    "input":"Allow group to execute test.sh",
+    "output":"chmod g+x test.sh"
+  },
+  {
+    "input":"Clear shell before pasting code",
+    "output":"clear"
+  },
+  {
+    "input":"Traceroute to github.com using only IPv6 and max TTL 40",
+    "output":"traceroute -6 -m 40 github.com"
+  },
+  {
+    "input":"Add zahir to fastapi group",
+    "output":"gpasswd -a zahir fastapi"
+  },
+  {
+    "input":"Enable and start NetworkManager",
+    "output":"systemctl enable --now NetworkManager"
+  },
+  {
+    "input":"Make a request with multiple headers",
+    "output":"curl -H 'Accept: application\/json' -H 'User-Agent: MyApp\/1.0' http:\/\/example.com\/api"
+  },
+  {
+    "input":"Ping google.com with 7 second timeout and 135 times",
+    "output":"ping -W 7 -c 135 google.com"
+  },
+  {
+    "input":"Restart the network manager",
+    "output":"sudo systemctl restart NetworkManager"
+  },
+  {
+    "input":"Traceroute to google.com using UDP port 53",
+    "output":"traceroute -U google.com"
+  },
+  {
+    "input":"List all files with details, sorted by modification time, but show access time instead",
+    "output":"ls -lt --time=atime"
+  },
+  {
+    "input":"Start MySQL service",
+    "output":"sudo systemctl start mysql"
+  },
+  {
+    "input":"Use fdisk to manage \/dev\/vdd",
+    "output":"fdisk \/dev\/vdd"
+  },
+  {
+    "input":"Delete all .bak files in the current directory",
+    "output":"rm *.bak"
+  },
+  {
+    "input":"Change niceness of search engine processes",
+    "output":"sudo renice +5 -p $(pgrep elasticsearch)"
+  },
+  {
+    "input":"Show disk usage for all filesystems, display only the filesystem, size, and usage percentage",
+    "output":"df -h --output=source,size,pcent"
+  },
+  {
+    "input":"Query A record for google.com and set +noall",
+    "output":"dig google.com +noall"
+  },
+  {
+    "input":"Remove final_project group",
+    "output":"groupdel final_project"
+  },
+  {
+    "input":"Open partition utility for SSD",
+    "output":"fdisk \/dev\/nvme0n1"
+  },
+  {
+    "input":"Change niceness of systemd-journald",
+    "output":"sudo renice +5 -p $(pgrep systemd-journald)"
+  },
+  {
+    "input":"Create a bootable USB from ISO file",
+    "output":"dd if=ubuntu.iso of=\/dev\/sdX bs=4M status=progress oflag=sync"
+  },
+  {
+    "input":"Get type of \/dev\/sdf7",
+    "output":"blkid \/dev\/sdf7"
+  },
+  {
+    "input":"List users who are using bash",
+    "output":"w | grep bash"
+  },
+  {
+    "input":"Block login using password for log_user",
+    "output":"passwd -l log_user"
+  },
+  {
+    "input":"Display all system information except kernel name and operating system",
+    "output":"uname -arvm"
+  },
+  {
+    "input":"Remove all files in the \/media directory",
+    "output":"rm \/media\/*"
+  },
+  {
+    "input":"Change to the directory \/usr\/share\/kde4",
+    "output":"cd \/usr\/share\/kde4"
+  },
+  {
+    "input":"Show kernel messages related to device sda",
+    "output":"dmesg | grep -i sda"
+  },
+  {
+    "input":"Display machine hardware name and processor type",
+    "output":"uname -mp"
+  },
+  {
+    "input":"List all sockets for destination port 5228",
+    "output":"ss dst :5228"
+  },
+  {
+    "input":"Install build tools",
+    "output":"sudo apt install build-essential"
+  },
+  {
+    "input":"Restart SSH service",
+    "output":"sudo systemctl restart ssh"
+  },
+  {
+    "input":"Simulate remove",
+    "output":"sudo dpkg -r --dry-run package-name"
+  },
+  {
+    "input":"Assign an IP address and netmask to an interface",
+    "output":"sudo ifconfig eth0 192.168.1.100 netmask 255.255.255.0"
+  },
+  {
+    "input":"Copy all files in \/tmp to the current directory",
+    "output":"cp \/tmp\/* ."
+  },
+  {
+    "input":"Change comment of devopsteam to 'DevOps Team Member'",
+    "output":"usermod -c 'DevOps Team Member' devopsteam"
+  },
+  {
+    "input":"Change shell of user paul to \/bin\/zsh",
+    "output":"usermod -s \/bin\/zsh paul"
+  },
+  {
+    "input":"Remove partition 1 from \/dev\/sdb",
+    "output":"parted \/dev\/sdb rm 1"
+  },
+  {
+    "input":"Display total memory (RAM + swap) in human-readable format",
+    "output":"free -h -t"
+  },
+  {
+    "input":"Print specific environment variable using env and grep",
+    "output":"env | grep HOME"
+  },
+  {
+    "input":"Display all files opened by systemd",
+    "output":"lsof -c systemd"
+  },
+  {
+    "input":"Remove lucas and delete home dir",
+    "output":"userdel -r lucas"
+  },
+  {
+    "input":"Enable promiscuous mode on ens33",
+    "output":"sudo ifconfig ens33 promisc"
+  },
+  {
+    "input":"Copy all files in the \/mnt directory to \/backup\/mnt",
+    "output":"cp \/mnt\/* \/backup\/mnt\/"
+  },
+  {
+    "input":"Form contractors group",
+    "output":"groupadd contractors"
+  },
+  {
+    "input":"Add hannah to research group",
+    "output":"gpasswd -a hannah research"
+  },
+  {
+    "input":"Create a file called 'boot.log' in \/var\/log",
+    "output":"touch \/var\/log\/boot.log"
+  },
+  {
+    "input":"Send SIGPIPE to PID 3435",
+    "output":"kill -PIPE 3435"
+  },
+  {
+    "input":"Open partition table for disk \/dev\/sda",
+    "output":"fdisk \/dev\/sda"
+  },
+  {
+    "input":"Remove user sam from the wheel group",
+    "output":"gpasswd -d sam wheel"
+  },
+  {
+    "input":"Get the last 10 commands",
+    "output":"history | tail -n 10"
+  },
+  {
+    "input":"Extract all host IPs",
+    "output":"who | awk '{print $5}'"
+  },
+  {
+    "input":"Compress patch.diff using bzip2",
+    "output":"bzip2 patch.diff"
+  },
+  {
+    "input":"Restrict login for dev_user",
+    "output":"passwd -l dev_user"
+  },
+  {
+    "input":"Display a detailed list of all files, sorted by time, showing access time",
+    "output":"ls -latu"
+  },
+  {
+    "input":"Query the PTR record for 4.2.2.2",
+    "output":"nslookup -query=PTR 4.2.2.2"
+  },
+  {
+    "input":"Create group product_research",
+    "output":"groupadd product_research"
+  },
+  {
+    "input":"Connect with connection timeout",
+    "output":"ssh -o ConnectTimeout=10 user@hostname"
+  },
+  {
+    "input":"Use bzip2 to compress diagram.svg",
+    "output":"bzip2 diagram.svg"
+  },
+  {
+    "input":"Delete buildbot_user",
+    "output":"userdel buildbot_user"
+  },
+  {
+    "input":"Compress the logs folder recursively",
+    "output":"zip -r logs.zip logs"
+  },
+  {
+    "input":"View UUID of external drive \/dev\/sdd7",
+    "output":"blkid \/dev\/sdd7"
+  },
+  {
+    "input":"Open interactive session for \/dev\/vdf",
+    "output":"fdisk \/dev\/vdf"
+  },
+  {
+    "input":"Show me the contents of the \/opt directory, sorted oldest first",
+    "output":"ls -tr \/opt"
+  },
+  {
+    "input":"Show tags index",
+    "output":"less -t tag file.txt"
+  },
+  {
+    "input":"Print disk layout of \/dev\/nvme1n1p1",
+    "output":"fdisk -l \/dev\/nvme1n1p1"
+  },
+  {
+    "input":"Copy all files in the current directory to \/tmp and preserve all attributes",
+    "output":"cp -a * \/tmp\/"
+  },
+  {
+    "input":"Query MX record for google.com with +short output",
+    "output":"dig google.com MX +short"
+  },
+  {
+    "input":"Make exfat file system on \/dev\/sdb5",
+    "output":"mkfs.exfat \/dev\/sdb5"
+  },
+  {
+    "input":"Block deployuser from accessing system with password",
+    "output":"passwd -l deployuser"
+  },
+  {
+    "input":"Create user for cronjobs with no password",
+    "output":"useradd -M -s \/usr\/sbin\/nologin cronuser"
+  },
+  {
+    "input":"Assign AI team to inference.py",
+    "output":"chgrp AI inference.py"
+  },
+  {
+    "input":"Add a user claire with password disabled",
+    "output":"useradd -M -s \/usr\/sbin\/nologin claire"
+  },
+  {
+    "input":"Find files in \/home accessed more than 30 days ago",
+    "output":"find \/home -atime +30"
+  },
+  {
+    "input":"List all TCP sockets using IPv6",
+    "output":"ss -6 -t"
+  },
+  {
+    "input":"Ping 1.1.1.1 and set deadline to 30 seconds",
+    "output":"ping -w 30 1.1.1.1"
+  },
+  {
+    "input":"Assign ownership of images to user mark",
+    "output":"chown mark images"
+  },
+  {
+    "input":"List all UDP sockets using IPv4",
+    "output":"ss -4 -u"
+  },
+  {
+    "input":"Purge configs",
+    "output":"sudo apt autoremove --purge"
+  },
+  {
+    "input":"Update comment for dbadmin to 'Postgres DBA'",
+    "output":"usermod -c 'Postgres DBA' dbadmin"
+  },
+  {
+    "input":"Sync files and filter using multiple rules",
+    "output":"rsync -avz --filter='- *.log' --filter='+ *.txt' --filter='- *' source_dir\/ destination_dir\/"
+  },
+  {
+    "input":"Add a connection with a specific IPv4 DHCP use MTU",
+    "output":"nmcli connection add type ethernet con-name \"My Ethernet\" ifname eth0 ipv4.dhcp-use-mtu yes"
+  },
+  {
+    "input":"Read history from default file",
+    "output":"history -r"
+  },
+  {
+    "input":"Traceroute to github.com showing ICMP extensions",
+    "output":"traceroute -e github.com"
+  },
+  {
+    "input":"List all files recursively, with details, sorted by modification time",
+    "output":"ls -lRt"
+  },
+  {
+    "input":"Use gzip to compress the log_report.log",
+    "output":"gzip log_report.log"
+  },
+  {
+    "input":"Assign user tony to releases group",
+    "output":"gpasswd -a tony releases"
+  },
+  {
+    "input":"Reset password for tempaccount",
+    "output":"passwd tempaccount"
+  },
+  {
+    "input":"Change niceness of sshd process to -10",
+    "output":"sudo renice -10 -p $(pgrep sshd)"
+  },
+  {
+    "input":"Update dev_team group name to software_dev",
+    "output":"groupmod -n software_dev dev_team"
+  },
+  {
+    "input":"Send SIGBUS to PID 5455",
+    "output":"kill -BUS 5455"
+  },
+  {
+    "input":"Run mtr to github.com and show output in report-wide format with 50 cycles",
+    "output":"mtr --report-wide -c 50 github.com"
+  },
+  {
+    "input":"Show top 10 commands from the history",
+    "output":"history | head -n 10"
+  },
+  {
+    "input":"Gzip the file that stores feedback.txt",
+    "output":"gzip feedback.txt"
+  },
+  {
+    "input":"Start the ufw firewall",
+    "output":"service ufw start"
+  },
+  {
+    "input":"Initialize a FAT file system on \/dev\/sda2",
+    "output":"mkfs.vfat \/dev\/sda2"
+  },
+  {
+    "input":"Make kate the owner of thesis.tex",
+    "output":"chown kate thesis.tex"
+  },
+  {
+    "input":"Edit system-wide cron jobs",
+    "output":"sudo nano \/etc\/crontab"
+  },
+  {
+    "input":"Change to the directory \/usr\/share\/backgrounds",
+    "output":"cd \/usr\/share\/backgrounds"
+  },
+  {
+    "input":"Zip a folder named demo recursively",
+    "output":"zip -r demo.zip demo"
+  },
+  {
+    "input":"Give user12 ownership of settings.conf",
+    "output":"chown user12 settings.conf"
+  },
+  {
+    "input":"Create a file called 'test_output' in your home",
+    "output":"touch ~\/test_output"
+  },
+  {
+    "input":"Create a file called 'America' in your home",
+    "output":"touch ~\/America"
+  },
+  {
+    "input":"Sync files with a size limit (max 1MB)",
+    "output":"rsync -avz --max-size=1m source_dir\/ destination_dir\/"
+  },
+  {
+    "input":"Compress picture.jpg using bzip2",
+    "output":"bzip2 picture.jpg"
+  },
+  {
+    "input":"Print raw who output",
+    "output":"who"
+  },
+  {
+    "input":"Set automatic window renaming",
+    "output":"set -g allow-rename on"
+  },
+  {
+    "input":"Show NetworkManager networking state",
+    "output":"nmcli networking"
+  },
+  {
+    "input":"Display disk usage for all files in \/srv, excluding .git directories",
+    "output":"du -h --exclude=\".git\" \/srv"
+  },
+  {
+    "input":"Show only the IPv6 address for eth0",
+    "output":"ifconfig eth0 | grep inet6"
+  },
+  {
+    "input":"What files are in \/var\/spool? Show me all of them.",
+    "output":"ls -a \/var\/spool"
+  },
+  {
+    "input":"Delete a file called 'user.log' in \/var\/log",
+    "output":"rm \/var\/log\/user.log"
+  },
+  {
+    "input":"Find files in \/data modified in the last hour",
+    "output":"find \/data -mmin -60"
+  },
+  {
+    "input":"Query the A record for example.com and display output with timestamp",
+    "output":"date; host example.com"
+  },
+  {
+    "input":"Download file with progress meter",
+    "output":"curl --progress-bar -O http:\/\/example.com\/file.zip"
+  },
+  {
+    "input":"Show disk usage for all filesystems, display only the available space",
+    "output":"df -h --output=avail"
+  },
+  {
+    "input":"List screen sessions before reconnecting",
+    "output":"screen -ls"
+  },
+  {
+    "input":"Make john a member of media group",
+    "output":"gpasswd -a john media"
+  },
+  {
+    "input":"Prevent lisa from using her password",
+    "output":"passwd -l lisa"
+  },
+  {
+    "input":"Gzip the file named demo",
+    "output":"gzip demo"
+  },
+  {
+    "input":"Set full access for user and group, none for others",
+    "output":"chmod 770 code.py"
+  },
+  {
+    "input":"Run atop and show only userland threads",
+    "output":"atop -U"
+  },
+  {
+    "input":"Show logs with explanations (catalog)",
+    "output":"journalctl -x"
+  },
+  {
+    "input":"Use `pwd` in a script to ensure the user is in `\/home\/user` before proceeding.",
+    "output":"if [ $(pwd) != \"\/home\/user\" ]; then echo \"Please cd to \/home\/user\"; exit 1; fi"
+  },
+  {
+    "input":"Look for authorized_keys",
+    "output":"locate authorized_keys"
+  },
+  {
+    "input":"Restart docker service",
+    "output":"service docker restart"
+  },
+  {
+    "input":"Wait for process using saved PID",
+    "output":"cmd & pid=$!; wait $pid"
+  },
+  {
+    "input":"Alias to show current time",
+    "output":"alias now='date +\"%T\"'"
+  }
+]
