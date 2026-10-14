@@ -39,7 +39,7 @@ class PositionalEncoding(nn.Module):
         self.register_buffer("pe", pe)    
 
     def forward(self, x):
-        x = x + (self.pe[:, :x.shape[1], :]).requires_grad(False)
+        x = x + (self.pe[:, :x.shape[1], :])
         return self.dropout(x)
 
 
@@ -150,7 +150,7 @@ class MultiHeadAttentionBlock(nn.Module):
         scores = scores / math.sqrt(d_k)
 
         if mask is not None:
-            scores.masked_fill(mask == 0, float("-inf"))
+            scores.masked_fill_(mask == 0, float("-inf"))
 
         attention_weights = torch.softmax(
             input=scores,
@@ -407,7 +407,7 @@ def build_transformer(
             dropout=dropout
         )
 
-        encoder_blocks.append(encoder_blocks)
+        encoder_blocks.append(encoder_block)
 
 
     # the decoder blocks
@@ -465,7 +465,7 @@ def build_transformer(
 
     # initialize the parameters 
     for p in transformer.parameters():
-        if p.dim > 1:
+        if p.dim() > 1:
             nn.init.xavier_uniform_(p)
 
     return transformer
