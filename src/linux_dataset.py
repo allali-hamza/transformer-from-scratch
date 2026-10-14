@@ -20,31 +20,21 @@ source_sample = x_train[0]
 target_sample = y_train[0]
 
 
-checkpoint = "gpt2"
-tokenizer = AutoTokenizer.from_pretrained(checkpoint)
-
-
-special_tokens = {
-    "bos_token": "<|bos|>",
-    "pad_token": "<|pad|>"
-}
-
-tokenizer.add_special_tokens(special_tokens)
 
 
 
 
-tokenized_source = tokenizer.tokenize(source_sample)
-tokenized_target = tokenizer.tokenize(target_sample)
+# tokenized_source = tokenizer.tokenize(source_sample)
+# tokenized_target = tokenizer.tokenize(target_sample)
 
-ids_source = tokenizer.convert_tokens_to_ids(tokenized_source)
-ids_target = tokenizer.convert_tokens_to_ids(tokenized_target)
+# ids_source = tokenizer.convert_tokens_to_ids(tokenized_source)
+# ids_target = tokenizer.convert_tokens_to_ids(tokenized_target)
 
 
 
-source_ids = ids_source + [tokenizer.eos_token_id]
-decoder_input_ids = [tokenizer.bos_token_id] + ids_target
-labels = ids_target + [tokenizer.eos_token_id]
+# source_ids = ids_source + [tokenizer.eos_token_id]
+# decoder_input_ids = [tokenizer.bos_token_id] + ids_target
+# labels = ids_target + [tokenizer.eos_token_id]
 
 
 
@@ -126,12 +116,9 @@ def collate_fn(batch, pad_token_id):
     )
 
     return padded_source, padded_decoder_inputs, padded_labels
-    
-df = pd.read_json(train_data_file)
 
-my_data = LinuxCommandsDataset(df, tokenizer)
 
-print(my_data[0])
+
 
 """
 
