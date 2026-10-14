@@ -3,6 +3,7 @@ from pathlib import Path
 import pandas as pd
 from torch.utils.data import Dataset, DataLoader
 import torch
+from torch.nn.utils.rnn import pad_sequence
 
 project_dir = Path(__file__).resolve().parent.parent
 
@@ -61,7 +62,7 @@ class LinuxCommandsDataset(Dataset):
         )["input_ids"]
 
         self.tokenized_source = [
-            tokens + [tokenizer.eos_token_id] 
+            tokens + [self.tokenizer.eos_token_id] 
             for tokens in tokenized_source
         ]
 
@@ -72,12 +73,12 @@ class LinuxCommandsDataset(Dataset):
         )["input_ids"]
 
         self.tokenized_target = [
-            [tokenizer.bos_token_id] + tokens
+            [self.tokenizer.bos_token_id] + tokens
             for tokens in tokenized_target
         ]
 
         self.labels = [
-            tokens + [tokenizer.eos_token_id]
+            tokens + [self.tokenizer.eos_token_id]
             for tokens in tokenized_target
         ]
 
@@ -101,7 +102,31 @@ class LinuxCommandsDataset(Dataset):
 
         return source_ids, decoder_input_ids, labels
 
+def collate_fn(batch, pad_token_id):
+    sources = [element[0] for element in batch]
+    decoder_inputs = [element[1] for element in batch]
+    labels = [element[2] for element in batch]
 
+    padded_source = pad_sequence(
+        sequences=sources,
+        batch_first=True,
+        padding_value=pad_token_id
+    )
+
+    padded_decoder_inputs = pad_sequence(
+        sequences=decoder_inputs,
+        batch_first=True,
+        padding_value=pad_token_id
+    )
+
+    padded_labels = pad_sequence(
+        sequences=labels,
+        batch_first=True,
+        padding_value = -100
+    )
+
+    return padded_source, padded_decoder_inputs, padded_labels
+    
 df = pd.read_json(train_data_file)
 
 my_data = LinuxCommandsDataset(df, tokenizer)
