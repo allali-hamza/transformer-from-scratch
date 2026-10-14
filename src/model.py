@@ -297,8 +297,7 @@ class ProjectionLayer(nn.Module):
 
     def forward(self, x):
         x = self.linear(x)
-        return torch.log_softmax(self.linear(x), dim=-1)
-
+        return x
 
 
 class Transformer(nn.Module):
