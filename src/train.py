@@ -2,6 +2,10 @@ from transformers import AutoTokenizer
 import pandas as pd
 from pathlib import Path
 from torch.utils.data import DataLoader
+import torch.nn as nn
+from torch.optim import AdamW
+from torch.nn.utils import clip_grad_norm_
+import torch
 
 from src.linux_dataset import LinuxCommandsDataset, collate_fn
 from src.mask import create_mask
@@ -69,3 +73,56 @@ projected_output = transformer.project(decoded_input)
 print(encoded_input.shape)
 print(decoded_input.shape)
 print(projected_output.shape)
+
+
+criterion = nn.CrossEntropyLoss(ignore_index=-100)
+
+y_predicted = projected_output.reshape(-1, len(tokenizer))
+y = labels.reshape(-1)
+
+
+
+optimizer = AdamW(params=transformer.parameters(), lr=0.001)
+
+transformer.train()
+
+encoded_input = transformer.encode(source, encoder_mask)
+decoded_input = transformer.decode(decoder_input, encoded_input, encoder_mask, decoder_mask)
+
+y_predicted = projected_output.reshape(-1, len(tokenizer))
+y = labels.reshape(-1)
+
+loss_before = criterion(y_predicted, y)
+print("Loss before:", loss_before.item())
+
+
+optimizer.zero_grad()
+loss = criterion(y_predicted, y)
+loss.backward()
+clip_grad_norm_(transformer.parameters(), max_norm=1)
+optimizer.step()
+
+transformer.eval()
+
+with torch.no_grad():
+
+    encoded_input = transformer.encode(
+        source,
+        encoder_mask
+    )
+
+    decoded_input = transformer.decode(
+        decoder_input,
+        encoded_input,
+        encoder_mask,
+        decoder_mask
+    )
+
+    projected_output = transformer.project(decoded_input)
+
+    y_predicted = projected_output.reshape(-1, len(tokenizer))
+
+    loss_after = criterion(y_predicted, y)
+
+
+print("Loss after:", loss_after.item())
