@@ -3,3 +3,4 @@ numpy
 datasets
 pandas
 scikit-learn
+transformers
