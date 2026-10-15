@@ -59,70 +59,118 @@ transformer = build_transformer(
     d_ff=128
 )
 
-encoder_mask, decoder_mask = create_mask(
-    source=source,
-    decoder_input=decoder_input,
-    pad_token_id=tokenizer.pad_token_id
-)
-
-encoded_input = transformer.encode(source, encoder_mask)
-decoded_input = transformer.decode(decoder_input, encoded_input, encoder_mask, decoder_mask)
-projected_output = transformer.project(decoded_input)
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(device)
 
 
-print(encoded_input.shape)
-print(decoded_input.shape)
-print(projected_output.shape)
+# encoder_mask, decoder_mask = create_mask(
+#     source=source,
+#     decoder_input=decoder_input,
+#     pad_token_id=tokenizer.pad_token_id
+# )
+
+# encoded_input = transformer.encode(source, encoder_mask)
+# decoded_input = transformer.decode(decoder_input, encoded_input, encoder_mask, decoder_mask)
+# projected_output = transformer.project(decoded_input)
 
 
-criterion = nn.CrossEntropyLoss(ignore_index=-100)
-
-y_predicted = projected_output.reshape(-1, len(tokenizer))
-y = labels.reshape(-1)
-
-
-
-optimizer = AdamW(params=transformer.parameters(), lr=0.001)
+# print(encoded_input.shape)
+# print(decoded_input.shape)
+# print(projected_output.shape)
 
 transformer.train()
 
-encoded_input = transformer.encode(source, encoder_mask)
-decoded_input = transformer.decode(decoder_input, encoded_input, encoder_mask, decoder_mask)
+criterion = nn.CrossEntropyLoss(ignore_index=-100)
 
-y_predicted = projected_output.reshape(-1, len(tokenizer))
-y = labels.reshape(-1)
+optimizer = AdamW(params=transformer.parameters(), lr=0.001)
 
-loss_before = criterion(y_predicted, y)
-print("Loss before:", loss_before.item())
+train_loses = []
+num_epochs = 50
+
+for epoch in range(num_epochs):
+    running_loss = 0.0
+    for i, example in enumerate(data_loader):
+
+        optimizer.zero_grad()
+
+        source, decoder_input, labels = example
+        encoder_mask, decoder_mask = create_mask(
+            source=source,
+            decoder_input=decoder_input,
+            pad_token_id=tokenizer.pad_token_id
+        )
+
+        # if torch.cuda.is_available():
+            
+
+        encoded_input = transformer.encode(source, encoder_mask)
+        decoded_input = transformer.decode(decoder_input, encoded_input, encoder_mask, decoder_mask)
+        projected_output = transformer.project(decoded_input)
+
+        y_predicted = projected_output.reshape(-1, len(tokenizer))
+        y = labels.reshape(-1)
+
+        loss = criterion(y_predicted, y)
+        # train_loses.append(loss.item())
+
+        loss.backward()
+        clip_grad_norm_(transformer.parameters(), max_norm=1)
+        optimizer.step()
+
+        running_loss += loss.item()
+    
+    print(f"[Epoch {epoch + 1}] Loss: {running_loss / (i + 1):.4f}")
 
 
-optimizer.zero_grad()
-loss = criterion(y_predicted, y)
-loss.backward()
-clip_grad_norm_(transformer.parameters(), max_norm=1)
-optimizer.step()
-
-transformer.eval()
-
-with torch.no_grad():
-
-    encoded_input = transformer.encode(
-        source,
-        encoder_mask
-    )
-
-    decoded_input = transformer.decode(
-        decoder_input,
-        encoded_input,
-        encoder_mask,
-        decoder_mask
-    )
-
-    projected_output = transformer.project(decoded_input)
-
-    y_predicted = projected_output.reshape(-1, len(tokenizer))
-
-    loss_after = criterion(y_predicted, y)
 
 
-print("Loss after:", loss_after.item())
+
+
+
+
+# y_predicted = projected_output.reshape(-1, len(tokenizer))
+# y = labels.reshape(-1)
+
+
+# transformer.train()
+
+# encoded_input = transformer.encode(source, encoder_mask)
+# decoded_input = transformer.decode(decoder_input, encoded_input, encoder_mask, decoder_mask)
+
+# y_predicted = projected_output.reshape(-1, len(tokenizer))
+# y = labels.reshape(-1)
+
+# loss_before = criterion(y_predicted, y)
+# print("Loss before:", loss_before.item())
+
+
+# optimizer.zero_grad()
+# loss = criterion(y_predicted, y)
+# loss.backward()
+# clip_grad_norm_(transformer.parameters(), max_norm=1)
+# optimizer.step()
+
+# transformer.eval()
+
+# with torch.no_grad():
+
+#     encoded_input = transformer.encode(
+#         source,
+#         encoder_mask
+#     )
+
+#     decoded_input = transformer.decode(
+#         decoder_input,
+#         encoded_input,
+#         encoder_mask,
+#         decoder_mask
+#     )
+
+#     projected_output = transformer.project(decoded_input)
+
+#     y_predicted = projected_output.reshape(-1, len(tokenizer))
+
+#     loss_after = criterion(y_predicted, y)
+
+
+# print("Loss after:", loss_after.item())
