@@ -10,14 +10,22 @@ import torch
 from src.linux_dataset import LinuxCommandsDataset, collate_fn
 from src.mask import create_mask
 from src.model import build_transformer
-
+from src.generate import generate_command
 
 
 project_dir = Path(__file__).resolve().parent.parent
 train_data_file = project_dir / "data" / "processed" / "train.json"
+
+checkpoint_dir = project_dir / "checkpoints"
+
 df = pd.read_json(train_data_file)
 
-sample_df = df.sample(n=10, random_state=42)
+sample_df = df.sample(n=500, random_state=42)
+
+another_sample = df.drop(
+    index=sample_df.index
+).sample(n=20, random_state=1)
+
 
 checkpoint = "gpt2"
 tokenizer = AutoTokenizer.from_pretrained(checkpoint)
@@ -39,6 +47,7 @@ dataset = LinuxCommandsDataset(
 data_loader = DataLoader(
     dataset=dataset,
     batch_size=2,
+    shuffle=True,
     collate_fn=lambda batch: collate_fn(batch, tokenizer.pad_token_id)
     
 )
@@ -59,24 +68,9 @@ transformer = build_transformer(
     d_ff=128
 )
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print(device)
+device = ("cuda" if torch.cuda.is_available() else "cpu")
 
-
-# encoder_mask, decoder_mask = create_mask(
-#     source=source,
-#     decoder_input=decoder_input,
-#     pad_token_id=tokenizer.pad_token_id
-# )
-
-# encoded_input = transformer.encode(source, encoder_mask)
-# decoded_input = transformer.decode(decoder_input, encoded_input, encoder_mask, decoder_mask)
-# projected_output = transformer.project(decoded_input)
-
-
-# print(encoded_input.shape)
-# print(decoded_input.shape)
-# print(projected_output.shape)
+transformer = transformer.to(device)
 
 transformer.train()
 
@@ -85,7 +79,7 @@ criterion = nn.CrossEntropyLoss(ignore_index=-100)
 optimizer = AdamW(params=transformer.parameters(), lr=0.001)
 
 train_loses = []
-num_epochs = 50
+num_epochs = 20
 
 for epoch in range(num_epochs):
     running_loss = 0.0
@@ -94,6 +88,9 @@ for epoch in range(num_epochs):
         optimizer.zero_grad()
 
         source, decoder_input, labels = example
+
+        source, decoder_input, labels = source.to(device), decoder_input.to(device), labels.to(device)  
+
         encoder_mask, decoder_mask = create_mask(
             source=source,
             decoder_input=decoder_input,
@@ -118,59 +115,48 @@ for epoch in range(num_epochs):
         optimizer.step()
 
         running_loss += loss.item()
-    
+
     print(f"[Epoch {epoch + 1}] Loss: {running_loss / (i + 1):.4f}")
 
 
+# description = sample_df["input"].iloc[0]
+# commande = sample_df["output"].iloc[0]
+# print(description)
+# print(commande)
 
 
+# generated_commande = generate_command(
+#     transformer=transformer,
+#     tokenizer=tokenizer, 
+#     description=description,
+#     max_len=100
+# )
+
+# print(f"generated commande: {generated_commande}")
 
 
+correct = 0
 
+for _, row in another_sample.iterrows():
 
-# y_predicted = projected_output.reshape(-1, len(tokenizer))
-# y = labels.reshape(-1)
+    description = row["input"]
+    expected = row["output"]
 
+    generated = generate_command(
+        transformer=transformer,
+        tokenizer=tokenizer,
+        description=description,
+        max_len=96
+    )
 
-# transformer.train()
+    is_correct = generated == expected
 
-# encoded_input = transformer.encode(source, encoder_mask)
-# decoded_input = transformer.decode(decoder_input, encoded_input, encoder_mask, decoder_mask)
+    if is_correct:
+        correct += 1
 
-# y_predicted = projected_output.reshape(-1, len(tokenizer))
-# y = labels.reshape(-1)
+    print(f"\nDescription : {description}")
+    print(f"Expected: {expected}")
+    print(f"Generated: {generated}")
+    print(f"Result: {'Ok' if is_correct else 'NOT OK'}")
 
-# loss_before = criterion(y_predicted, y)
-# print("Loss before:", loss_before.item())
-
-
-# optimizer.zero_grad()
-# loss = criterion(y_predicted, y)
-# loss.backward()
-# clip_grad_norm_(transformer.parameters(), max_norm=1)
-# optimizer.step()
-
-# transformer.eval()
-
-# with torch.no_grad():
-
-#     encoded_input = transformer.encode(
-#         source,
-#         encoder_mask
-#     )
-
-#     decoded_input = transformer.decode(
-#         decoder_input,
-#         encoded_input,
-#         encoder_mask,
-#         decoder_mask
-#     )
-
-#     projected_output = transformer.project(decoded_input)
-
-#     y_predicted = projected_output.reshape(-1, len(tokenizer))
-
-#     loss_after = criterion(y_predicted, y)
-
-
-# print("Loss after:", loss_after.item())
+print(f"\nExact Match : {correct}/{len(another_sample)}")
