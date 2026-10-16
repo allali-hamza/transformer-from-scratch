@@ -3,9 +3,11 @@ import torch
 
 def generate_command(transformer, tokenizer, description, max_len):
 
+    device = next(transformer.parameters()).device
+
     transformer.eval()
 
-    decoder_input = torch.tensor([tokenizer.bos_token_id], dtype=torch.long)
+    decoder_input = torch.tensor([tokenizer.bos_token_id], dtype=torch.long, device=device)
     decoder_input = decoder_input.reshape(1, -1)
 
     with torch.no_grad():
@@ -13,13 +15,13 @@ def generate_command(transformer, tokenizer, description, max_len):
         tokenized_description = tokenizer(description)["input_ids"]
         tokenized_description = tokenized_description + [tokenizer.eos_token_id]
 
-        tokenized_description = torch.tensor(tokenized_description, dtype=torch.long)
+        tokenized_description = torch.tensor(tokenized_description, dtype=torch.long, device=device)
         source = tokenized_description.reshape(1, -1)
 
         source_mask = create_src_mask(
             source=source,
             pad_token_id=tokenizer.pad_token_id
-        )
+        ).to(device)
 
         encoder_output = transformer.encode(source, source_mask)
 
@@ -28,7 +30,7 @@ def generate_command(transformer, tokenizer, description, max_len):
             decoder_combined_mask = create_tgt_mask(
                 decoder_input=decoder_input,
                 pad_token_id=tokenizer.pad_token_id
-            )
+            ).to(device)
 
             decoder_output = transformer.decode(decoder_input, encoder_output, source_mask, decoder_combined_mask)
 
@@ -40,10 +42,11 @@ def generate_command(transformer, tokenizer, description, max_len):
 
             next_token = torch.tensor(
                 [[predicted_token_id]],
-                dtype=torch.long
+                dtype=torch.long,
+                device=device
             )
 
-            decoder_input = torch.cat((decoder_input, next_token), dim=-1)
+            decoder_input = torch.cat((decoder_input, next_token), dim=-1).to(device)
 
             
             if predicted_token_id == tokenizer.eos_token_id:
