@@ -54,7 +54,7 @@ val_dataset = LinuxCommandsDataset(
 
 data_loader = DataLoader(
     dataset=train_dataset,
-    batch_size=2,
+    batch_size=16,
     shuffle=True,
     collate_fn=lambda batch: collate_fn(batch, tokenizer.pad_token_id)
     
@@ -62,7 +62,7 @@ data_loader = DataLoader(
 
 val_data_loader = DataLoader(
     dataset=val_dataset,
-    batch_size=2,
+    batch_size=16,
     shuffle=False,
     collate_fn=lambda batch: collate_fn(batch, tokenizer.pad_token_id)
 )
