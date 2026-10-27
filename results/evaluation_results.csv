@@ -1,0 +1,807 @@
+description,expected,generated,exact_match,command_match,first_argument_match,command_and_argument_match
+Search for pdfs in Documents folder,locate /Documents/*.pdf,locate '*.json',False,True,False,False
+Compress model.pkl using bzip2,bzip2 model.pkl,bzip2 image.png,False,True,False,False
+Alias 'q' to exit terminal,alias q='exit',alias='sudo='ls',False,False,False,False
+Alias to go to root,alias root='cd /',alias syssh='find . -type f -type f -sh',False,True,False,False
+Assign tommy to own nginx.conf,chown tommy nginx.conf,chown user@host.conf,False,True,False,False
+Sleep for long-running delay,sleep 10000,sleep 0.0,False,True,False,False
+Change to the /bin directory,cd /bin,cd /bin,True,True,True,True
+Reset shell password for docker_runner,passwd docker_runner,passwd -l dev_run,False,True,False,False
+Remove a file named 'backup.tar.gz' in the current folder,rm backup.tar.gz,rm backup.gz,False,True,False,False
+"Display memory usage in bytes, update every 15 seconds indefinitely",free -b -s 15,free -b -s 15,True,True,True,True
+Mount systemd automount unit,systemctl start mnt-data.mount,mount -t rsync /dev/sdaemon,False,False,False,False
+Show top 10 memory-consuming processes,"ps -eo pid,ppid,cmd,%mem --sort=-%mem | head -n 11",top -b -oM,False,False,False,False
+Who is connected via SSH,who | grep ssh,ssh-keygen -t rsa -a | wc -l,False,False,False,False
+"List files in my home folder, sorted by size, smallest first",ls -Sr ~,ls -l ~,False,True,False,False
+Change to the /var/log/fsck directory,cd /var/log/fsck,cd /var/log/fs,False,True,False,False
+Traceroute to github.com showing version info,traceroute -V github.com,traceroute -V github.com,True,True,True,True
+Go to the /var/log directory,cd /var/log,cd /var/log/,False,True,False,False
+Use env to simulate cron job environment,env -i PATH=/usr/bin:/bin ./cron_script.sh,env VAR=value command,False,True,False,False
+Change credentials of remote_user,passwd remote_user,passwd -u temporary_user,False,True,False,False
+"Display memory usage in human-readable format with wide output and total, update every 4 seconds, 4 times",free -h -w -t -s 4 -c 4,free -h -w -s 10 -c 10,False,True,True,True
+Copy file and remove carriage returns,"dd if=input.txt of=output.txt conv=notrunc,unblock",dd if=input.img of=out.img bs=1M count=1M,False,True,False,False
+Get user sessions for current machine,who,who,True,True,,
+Switch to last session,tmux switch-client -l,service google.com,False,False,False,False
+Restrict employee45's password login,passwd -l employee45,passwd -l tim,False,True,True,True
+Delete an empty directory called 'weekly' in /var/log/backup,rmdir /var/log/backup/weekly,rmdir /var/log/backup/backup,False,True,False,False
+"Display memory usage in bytes, update every 5 seconds, 5 times",free -b -s 5 -c 5,free -b -s 5 -c 5,True,True,True,True
+Open file with numbers left-justified,LESS='-N -L' less file.txt,vim -c 'set smartindent' file.txt,False,False,False,False
+Set guest group to welcome_note.txt,chgrp guest welcome_note.txt,chgrp cloud_create.txt,False,True,False,False
+Delete python_devs,groupdel python_devs,groupdel python_dev,False,True,False,False
+Create ext4 on /dev/nvme0n1p1,mkfs.ext4 /dev/nvme0n1p1,mkfs.v3 /dev/sda1,False,False,False,False
+Lock frontend_dev's password,passwd -l frontend_dev,passwd -l frontend_dev,True,True,True,True
+Assign operations group to metrics.json,chgrp operations metrics.json,chgrp marketing campaign.json,False,True,False,False
+Unmount USB in read-only mode,umount /mnt/ro,umount /mnt/iso,False,True,False,False
+Wait for 2 minutes,sleep 120,sleep 75,False,True,False,False
+Display open ports,watch 'ss -tuln',who | awk '{print $2}' | wc -l,False,False,False,False
+Set a device to managed mode,nmcli device set eth0 managed yes,chmod 755 script.sh,False,False,False,False
+Query the A record for google.com and display statistics,nslookup -stats google.com,nslookup -type=DNSKEY google.com,False,True,False,False
+Copy all files in /var/log/alternatives.log to /backup/alternatives,cp /var/log/alternatives.log/* /backup/alternatives/,cp /var/log/alternatives.log /var/log/,False,True,False,False
+Delete a file called 'news.log' in /var/log/news,rm /var/log/news/news.log,rm /var/log/news.log,False,True,False,False
+Install specific version,sudo apt install nginx=1.18.0-0ubuntu1,sudo apt install nginx,False,True,True,True
+Delete user guest,sudo userdel guest,userdel guest,False,False,False,False
+Download a file and specify a certificate file,wget --ca-certificate=ca.pem https://example.com/file.zip,wget --certificate=client.pem https://example.com/file.zip,False,True,False,False
+Download a file and delete after download,wget --delete-after http://example.com/file.zip,wget --no-wots=18=@example.com/file.zip,False,True,False,False
+Run top in default mode,top,top -b,False,True,,
+Run mtr to google.com and set the number of pings per hop to 3,mtr -c 3 google.com,mtr -c 40 google.com,False,True,True,True
+Lock access for tempuser,usermod -L tempuser,passwd -l backup_user,False,False,False,False
+Connect to a remote server using SSH,ssh user@hostname,ssh -o StrictHostKeyChecking=ssh-key=key user@hostname,False,True,False,False
+Run temperature monitor every 2 minutes,crontab -e # */2 * * * * /temp.sh,ssh-keygen -t rsync -n 1 -n 2 /path/to/script.sh,False,False,False,False
+Display files opened by process ID 4321,lsof -p 4321,lsof -p $(p $(pgrep cron),False,True,True,True
+Reenable the ssh service,systemctl reenable ssh,sudo apt purge -u ssh user@hostname,False,False,False,False
+Create a swap partition on /dev/sdg,parted /dev/sdg mkpart primary linux-swap 2GiB 4GiB,parted /dev/sdg mklabel gpt,False,True,True,True
+Find idle users,"w | awk '$5 ~ /[0-9]+/ {print $1, $5}'",locate '*.json',False,False,False,False
+Show logs in pretty JSON format,journalctl -o json-pretty,journalctl _SYSTEMD_data.json,False,True,False,False
+View filesystem label of /dev/sdg2,blkid /dev/sdg2,blkid /dev/sdg2,True,True,True,True
+Revoke all permissions from others on private.doc,chmod o= private.doc,chmod o-r view.docx,False,True,False,False
+Format partition 7 as xfs,mkfs.xfs /dev/sdf7,mkfs.xfs /dev/sda5,False,True,False,False
+Query the A record for example.com and set search domain to .,nslookup example.com .,nslookup example.com local,False,True,True,True
+Move all files in /var/tmp to /backup/tmp and force overwrite,mv -f /var/tmp/* /backup/tmp/,mv -u -i * /tmp/,False,True,False,False
+Show load average from w output,w | head -1,w | awk '{print $1}'M %{print $2}',False,True,True,True
+Check the version of the `pwd` binary on your system.,/bin/pwd --version,rm /home/passwd,False,False,False,False
+Locate the sudoers file,locate sudoers,locate '*.json',False,True,False,False
+Delete beta_user with home dir,userdel -r beta_user,userdel -r beta_user,True,True,True,True
+Delete saved command logs,history -c,chmod alog -x logs,False,False,False,False
+Send SIGCONT to jobs in current shell,kill -CONT %1 %2,kill -TERM -1,False,True,False,False
+Temporarily disable password for user1,passwd -l user1,passwd -l j11111,False,True,True,True
+Capitalize the word 'hello',sed 's/hello/HELLO/g' file.txt,sed 's/^/bin/cron' file.txt,False,True,False,False
+Change to the /var/log/mail.err directory,cd /var/log/mail.err,cd /var/log/mail.info,False,True,False,False
+Calculate product of values in column 1,awk '{p *= $1} END {print p}' file.txt,cat file.txt > data.txt,False,False,False,False
+Copy all files in /mnt/usb to /media/backup,cp /mnt/usb/* /media/backup/,mv /media/usb/,False,False,False,False
+Query the A record for yahoo.com and save output to file,host yahoo.com > yahoo_dns.txt,nslookup yahoo.com yahoo.com,False,False,True,False
+Create a directory called 'test' in /var/spool,mkdir /var/spool/test,mkdir /var/spool/test,True,True,True,True
+Make request with custom socket timeout,curl --max-time 30 --connect-timeout 10 http://example.com,curl --tcp-timeout=10 http://example.com,False,True,False,False
+Delete a file called 'wtmp' in /var/log,rm /var/log/wtmp,rm /var/log/wtmp/wtmp/,False,True,False,False
+Start a new partition table with msdos on /dev/sdp,parted /dev/sdp mklabel msdos,mount -o /dev/sdj3,False,False,False,False
+Set gallery group to artwork.png,chgrp gallery artwork.png,chgrp HR org_chart.png,False,True,False,False
+Create node_admins group,groupadd node_admins,groupadd node_admins,True,True,True,True
+Update without prompts,sudo apt update -y,sudo apt purge --data-data nginx,False,True,True,True
+Create a directory called 'videos' in /media/usb,mkdir /media/usb/videos,mkdir /home/frank/temp,False,True,False,False
+Reattach screen with partial name,screen -r myjob,screen -r docker-file,False,True,True,True
+Sync files and set specific permissions,rsync -avz --chmod=644 source_dir/ destination_dir/,rsync -avz --daemon --chroot=/path/to/dir/module/path/path/path destination_dir/,False,True,True,True
+Identify filesystem on /dev/sda7,blkid /dev/sda7,blkid /dev/sda5,False,True,False,False
+Traceroute to github.com with IPv6 source address,traceroute -S 2001:db8::1 github.com,traceroute -6 github.com,False,True,False,False
+Inspect disk partitions of /dev/nvme2n1,fdisk -l /dev/nvme2n1,fdisk -l /dev/nvme2,False,True,True,True
+Assign outreach team to invites.doc,chgrp outreach invites.doc,chgrp data org_chart.doc,False,True,False,False
+List files with details and sort by change time (ctime),ls -lc,ls -l,False,True,False,False
+Include sean in experiments group,gpasswd -a sean experiments,gpasswd -a mike build,False,True,True,True
+Create a file called 'man' in your home,touch ~/man,touch ~/man,True,True,True,True
+"Display memory usage in human-readable format with detailed stats and wide output, update every 9 seconds, 9 times",free -h -l -w -s 9 -c 9,free -h -s 15 -c 9 -c 9,False,True,True,True
+Format nvme partition /dev/nvme0n1p2 to ext2,mkfs.ext2 /dev/nvme0n1p2,mkfs.vfat /dev/nvme0n1,False,False,False,False
+Copy a file 'index.html' to /var/www/html and keep timestamps,cp -p index.html /var/www/html/,cp -r ftp://example.com/,False,True,False,False
+Change niceness of Xorg process,sudo renice +5 -p $(pgrep Xorg),sudo renice +5 -p $(pgrep cron),False,True,True,True
+Exclude tara from dev group,gpasswd -d tara dev,gpasswd -a jenkins dev,False,True,False,False
+Query A record for google.com and set +besteffort,dig google.com +besteffort,dig google.com +noall +answer,False,True,True,True
+Keep only lines that contain '@gmail.com',sed -n '/@gmail\.com/p' emails.txt,sed 's/^///' file.txt,False,True,False,False
+Get partition UUID for /dev/sdf4,blkid /dev/sdf4,blkid /dev/sdf6,False,True,False,False
+Query PTR record for 8.8.8.8 with +short output,dig -x 8.8.8.8 +short,dig 8.8.8.8,False,True,False,False
+Query A record for google.com and set +cmd,dig google.com +cmd,dig google.com +noall +answer,False,True,True,True
+Ping yahoo.com 10 times,ping -c 10 yahoo.com,ping -c 10 yahoo.com,True,True,True,True
+Add test.txt to myarchive.zip,zip myarchive.zip test.txt,gzip test.zip .,False,False,False,False
+Make a request with bearer token authentication,curl -H 'Authorization: Bearer your_token_here' http://example.com/api,curl -X POST -F 'file=@example.com' http://example.com,False,True,False,False
+Split tmux window horizontally,"Ctrl-b """,Ctrl-b :resize-pane -A,False,True,False,False
+Display memory usage in pebibytes,free --pebi,"free --output=source,ppid",False,True,False,False
+Make terminal display empty,clear,clear,True,True,,
+Archive all docs and PDFs,zip documents.zip *.doc *.pdf,dd if=/dev/sda of=s=s=s=D bs=1M count=1,False,False,False,False
+Fetch block info of /dev/sdh5,blkid /dev/sdh5,blkid /dev/sdh5,True,True,True,True
+Query the A record for google.com with verbose output,host -v google.com,nslookup -v google.com,False,False,True,False
+Find the maximum value in the third column,awk 'max < $3 {max=$3} END {print max}' file.txt,locate '*.json',False,False,False,False
+Rename 'messages' to 'messages.old' in /var/log,mv /var/log/messages /var/log/messages.old,mv /var/log/messages.old,False,True,False,False
+Display who is currently connected,who,who | grep tty,False,True,,
+Run npm start detached,nohup npm start &,dd if=input.bin of=memory.bin bs=1M count=1,False,False,False,False
+Run mtr to facebook.com and display only numeric IPs,mtr -n facebook.com,mtr --split facebook.com,False,True,False,False
+Pause for 42 seconds,sleep 42,sleep 60,False,True,False,False
+Wait for command that outputs PID,command & pid=$!; wait $pid,sleep 1234,False,False,False,False
+Change to a directory called 'test' in the current directory,cd test,cd test,True,True,True,True
+Sleep for 1.5 minutes,sleep 90,sleep 150,False,True,False,False
+Identify all block devices with UUID,blkid,blkid,True,True,,
+Sync files and don't preserve group,rsync -avz --no-g source_dir/ destination_dir/,rsync -avz --no-o source_dir/ destination_dir/,False,True,True,True
+Query the CNAME record for www.google.com,nslookup -query=CNAME www.google.com,host -t CNAME www.google.com,False,False,False,False
+Change niceness of monitoring agent,sudo renice +5 -p $(pgrep prometheus),sudo renice +5 -p $(pgrep java),False,True,True,True
+Use screen to test code interactively,screen -S testenv python3,screen -S test -X stuff 'ls /',False,True,True,True
+Remove an empty directory called '2025' inside /srv/www,rmdir /srv/www/2025,rmdir /srv/www/2025,True,True,True,True
+Restore crontab from backup,crontab mycron.backup,sudo cron -x,False,False,False,False
+Change GID of user george to 2000,usermod -g 2000 george,usermod -g alpha_main content,False,True,True,True
+Transfer file using SCP with specific port,scp -P 2222 file.txt user@hostname:/remote/path/,scp -p user@hostname:/path/,False,True,False,False
+Copy a file 'archive.tar.gz' to /opt and preserve attributes,cp -a archive.tar.gz /opt/,cp -x /opt/data.tar.gz /opt/,False,True,False,False
+Display disk usage summary for each subdirectory in /root,du -h --max-depth=1 /root,du -h --max-depth=1 /opt,False,True,True,True
+Create a directory called 'src' in your home,mkdir ~/src,mkdir ~/games,False,True,False,False
+Open file and show invisibles,vim -c 'set list' file.txt,vim -c 'set smartindent' file.txt,False,True,True,True
+Download a file and set referer to another site,wget --referer=http://referrer.com http://example.com/file.zip,wget -A pdf http://example.com/file.zip,False,True,False,False
+Download a file and ignore certificate errors,wget --no-check-certificate https://example.com/file.zip,wget --certificate=client.pem https://example.com/file.zip,False,True,False,False
+Check the smbd status,service smbd status,service smbd status,True,True,True,True
+Find all directories at the top level of /,find / -maxdepth 1 -type d,find /home -type d -type d,False,True,False,False
+Get list of active users,who,who,True,True,,
+Run mtr to example.com and set the number of pings per hop to 60,mtr -c 60 example.com,mtr -c 50 example.com,False,True,True,True
+Copy a file 'user.log' to /var/log,cp user.log /var/log/,cp mail.log /var/log/,False,True,False,False
+Sleep for 2700 seconds,sleep 2700,sleep 16,False,True,False,False
+Change to the /var/log/mysql directory,cd /var/log/mysql,cd /var/log/mysql,True,True,True,True
+Query A record for google.com and set +adflag,dig google.com +adflag,dig google.com +nocmd,False,True,True,True
+Create a file called 'kern.log' in /var/log,touch /var/log/kern.log,touch /var/log/kern.log,True,True,True,True
+Create a directory called 'fonts' in your home,mkdir ~/fonts,mkdir ~/backgrounds,False,True,False,False
+Make teachers group for exam_results.csv,chgrp teachers exam_results.csv,chgrp data_create.csv,False,True,False,False
+Unmount SSHFS,fusermount -u /local/mountpoint,ssh /mnt/data.yum.168.sh,False,False,False,False
+Create user frontenddev with group frontend,useradd -g frontend frontenddev,"usermod -aG ftp,groupadd",False,False,False,False
+Enable password access for alice_dev,passwd -u alice_dev,passwd -u alice_test_dev,False,True,True,True
+Use parted to set lvm flag on second partition,parted /dev/sdf set 2 lvm on,parted /dev/sda print,False,True,False,False
+Query the ANY record for example.com,host -t ANY example.com,nslookup -query=ANY example.com,False,False,False,False
+Download a file and mirror a website with no parent directories,wget --mirror --no-parent http://example.com/,wget --mirror --backup-check-file=log.txt --directory-document=directory-prefix=/tmp --quiet --quiet --directory-check=10 http://example.com/,False,True,True,True
+Unmount devtmpfs from /dev,umount /dev,umount /dev/sda,False,True,False,False
+List the contents of the current directory,ls,ls -X,False,True,,
+Assign owner of file1.txt to user9,chown user9 file1.txt,chown user1 logs.1.1,False,True,False,False
+Transfer file using SCP,scp file.txt user@hostname:/remote/path/,scp -p user@hostname:/path/,False,True,False,False
+Run Jenkins CLI with niceness +8,nice -n 8 java -jar jenkins-cli.jar -s http://localhost:8080 build job,nice -n 3 python3 build.py,False,True,True,True
+Delete super_admins group,groupdel super_admins,groupdel onboarding_admins,False,True,False,False
+Re-enable login for user helpline,passwd -u helpline,passwd -u alice,False,True,True,True
+Temporarily lock password for backend_admin,passwd -l backend_admin,passwd -l test_admin,False,True,True,True
+Run R script detached from terminal,nohup Rscript analysis.R &,nohup python3_server/cron.py &,False,True,False,False
+Run a python script with custom ENV,env ENV=dev python script.py,ssh -O user@hostname 'yes user@hostname:/destjob.sh',False,False,False,False
+Unmount folder with lazy mode,umount -l /mnt/folder,umount /mnt/iso,False,True,False,False
+List all TCP sockets with process and timer info,ss -t -p -o,ss -o -o -o -o -o -o,False,True,False,False
+Connect without agent forwarding,ssh -a user@hostname,ssh -O user@hostname,False,True,False,False
+Delete all partitions and print table on /dev/sdg,parted /dev/sdg mklabel gpt print,parted /dev/sdg mklabel gpt,False,True,True,True
+Run node server with screen,screen -S node node server.js,screen -S python script.py,False,True,True,True
+Show environment settings used by shell,env,env -u root,False,True,,
+Find 'ssh' in service logs,grep 'ssh' /var/log/messages,locate '*.tar',False,False,False,False
+Sleep for 77 seconds,sleep 77,sleep 8,False,True,False,False
+Make user buildengine with UID 6000,useradd -u 6000 buildengine,useradd -u username:password user@hostname,False,True,True,True
+Blank the screen before next output,clear,clear,True,True,,
+Change to the /usr/local/bin directory,cd /usr/local/bin,cd /usr/local/bin,True,True,True,True
+Create backend_team group,groupadd backend_team,groupadd onboarding_team,False,True,False,False
+Change to the directory /usr/share/locale,cd /usr/share/locale,cd /usr/share/share,False,True,False,False
+Search JSON files for 'token',grep 'token' *.json,grep '^[0-9]\.[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' /etc/c '\.[0-9]+' *.c 'c2' *.json,False,True,False,False
+Download a file with a specific referer,wget --referer=http://google.com http://example.com/file.zip,wget --no-key=all nginx.txt http://example.com/file.zip,False,True,False,False
+Grant write access to group for log.txt,chmod g+w log.txt,chmod o-wait.txt,False,True,False,False
+Append all commands to history file,history -a && history -w,history | wc -c -c2 http://example.com,False,True,False,False
+Run top and display processes sorted by memory usage,top -o %MEM,top -b -H,False,True,False,False
+Empty the terminal buffer,clear,clear,True,True,,
+Force kill all sshd processes,killall -9 sshd,killall -9 sshd,True,True,True,True
+Reset the password for student7,passwd student7,passwd -l sam,False,True,False,False
+Traceroute to google.com sending 5 probes per hop,traceroute -q 5 google.com,traceroute -q 5 google.com,True,True,True,True
+Match exact name,pkill -x bash,pkill -P mysession -o user@hostname,False,True,False,False
+Query the CNAME record for www.github.com,nslookup -query=CNAME www.github.com,host -t CNAME www.google.com,False,False,False,False
+List all users on tty2,who | grep tty2,who | grep tty2,True,True,True,True
+List all sockets for IPv4,ss -4,ss -4,True,True,True,True
+Ping google.com with 5 second timeout and 3 times,ping -W 5 -c 3 google.com,ping -W 5 -c 51 google.com,False,True,True,True
+List large files (>1GB) in /var with details,find /var -size +1G -exec ls -lh {} \;,find /var -type f -size +1M,False,True,True,True
+Show me the three newest files in the current directory,ls -t | head -n 3,ls -d,False,True,False,False
+Search for 'usb' in kernel logs,dmesg | grep 'usb',grep '^mnt/log/s/nologin /mnt/usb/,False,False,False,False
+Traceroute to 8.8.8.8 with wait time 2 seconds,traceroute -w 2 8.8.8.8,traceroute -w 2 8.8.8.8,True,True,True,True
+Flush shell history,history -c,history | awk '{print $1}',False,True,False,False
+Check cron job run success,grep 'CRON' /var/log/syslog | grep 'CMD',crontab -e # */30 * * * * crontab -path,False,False,False,False
+Start tmux session with shell script,tmux new -s backup './backup.sh',tmux kill-session -t 'session -f /usr/local/bin/bin/bin/,False,True,False,False
+Ping google.com with 7 second timeout and 75 times,ping -W 7 -c 75 google.com,ping -W 7 -c 29 google.com,False,True,True,True
+Create a directory called 'test_output' in your home,mkdir ~/test_output,mkdir ~/test_test,False,True,False,False
+Fetch URLs with alphanumeric pattern,"curl http://example.com/file{a,b,c}.txt",htop | grep ' S ',False,False,False,False
+Make 'gl' show git log,alias gl='git log',dd if=/dev/sda of=s bs=1M count=1M,False,False,False,False
+Print today’s user count,"echo ""Logged in: $(who | wc -l) users""",echo '0 | wc -l' file.txt,False,True,False,False
+Kill group of processes by group name,killall -g mygroup,pkill -u alice,False,False,False,False
+Run background bash block and wait,{ echo 1; sleep 2; } & wait,nohup python3 &,False,False,False,False
+Remove root_access group,groupdel root_access,groupdel root_access,True,True,True,True
+Use bzip2 to compress the metadata.xml,bzip2 metadata.xml,bzip2 notes.md,False,True,False,False
+Show last lines of tar listing,tar tzf archive.tar.gz | tail,tail -n 8 file.txt,False,False,False,False
+Delete rootclone,userdel rootclone,sudo apt install - /opt/,False,False,False,False
+Rename user beta to betatest,usermod -l betatest beta,usermod -aG jhtD traineev,False,True,False,False
+Extract IPv4 addresses from text,awk '/[0-9]+(\.[0-9]+){3}/' file.txt,wget --log file.txt http://example.com/,False,False,False,False
+Create a directory called 'include' in your home,mkdir ~/include,mkdir ~/build.sudo=1234,False,True,False,False
+Allow ssh_admin to use password again,passwd -u ssh_admin,passwd -u alice_admin,False,True,True,True
+Truncate file by overwriting with zeroes,dd if=/dev/zero of=file.txt bs=1K count=1 conv=notrunc,ping -i tcp -A -A -i_EN-1234,False,False,False,False
+"List all log files in /var/log, with details and human sizes",ls -lh /var/log/*.log,ls -l /var/log,False,True,False,False
+Display kernel name and hardware platform,uname -si,uname -smo,False,True,False,False
+Assign chris to own all files in /data,chown chris /data/*,chmod +x * /data/config.zip,False,False,False,False
+Create a file called 'clamav.log' in /var/log/clamav,touch /var/log/clamav/clamav.log,touch /var/log/clamav/clamav.log,True,True,True,True
+Get a clear shell,clear,cat file.txt,False,False,,
+Install build-essential,sudo apt install build-essential,sudo apt purge --data-key=key=key=key=key user@hostname,False,True,True,True
+Display disk usage summary for each subdirectory in /opt,du -h --max-depth=1 /opt,du -h --max-depth=1 /opt,True,True,True,True
+Start a script with sudo and wait,sudo ./admin_script.sh & wait,nice -n 8 python script.py,False,False,False,False
+Create a zip named user_data.zip containing user.csv,zip user_data.zip user.csv,zip archive.zip backup.csv,False,True,False,False
+Print the command history,history,history | grep 'history',False,True,,
+Create intern account internship2025,useradd internship2025,"useradd -G deployuser,d test2025",False,True,False,False
+Interactive mode: set query type to ANY and look up example.com,"nslookup
+set type=ANY
+example.com","nslookup
+set type=AAAA
+google.com.com",False,True,True,True
+Display login environment,env,passwd -l bob,False,False,,
+Make a group called dev_team,groupadd dev_team,groupadd dev_team,True,True,True,True
+"Display disk usage for all files in /etc, excluding README files","du -h --exclude=""README*"" /etc","du -h --exclude=""*.html"" /etc",False,True,True,True
+Move to the Documents folder inside the current directory,cd Documents,cd /bin,False,True,False,False
+Traceroute to github.com without resolving IP addresses to hostnames,traceroute -n github.com,traceroute -n github.com,True,True,True,True
+Print kernel version,"echo ""Kernel: $(uname -r)""","echo ""$(uname""",False,True,False,False
+Sync files and filter using patterns from a file,rsync -avz --filter='merge filter_rules.txt' source_dir/ destination_dir/,rsync -avz --daemon --daemon --daemon --daemon --daemon --exclude='*.zip source_dir/ destination_dir/,False,True,True,True
+Install unzip tool,sudo apt install unzip,sudo apt install nginx,False,True,True,True
+Ping amazon.com with 65507 byte packets and 45 times,ping -s 65507 -c 45 amazon.com,ping -s 56 -c 300 amazon.com,False,True,True,True
+Use wait with multiple PIDs,cmd1 & pid1=$!; cmd2 & pid2=$!; wait $pid1 $pid2,!docker & wait; sleep 5678,False,False,True,False
+Show all open UDP ports,netstat -uan | grep 'LISTEN',netstat -u,False,True,False,False
+Quiet mode,pkill -q sshd,less -R file.txt,False,False,False,False
+Move the entire 'Documents' folder to /mnt/usb,mv ~/Documents /mnt/usb/,"mv -a --exclude=""/.cache/",False,True,False,False
+Find previous npm commands,history | grep npm,history | grep '(',False,True,True,True
+Run job once a year,crontab -e # @yearly /yearly_job.sh,sudo python script.sh,False,False,False,False
+Erase scrollback content,clear,clear,True,True,,
+Clear command history from memory,history -c,history | awk '{print $1}',False,True,False,False
+Copy a directory 'images' to /var/www/html,cp -r images /var/www/html/,cp -r testdir /var/log/,False,True,True,True
+Connect with maximum keep-alive count,ssh -o ServerAliveCountMax=3 user@hostname,ssh -o RequestTTY=key=key=key=key=key=key=key= user@hostname,False,True,True,True
+Display only the total disk usage for /var,du -sh /var,du -h /var,False,True,False,False
+Change golang_team to go_dev,groupmod -n go_dev golang_team,groupmod -n_team,False,True,False,False
+Remove unwanted_user from system,userdel unwanted_user,usermod -e 2025_user,False,False,False,False
+Get the last 20 commands from history,history | tail -n 20,history | tail -n 1,False,True,True,True
+Create a directory called 'images' in the Desktop directory,mkdir ~/Desktop/images,mkdir ~/Pictures,False,True,False,False
+List all partitions with details,fdisk -l,fdisk -l,True,True,True,True
+Show last 5 lines of find output,find . -type f | tail -n 5,find /opt -type f -type f -type f -exec tail -exec python {} \;,False,True,False,False
+Display disk usage in blocks of 512 bytes,du -B 512,du -B 1K,False,True,True,True
+Use gzip on log_2020.log,gzip log_2020.log,gzip log_log.log,False,True,False,False
+Switch to finance account,su finance,su backup,False,True,False,False
+Rename 'logfile' to 'logfile.old' in /var/log,mv /var/log/logfile /var/log/logfile.old,mv /var/log/file /var/log/file.log/,False,True,False,False
+Unlock data_input user,passwd -u data_input,passwd -u backup_WAIT,False,True,True,True
+Get blkid for /dev/sdi3,blkid /dev/sdi3,blkid /dev/sdi3,True,True,True,True
+Traceroute to yahoo.com with IPv6 source address,traceroute -S 2001:db8::1 yahoo.com,traceroute -6 yahoo.com,False,True,False,False
+Assign social group to announcement.doc,chgrp social announcement.doc,chgrp HR org.doc,False,True,False,False
+Change to the /dev directory,cd /dev,cd /dev/sda,False,True,False,False
+Show kernel messages and pipe to less for paging,dmesg | less,dmesg -A myjob,False,True,False,False
+Show all processes for a group 'admin',ps -G admin,ps -ejadmin,False,True,False,False
+Remove all files in /var/log/postgresql,rm /var/log/postgresql/*,rm /var/log/postgresql/*,True,True,True,True
+Alias to edit crontab,alias crontabedit='crontab -e',crontab -e # 0 2 * * 2 crontab -f '2',False,False,False,False
+Edit SSH config file,sudo nano /etc/ssh/sshd_config,sudo cron -u root.bin,False,True,False,False
+Ping github.com and set deadline to 20 seconds,ping -w 20 github.com,ping -w github.com,False,True,True,True
+Make a 512MB partition on /dev/sdc,parted /dev/sdc mkpart primary ext4 0% 512MB,parted /dev/sdc mkpart primary linux-data 1MiB 10GB,False,True,True,True
+Restart the computer,sudo reboot,service cups restart,False,False,False,False
+Run sleep command with nohup,nohup sleep 1000 &,nohup python3 &,False,True,False,False
+Change to the directory /usr/share/vim,cd /usr/share/vim,cd /usr/share/share,False,True,False,False
+Use bzip2 to shrink setup.cfg,bzip2 setup.cfg,bzip2 python3.py,False,True,False,False
+Show help screen,less -h,screen -S download,False,False,False,False
+Download a file and enable following FTP links from HTML,wget --follow-ftp http://example.com/,wget --no-w-pasv ftp://example.com/file.zip,False,True,False,False
+Give editor full control of article.docx,chown editor article.docx,chgrp system script.sh,False,False,False,False
+Remove analytics_group,groupdel analytics_group,groupdel read_group,False,True,False,False
+Create user ankit with groups wheel and docker,"useradd -G wheel,docker ankit","useradd -G docker,wheel helen",False,True,True,True
+Send SIGXFSZ to PID 3839,kill -XFSZ 3839,kill -USR1 mysqld,False,True,False,False
+Locate music files,locate '*.mp3',locate '*.l',False,True,False,False
+"Run mtr to google.com with TCP, 200 cycles, interval 0.5s, and output in JSON format",mtr --tcp --json -c 200 -i 0.5 google.com,mtr --tcp --json -c 200 -i 0.5 -c 150 -c 150 -i 1 google.com,False,True,True,True
+Interactive mode: set query type to NS and look up example.com,"nslookup
+set type=NS
+example.com",nslookup -query=AAAA example.com,False,True,False,False
+Query A record for google.com with TCP,dig google.com +tcp,dig google.com +noauthority,False,True,True,True
+Change niceness of mail services,sudo renice +5 -p $(pgrep postfix) $(pgrep smbd),sudo renice +5 -p $(pgrep nginx),False,True,True,True
+Create a directory called 'data' inside /var/log,mkdir /var/log/data,mkdir /var/log/data,True,True,True,True
+Show kernel messages related to errors,dmesg | grep -i error,dmesg -s //bin/to/test,False,True,False,False
+Ping google.com with default settings,ping google.com,ping google.com,True,True,True,True
+Make owner of image.jpg as user19,chown user19 image.jpg,chown tom image.pdf,False,True,False,False
+Make a request with custom DNS server,curl --dns-servers 8.8.8.8 http://example.com,curl --retry 10.txt http://example.com,False,True,False,False
+Show the latest commands used,history,history | grep '(',False,True,,
+Send enter key to pane,tmux send-keys -t dev C-m,ssh-keygen -t rsync -a -a -o C-key=DNS C-key=D_host:/dest,False,False,False,False
+Unmount USB safely,umount /media/usb,umount /mnt/iso,False,True,False,False
+Follow kernel ring buffer,dmesg --follow,dmesg -i,False,True,False,False
+Create new session and run bash,tmux new-session -s shell bash,screen -S mysession -s /bin/bash_job,False,False,False,False
+Alias to open nautilus file explorer,alias open='nautilus .',alias gb='pkill -hall nginx',False,True,False,False
+Locate VSCode settings,locate settings.json,locate '*.json',False,True,False,False
+Traceroute to example.com with AS lookups enabled,traceroute -A example.com,traceroute -A example.com,True,True,True,True
+Make a request and show timing information,curl -w '%{time_total}\n' http://example.com,curl -X POST -F 'file=@example.com' http://example.com,False,True,False,False
+Show user login dates,who,who | grep tty,False,True,,
+Check the version of the pwd binary on your system.,/bin/pwd --version,rm -u root,False,False,False,False
+Show logged in users sorted by idle time,w | sort -k5,watch 'who | wc -l',False,False,False,False
+Remove all permissions from group,chmod g= filename,chmod a-w file.txt,False,True,False,False
+Query MX record for google.com and display only answer section,dig google.com MX +noall +answer,dig google.com NS +noall +answer,False,True,True,True
+Remove a file called 'error.log' inside /var/log,rm /var/log/error.log,rm /var/log/fail.log,False,True,False,False
+Watch a directory for new files,watch 'ls -lh /path/to/dir',watch 'ls /',False,True,True,True
+Assign dev group to app.py,chgrp dev app.py,chgrp data data.py,False,True,False,False
+Show logs for the last hour,journalctl --since '1 hour ago',journalctl _9]+ & wait,False,True,False,False
+Dry run auto-remove,sudo apt autoremove --dry-run,sudo apt purge --allow-w=progress nginx,False,True,True,True
+Find files opened by process ID 1234,lsof -p 1234,lsof -f 1234.2.2,False,True,False,False
+Find a file named main.cpp,locate main.cpp,locate '*.sql,False,True,False,False
+Remove mount at /mnt/shared,umount /mnt/shared,fdisk /dev/sda,False,False,False,False
+Run mtr to amazon.com and set the number of pings per hop to 9,mtr -c 9 amazon.com,mtr -c 9 amazon.com,True,True,True,True
+Add students2025 group,groupadd students2025,groupadd support_2025,False,True,False,False
+Download only,sudo apt autoremove --download-only,sudo apt purge --no-w nginx -x nginx,False,True,True,True
+Find all symbolic links in /usr,find /usr -type l,find /usr/local -type d,False,True,False,False
+Show all connections and append output to a file,netstat -an >> netstat_output.txt,netstat -s0,False,True,False,False
+Run mtr to amazon.com and show both hostnames and IP addresses,mtr -b amazon.com,mtr -c amazon.com,False,True,False,False
+Ping amazon.com and use IPv4 only,ping -4 amazon.com,ping -4 amazon.com,True,True,True,True
+Remove project_guest and delete home,userdel -r project_guest,userdel -r dev_guest,False,True,True,True
+Rename voice_test group to voice_team,groupmod -n voice_team voice_test,groupmod -n eng_team training_team,False,True,True,True
+Make a zip file called images.zip with photo1.jpg and photo2.jpg,zip images.zip photo1.jpg photo2.jpg,zip -r archive.zip scripts.zip log.zip,False,True,False,False
+List all files in the current folder with a .txt extension,ls *.txt,ls -l file.txt,False,True,False,False
+Monitor number of SSH connections,watch 'netstat -tn | grep :22 | wc -l',watch 'who | wc -l',False,True,False,False
+Rename mobile_team to mobile_dev,groupmod -n mobile_dev mobile_team,groupmod -l alpha_team project_team,False,True,False,False
+Find hidden files in home directory,locate /home/.*,find /home -type f -type f,False,False,False,False
+Block user dev_ux from logging in,passwd -l dev_ux,passwd -l dev_intern,False,True,True,True
+Run htop and show only processes with CPU usage > 50%,htop | awk '$9 > 50',htop | awk '$5 == 20',False,True,True,True
+Run mtr to facebook.com and set the number of pings per hop to 2,mtr -c 2 facebook.com,mtr -c 150 -c 50 facebook.com,False,True,True,True
+Find lines containing digits,grep '[0-9]' file.txt,grep '^[0-9]+[0-9]+[0-9]+\.[0-9]+[0-9]+' file.txt,False,True,False,False
+Download a file and save with a different name,wget -O newname.zip http://example.com/file.zip,wget --no-wsts.zip http://example.com/file.zip,False,True,False,False
+Run a script that modifies system settings,sudo ./setup.sh,nohup ./sync_boot.sh &,False,False,False,False
+Change to the directory /usr/share/zoneinfo/Africa,cd /usr/share/zoneinfo/Africa,cd /usr/share/zoneinfo,False,True,False,False
+Show kernel messages for specific level and facility,dmesg -l err -f kern,"dmesg --exclude=""*.jpg",False,True,False,False
+Display all system information except kernel name and processor type,uname -arvmio,uname -arv,False,True,False,False
+Run mtr to google.com and set interval to 0.1 second,mtr -i 0.1 google.com,mtr -i 0.1 google.com,True,True,True,True
+Temporarily prevent linuxuser from logging in,passwd -l linuxuser,passwd -l backup_user=user,False,True,True,True
+Traceroute to 8.8.8.8 with wait time 10 seconds and 5 probes per hop,traceroute -w 10 -q 5 8.8.8.8,traceroute -w 5 -q 5 8.8.8.8,False,True,True,True
+Show all network devices,nmcli device,netstat,False,False,False,False
+Copy all files in the current directory to /tmp and keep everything and do not overwrite existing files,cp -an * /tmp/,cp -a -p * /tmp/,False,True,False,False
+Query the A record for example.com with 5 retries,nslookup -retry=5 example.com,nslookup -retry=2 http://example.com,False,True,False,False
+Remove password lock for observer_1,passwd -u observer_1,passwd -u admin1_runner,False,True,True,True
+Start xargs in background and wait,cat files.txt | xargs -n1 -P4 cp & wait,nice -n 2 python3 script.py,False,False,False,False
+Display history with date and time,"HISTTIMEFORMAT=""%c "" history",history -d 1,False,False,False,False
+Query A record for google.com and set +all,dig google.com +all,dig google.com +noall +answer,False,True,True,True
+Get full partition list,fdisk -l,sudo apt purge --download-bak,False,False,False,False
+Create a directory called 'applications' in your home,mkdir ~/applications,mkdir ~/app,False,True,False,False
+Download a file and append to a log file (append mode),wget -a download.log http://example.com/file.zip,wget -o username:password:password:password:password:password:password:password http://example.com/file.com/file.zip,False,True,False,False
+Compress all markdown and HTML files,zip web_docs.zip *.md *.html,gzip README.md,False,False,False,False
+Kill processes using older than given age,killall -o nginx,killall -u 'ssh-9',False,True,False,False
+Mount ISO with exec option,"mount -o loop,exec image.iso /mnt/iso","mount -o loop,ro /mnt/iso /mnt/iso",False,True,True,True
+Install npm,sudo apt install npm,sudo apt install nginx,False,True,True,True
+Run Docker container restart script,nohup ./restart_docker.sh &,ssh -O start user@hostname,False,False,False,False
+Ping amazon.com with 3 second timeout and 47 times,ping -W 3 -c 47 amazon.com,ping -W 9 -c 33 amazon.com,False,True,True,True
+Kill processes by full path name,killall /usr/bin/python3,killall -u 'ssh-9]+',False,True,False,False
+Move to pane on the bottom,Ctrl-b ↓,Ctrl-best -Ctrl-best -n 0,False,False,False,False
+Change owner to alice for app.py,chown alice app.py,chown user1 .,False,True,False,False
+Ping facebook.com with 5 second timeout and 150 times,ping -W 5 -c 150 facebook.com,ping -W 5 -c 91 facebook.com,False,True,True,True
+"Display disk usage for all files and directories, using block size of 16M",du -B 16M,du -B 16M,True,True,True,True
+Make a PATCH request with data,curl -X PATCH -d 'field=newvalue' http://example.com/api/resource/123,curl -X POST -F 'file=@example.com' http://example.com,False,True,True,True
+Connect with host-based authentication,ssh -o HostbasedAuthentication=yes user@hostname,ssh -o RequestTTY=no-key=sha256 user@hostname,False,True,True,True
+Run top and show only running processes,top -i,top -b -n 1 | tail -n 1,False,True,False,False
+Make request with rate limiting,curl --limit-rate 50k --max-time 60 http://example.com/largefile,curl --retry 10.txt http://example.com,False,True,False,False
+Query the A record for github.com and append output to file,host github.com >> github_dns.txt,nslookup -query=AAAA github.com,False,False,False,False
+Traceroute to github.com with AS lookups enabled,traceroute -A github.com,traceroute -A github.com,True,True,True,True
+Create a directory called 'jobs' in /var/spool/cron,mkdir /var/spool/cron/jobs,mkdir /var/spool/cron/cron,False,True,False,False
+Make setup.sh executable only by group,chmod 010 setup.sh,chmod g-x file.sh,False,True,False,False
+Update api_dev to api_team,groupmod -n api_team api_dev,groupmod -n api_team,False,True,True,True
+Display all system information except processor type,uname -asrvmoin,uname -arv,False,True,False,False
+Move all files in the current directory to /tmp and keep ownership,mv --preserve=ownership * /tmp/,mv --preserve=all * /tmp/,False,True,False,False
+Show last lines of Markdown,tail -n 20 README.md,nohup python3 &,False,False,False,False
+Remove julie including her home folder,userdel -r julie,userdel -r jya,False,True,True,True
+"Display memory usage in gigabytes with total, update every 20 seconds, 6 times",free -g -t -s 20 -c 6,free -g -s 20 -c 6,False,True,True,True
+Change owner to webmaster for /var/www/html,chown webmaster /var/www/html,chown user@host /var/log/www,False,True,False,False
+Copy all files in the /media directory to /backup/media,cp /media/* /backup/media/,cp /media /backup/,False,True,False,False
+Delete ubuntu account,userdel ubuntu,userdel beta_tester,False,True,False,False
+Comment out all lines,sed 's/^/#/' file.txt,sed 's/^/\t/g' file.txt,False,True,False,False
+Query the TXT record for github.com and use short output,"host -t TXT github.com | awk -F'""' '{print $2}'",host -t TXT github.com,False,True,True,True
+Create system bot user pushbot with no shell,useradd -r -s /sbin/nologin pushbot,useradd -r -u usernameuseradd backup,False,True,True,True
+Create a file called 'index.html' in /var/www/html,touch /var/www/html/index.html,touch /var/www/html/index.html,True,True,True,True
+Combine pwd with an error message if a directory does not exist.,"if [ ! -d ""/some/dir"" ]; then echo ""Not found, current: $(pwd)""; fi",find . -type f -newer log.txt,False,False,False,False
+Download a file using IPv4 only,wget -4 http://example.com/file.zip,"wget --exclude=10=""file.txt http://example.com/file.zip",False,True,False,False
+Find all logged in SSH users,who | grep ssh,who | awk '{print $2}' | wc -l,False,True,True,True
+Show me a detailed list sorted by extension,ls -lX,ls -lS,False,True,False,False
+Copy all files in /var/log/exim4 to /backup/exim4,cp /var/log/exim4/* /backup/exim4/,cp /var/log/exim4/* /backup/exim4/,True,True,True,True
+Login as system user logs,su logs,su logs,True,True,True,True
+Assign read permission to everyone on changelog.md,chmod a+r changelog.md,chmod o-r view.md,False,True,False,False
+Gzip user.log file,gzip user.log,gzip config.log.log,False,True,False,False
+Compress the file data.txt using bzip2,bzip2 data.txt,bzip2 data.txt,True,True,True,True
+Change niceness of virtualization processes,sudo renice +5 -p $(pgrep qemu),"sudo renice +5 -p $(pgrep -p $(pgrep '{""command)",False,True,True,True
+"Display memory usage in bytes with old format and detailed stats, update every 5 seconds, 5 times",free -b -o -l -s 5 -c 5,free -b -s -s 5 -c 5,False,True,True,True
+Show logs for a specific group (GID 100),journalctl _GID=100,grep -r 'dd=source-check.sh' config.sh,False,False,False,False
+Display disk usage with last modification time in human-readable format,du --time -h,du -B 1M,False,True,False,False
+Start camera recording via script,nohup ./record.sh &,nohup ./backup.sh &,False,True,False,False
+Only see command column from w,w | awk '{print $8}',wget -h http://example.com/file.zip,False,False,False,False
+Show all open files under /var/log,lsof +D /var/log,lsof /var/log/,False,True,False,False
+"Sync files and preserve all attributes (ACLs, xattrs, hard links)",rsync -avzHAX source_dir/ destination_dir/,rsync -avz --daemon --backup-dir=/path/ destination_dir/,False,True,False,False
+List active connections,nmcli connection show --active,sudo apt update --allow-name,False,False,False,False
+Show all established connections,netstat | grep ESTABLISHED,netstat -an | grep 'LISTEN',False,True,False,False
+Change niceness of processes using network on port 22,sudo renice +5 -p $(lsof -i:22 -t),sudo renice +5 -p $(pgrep java),False,True,True,True
+Display disk usage in megabytes,du -m,du -m,True,True,True,True
+Show open files on port 3306,lsof -i :3306,lsof -p $(pgrep myapp,False,True,False,False
+Download only files larger than 1MB,wget --quota=1m -r http://example.com/,wget --no-w=10 http://example.com/file.zip,False,True,False,False
+List all partition tables,fdisk -l,fdisk -l,True,True,True,True
+"Display memory usage in human-readable format, update every 30 seconds indefinitely",free -h -s 30,free -h -s 30,True,True,True,True
+Run mtr to 1.1.1.1 and show maximum 15 hops,mtr -m 15 1.1.1.1,mtr -m 1 1 1 1 1.1.1.1.1.1.1.1.1 1,False,True,True,True
+Empty shell view for cleaner output,clear,clear,True,True,,
+List all cron timers,systemctl list-timers,sudo cron -o cron,False,False,False,False
+Add simon to proxy group,gpasswd -a simon proxy,groupadd project_batch.sh,False,False,False,False
+Run top and display only the header,top -b -n 1 | head -n 5,top -n 1 | grep '?',False,True,False,False
+Move 'resume.pdf' to your home directory,mv resume.pdf ~/,mv ~/notes.txt ~/dd.gz,False,True,False,False
+Create ops_team group,groupadd ops_team,groupadd onboarding_team,False,True,False,False
+Download large file without hangup,nohup wget http://example.com/bigfile.zip &,wget --no-pasv ftp://example.com/file.zip,False,False,False,False
+Screen session for machine learning training,screen -S training python train.py,screen -S deploy -S python,False,True,True,True
+Test write speed of disk,dd if=/dev/zero of=testfile bs=1G count=1 oflag=dsync,dd if=input.img of=out.img bs=1M count=10 count=10,False,True,False,False
+"Show the configuration of a wireless interface (e.g., wlan0)",ifconfig wlan0,ifconfig eth0 | grep errors,False,True,False,False
+Install Git,sudo apt install git,sudo apt install nginx,False,True,True,True
+Make exact image of disk,dd if=/dev/sda of=disk.img bs=512,dd if=input.img of=out.img bs=out,False,True,False,False
+Add finance group,groupadd finance,chgrp developers project.user,False,False,False,False
+Display machine hardware name and hardware platform,uname -mi,uname -smo,False,True,False,False
+Remove spaces from end of lines,sed 's/ *$//' file.txt,sed 's/^/[0-9]\.[0-9]{print $2}' file.txt,False,True,False,False
+Delete an empty directory called 'docs' in /usr/local/share,rmdir /usr/local/share/docs,rmdir /usr/local/share,False,True,False,False
+Find directories in /data larger than 2GB,find /data -size +2G -type d,"find /data -path ""*.json -size +%",False,True,True,True
+"After changing to /var/log, display your location.",cd /var/log && pwd,cd /var/log/s,False,True,False,False
+"Display a detailed list of all files in my home directory, including hidden ones",ls -la ~,ls -l ~,False,True,False,False
+Inspect storage volume /dev/vdi,fdisk -l /dev/vdi,fdisk -l /dev/sdi,False,True,True,True
+Compress the script.sh file,gzip script.sh,gzip config.json,False,True,False,False
+Run atop and show only sleeping processes,atop | grep sleeping,atop | grep NET | grep NET | grep NET | grep NET | grep NET,False,True,True,True
+Make image.jpg readable and writable only by owner,chmod 600 image.jpg,chmod g-pane -r http://example.com,False,True,False,False
+Sync files and specify a custom daemon outgoing chmod,"rsync -avz --daemon --outgoing-chmod=Du=rwx,go=rx,Fu=rw,go=r source_dir/ destination_dir/",rsync -avz --daemon --daemon --chroot source_dir/ destination_dir/,False,True,True,True
+Move all files in /var/log/zypper.log to /backup/zypper,mv /var/log/zypper.log/* /backup/zypper/,mv /var/log/zypper.log/* /backup/,False,True,True,True
+Show all processes and pipe to most for scrolling,ps aux | most,ps aux | grep sshd,False,True,True,True
+Initialize a new NTFS partition on /dev/sde1,mkfs.ntfs /dev/sde1,mkfs.vfat /dev/sdi1,False,False,False,False
+Print fields if line starts with 'user:',"awk '/^user:/ {print $2, $3}' file.txt",sed 's/[0-9]/' file.txt,False,False,False,False
+Disable developer99's authentication temporarily,passwd -l developer99,passwd -l developer99,True,True,True,True
+Add execute permission for the owner to run.py,chmod u+x run.py,chmod +x script.py,False,True,False,False
+Make zip file configs.zip with config.yaml and settings.ini,zip configs.zip config.yaml settings.ini,zip backup.zip . backup.json,False,True,False,False
+Find a file named README.md,locate README.md,locate config.json,False,True,False,False
+Set group leadteam for dashboard.py,chgrp leadteam dashboard.py,chgrp HR_x.py,False,True,False,False
+Traceroute to example.com using ICMP echo requests,traceroute -I example.com,traceroute -I example.com,True,True,True,True
+Delete all files in the current directory that start with 'temp',rm temp*,rm -r test_*,False,True,False,False
+Check if smbd is running,service smbd status,service smbd status,True,True,True,True
+Show logs in JSON format,journalctl -o json,journalctl _SYSTEMDup,False,True,False,False
+Change document.docx owner to linda,chown linda document.docx,chown sysdocx,False,True,False,False
+Query the TLSA record for yahoo.com,nslookup -type=TLSA yahoo.com,nslookup -type=TLSA yahoo.com,True,True,True,True
+Allow devuser2 to log in again,passwd -u devuser2,passwd -u devadmin,False,True,True,True
+Change user neil's shell to nologin,usermod -s /usr/sbin/nologin neil,usermod -l nginx,False,True,False,False
+Store the present working directory in a variable called dir and print it.,dir=$(pwd); echo $dir,rmdir -p test.sql,False,False,False,False
+Delete the interns group,groupdel interns,groupdel training,False,True,False,False
+Parallel kill multiple PIDs,kill -9 11131 & kill -9 12141 & wait,watch 'python3',False,False,False,False
+Change to the Downloads directory in your home folder,cd ~/Downloads,cd /,False,True,False,False
+Make a file system of type exfat on /dev/sdg1,mkfs.exfat /dev/sdg1,mkfs.vfat /dev/sdg1,False,False,True,False
+Query the A record for example.com and display output in color,host example.com | lolcat,host example.com | lolcat,True,True,True,True
+Run atop and show only processes with network usage > 10MB,atop | awk '$12 > 10240',atop | awk '$5 == 1',False,True,True,True
+"Display kernel name, machine hardware name, and hardware platform",uname -smi,uname -smo,False,True,False,False
+Show usernames and remote connections,who,who | awk '{print $1}',False,True,,
+Copy all files in the current directory to /tmp and keep everything and force overwrite,cp -a -f * /tmp/,cp -a -o * /tmp/,False,True,True,True
+Kill screen by name,screen -X -S training quit,screen -S mysession -X stuff '^kill-9',False,True,False,False
+Delete old_user account,userdel old_user,userdel old_user_user,False,True,False,False
+Add a connection with a specific IPv4 DHCP hostname,"nmcli connection add type ethernet con-name ""My Ethernet"" ifname eth0 ipv4.dhcp-hostname ""myhost""","nmcli connection add type ethernet con-name ""My Ethernet"" ifname eth0 ipv4.dhcp-hostname-host",False,True,True,True
+Find media files,locate '*.mp4',locate '*.iso',False,True,False,False
+Load a specific connection file,nmcli connection load /etc/NetworkManager/system-connections/my-connection.nmconnection,"nmcli connection add type ethernet con-name ""My Ethernet"" ifname eth0 ipv4.dhcp-hostname-host",False,True,True,True
+Assign IP 10.0.0.2 and enable promiscuous mode on eth5,sudo ifconfig eth5 10.0.0.2 promisc,sudo ifconfig eth0 192.168.1.1.1 netmask 255.0.0.0.0.1.1,False,True,True,True
+Display available system updates,watch 'apt update',watch 'ls -lv,False,True,False,False
+Make a PUT request with data,curl -X PUT -d 'data' http://example.com/api/resource,curl -X POST -F http://example.com/file.com/file.zip,False,True,True,True
+Run background command in screen,screen -dmS backup ./backup.sh,screen -S python3 script.py,False,True,False,False
+"Display memory usage in gigabytes with all options, update every 13 seconds, 13 times",free -g -o -l -w -t -s 13 -c 13,free -g -o -s 10 -c 3,False,True,True,True
+Delete a connection,"nmcli connection delete ""My Connection""","nmcli connection add type ethernet con-name ""My Ethernet"" ifname eth0",False,True,True,True
+Print lines where the length is greater than 20,awk 'length($0) > 20' file.txt,awk '{print $1}' file.txt,False,True,False,False
+Move all files in /var/log/lightdm to /backup/lightdm,mv /var/log/lightdm/* /backup/lightdm/,mv /var/log/lightdm/* /backup/lightdm/,True,True,True,True
+Display all system information except kernel name and operating system,uname -a,uname -arvmpo,False,True,False,False
+Rename 'sa.log' to 'sa.log.old' in /var/log/sa,mv /var/log/sa/sa.log /var/log/sa/sa.log.old,mv /var/log/sa.log /var/log/sa.old,False,True,False,False
+Traceroute to yahoo.com using UDPLITE protocol,traceroute -UL yahoo.com,traceroute -UL yahoo.com,True,True,True,True
+Create a file called 'cron' in /var/log,touch /var/log/cron,touch /var/log/cron,True,True,True,True
+Match processes younger than 5 seconds,pkill -n sleep,pkill -R 5 myapp,False,True,False,False
+List all sockets and filter for FIN-WAIT-2 state,ss state fin-wait-2,ss state time-wait,False,True,True,True
+Sync files and specify a custom daemon group,rsync -avz --daemon --gid=nogroup source_dir/ destination_dir/,rsync -avz --daemon --daemon --chroot source_dir/ destination_dir/,False,True,True,True
+Find 'config' in all .conf files,grep 'config' *.conf,"find /data -name ""*.log""",False,False,False,False
+Change to the /var/log/clamav directory,cd /var/log/clamav,cd /var/log/clam,False,True,False,False
+Show partition summary for virtual disk /dev/vdb,parted /dev/vdb print,fdisk -l /dev/sdb,False,False,False,False
+Display all tmux key bindings,Ctrl-b ?,nohup python3 &,False,False,False,False
+Copy 'report.pdf' to the Documents folder,cp report.pdf ~/Documents/,cp mail.sqlite,False,True,False,False
+Create a file called 'icons' in your home,touch ~/icons,touch ~/Africa,False,True,False,False
+Run htop inside tmux,tmux new -s sys htop,htop -t,False,False,False,False
+Delete k8s_demo_user,userdel k8s_demo_user,userdel -r kuser_usering_user_user_user_user_user,False,True,False,False
+Send SIGSTOP to PID 2627,kill -STOP 2627,kill -USR1 myapp,False,True,False,False
+Query the ANY record for github.com,nslookup -query=ANY github.com,nslookup -query=ANY github.com,True,True,True,True
+Fork a subshell process and wait,(echo hello; sleep 2) & wait,dig google.com & wait,False,False,False,False
+Set control as owner of router.cfg,chown control router.cfg,chown user@host,False,True,False,False
+Show all processes with more than 10% CPU usage,"ps -eo pid,ppid,cmd,%cpu --sort=-%cpu | awk '$4 > 10'","ps -eo pid,ppid,cmd,cmd=9%cpu --sort=-%cpu | head -n 10'",False,True,True,True
+Monitor sudo usage logs,watch 'grep sudo /var/log/auth.log',sudo apt install cron,False,False,False,False
+Create a directory called 'logs' in your home,mkdir ~/logs,mkdir ~/logs,True,True,True,True
+Run bash with root privileges,sudo bash,sudo dpkg -u root /bin/sh,False,True,False,False
+Run sudo command with clean environment,sudo env -i command,env | grep tty,False,False,False,False
+"List all files ending in .log in the current directory, sorted by size",ls -S *.log,ls -lR,False,True,False,False
+Add guest user guest123 with UID 2222,useradd -u 2222 guest123,useradd -u guest=1,False,True,True,True
+Sleep before retrying a command,sleep 2,sleep 60,False,True,False,False
+Create frontend_leads group,groupadd frontend_leads,groupadd UX_leads,False,True,False,False
+Display all system information except kernel name and kernel release,uname -avmpi,uname -a,False,True,False,False
+Ping google.com using IPv6,ping6 google.com,ping google.com,False,False,True,False
+Delete debug_team,groupdel debug_team,groupdel eng_team,False,True,False,False
+Backup current crontab to a file,crontab -l > mycron.backup,crontab -e # 0 * * * * * /dev/cron.sh,False,True,False,False
+"Run mtr to yahoo.com with IPv6, 75 cycles, interval 0.25s, and output in raw format",mtr -6 --raw -c 75 -i 0.25 yahoo.com,mtr -4 --raw -c 75 -i 0.75 yahoo.com,False,True,False,False
+Set login password for internal_user,passwd internal_user,passwd -u alice_user,False,True,False,False
+Use bzip2 for compressing the text.txt,bzip2 text.txt,bzip2 notes.txt,False,True,False,False
+Query the SRV record for _sip._tcp.google.com,nslookup -query=SRV _sip._tcp.google.com,host -t SRV _xmpp-server._tcp-server._tcp.yahoo.com,False,False,False,False
+Check if TERM is set,env | grep TERM,env | grep '(',False,True,True,True
+Add a connection with a specific IPv4 DHCP use routes,"nmcli connection add type ethernet con-name ""My Ethernet"" ifname eth0 ipv4.dhcp-use-routes yes","nmcli connection add type ethernet con-name ""My Ethernet"" ifname eth0 ipv4.dhcp-hostname-host",False,True,True,True
+Use su to switch to analytics,su analytics,su archive.pass,False,True,False,False
+Use wait in a bash trap handler,trap 'wait' EXIT,!docker . . .env,False,False,False,False
+Start gunicorn server safely,nohup gunicorn app:app &,nohup python_job.py &,False,True,False,False
+Remove an empty directory called 'cache' in /var,rmdir /var/cache,rmdir /var/spool/queue,False,True,False,False
+Run top and show only idle processes,top -I,top -b -n 1 | tail -n 1,False,True,False,False
+Check nginx status,service nginx status,watch 'systemctl status nginx',False,False,False,False
+Pause for 0.001 seconds,sleep 0.001,sleep 0.75,False,True,False,False
+Delete batch1_training group,groupdel batch1_training,groupdel python_batch_1,False,True,False,False
+Find files in /etc where user has execute permission,find /etc -perm /u+x,find /etc -l +ed /etc/,False,True,True,True
+Make a GET request with verbose output,curl -v http://example.com,curl -v http://example.com,True,True,True,True
+Bind mount /mnt/source to /mnt/target,mount --bind /mnt/source /mnt/target,mount /mntntfs /mnt,False,True,False,False
+"Run mtr to yahoo.com with IPv6, 75 cycles, and output in raw format",mtr -6 --raw -c 75 yahoo.com,mtr -4 --raw -c 75 -i 1 yahoo.com,False,True,False,False
+Query ANY record for google.com,dig google.com ANY,dig google.com ANY +noidentify,False,True,True,True
+Copy a file 'data.json' to /srv/www and keep permissions,cp -p data.json /srv/www/,cp -v ftp://example.com/data.zip,False,True,False,False
+Traceroute to example.com using a loose source route gateway,traceroute -g 192.168.1.1 example.com,traceroute -g 192.168.1 example.com,False,True,True,True
+Search for missing.txt,locate missing.txt,locate '*.zip *.txt,False,True,False,False
+Fetch block device info of /dev/sdi6,blkid /dev/sdi6,blkid /dev/sdi6,True,True,True,True
+"Show disk usage for all filesystems, sorted by available space",df -h | sort -k 4 -h,"df -h --output=source,fstype,p",False,True,True,True
+Show processes running as root (real & effective ID) in user format,ps -U root -u root u,pwd -u alice,False,False,False,False
+Remove flask_backend group,groupdel flask_backend,groupdel java__support,False,True,False,False
+Query TXT record for google.com and display only answer section,dig google.com TXT +noall +answer,dig google.com TXT,False,True,True,True
+Query the DS record for example.com,host -t DS example.com,nslookup -type=TLSA example.com,False,False,False,False
+Copy all files in /var/log/auth to /backup/auth,cp /var/log/auth/* /backup/auth/,cp /var/log/mail.log /backup/,False,True,False,False
+"Run sleep and echo in background, then wait",sleep 3 & echo done & wait,sleep 3 & wait; echo $pid,False,True,True,True
+Remove all files in /var/log/Xorg.1.log,rm /var/log/Xorg.1.log/*,rm /var/log/Xorg.1.log/*.log,False,True,False,False
+Run Flask app in tmux,tmux new -s flask 'flask run',nohup python_job.py &,False,False,False,False
+Check if admin is logged in,who | grep admin,who | grep tty,False,True,True,True
+Zip data directory recursively,zip -r data.zip data,zip -r -r archive.zip -r archive -r archive -r -r archive.zip -r archive -r archive archive -r -r -r -pzip -g -g -g -r,False,True,True,True
+Zip the images and thumbnails folders together,zip -r pics.zip images thumbnails,zip -r archive.zip . -A config.zip,False,True,True,True
+Copy all files and subdirectories from 'build' to 'release',cp -r build/* release/,cp -p test_dir/*.py,False,True,False,False
+Start background ffmpeg recording,nohup ffmpeg -i input.mp4 output.avi &,nohup python manage.py &,False,True,False,False
+Run atop and read from a log file,atop -r atop.log,atop -u -u www.sh,False,True,False,False
+Use env to simulate clean environment,env -i VAR=1 command,env | grep USER,False,True,False,False
+Run atop and show only processes with TTY,atop | grep -v '?',atop -t -t,False,True,False,False
+Show disk usage for all filesystems in human-readable POSIX format,df -Ph,"df -h --output=source,pcent",False,True,False,False
+Connect with connection sharing,ssh -o ControlMaster=auto -o ControlPath=~/.ssh/master-%r@%h:%p user@hostname,ssh -o Protocol=2 user@hostname,False,True,True,True
+Delete nodebot_user,userdel nodebot_user,userdel olduser_userbot,False,True,False,False
+Login to integration user,su integration,su tomsu,False,True,False,False
+Stop nginx server now,service nginx stop,service nginx status,False,True,True,True
+Restart the apache2 service,service apache2 restart,service apache2 status,False,True,True,True
+Kill all instances of mousepad,killall mousepad,killall -u 'ssh-9,False,True,False,False
+Create a directory called 'archive' in /var/mail,mkdir /var/mail/archive,mkdir /var/mail/temp,False,True,False,False
+Copy a file 'aptitude.log' to /var/log/aptitude,cp aptitude.log /var/log/aptitude/,cp Xorg.log /var/log/apt/apt/aptitude.log.log.log /var/,False,True,False,False
+Disable nginx from starting automatically,systemctl disable nginx,sudo apt purge --config-config eth0 file.txt,False,False,False,False
+Clean shell terminal for new work,clear,clear,True,True,,
+Change to the /var/log/apt directory,cd /var/log/apt,cd /var/log/apt,True,True,True,True
+Run gem install with niceness +8,nice -n 8 gem install rails,nice -n 8 python3 script.py,False,True,True,True
+Make request and follow redirects with max count,curl -L --max-redirs 5 http://example.com,curl -f 'http://example.com' http://example.com/file.zip,False,True,False,False
+Make file confidential.txt accessible to user and group,chmod 660 confidential.txt,chmod g-g=userdel file.txt,False,True,False,False
+Exit from screen completely,exit,exit -t c,False,True,,
+List all UDP sockets,ss -u,ss -l,False,True,False,False
+Find all files in /tmp but skip old directories,"find /tmp -path ""*/old"" -prune -o -type f -print","find /tmp -path ""*/.*/.*/.*/.*/.*""",False,True,True,True
+Sort the current directory's contents by file extension,ls -X,pwd -p $(pg} END {print $1}',False,False,False,False
+Add executable permission to script,sudo chmod +x script.sh,chown user@host:/path/,False,False,False,False
+Connect with specific cipher,ssh -c aes256-ctr user@hostname,ssh -o Protocol=2 user@hostname,False,True,False,False
+"Display memory usage in human-readable format, no buffers/cache line",free -h -o,free -h -o -o -o -o,False,True,True,True
+Unmount USB attached to /mnt/usb,umount /mnt/usb,umount /mnt/usb/temp,False,True,False,False
+Become prod_user,su prod_user,su frontend_user,False,True,False,False
+"Show all connections for a specific interface (e.g., eth0)",netstat -i eth0,netstat -p eth0,False,True,False,False
+Continuously display memory usage every 5 seconds,free -s 5,free -k -t,False,True,False,False
+Create zip file bin.zip with all executables in /usr/bin,zip bin.zip /usr/bin/*,zip -r archive.zip scripts,False,True,False,False
+Find a copy of python3,locate python3,locate '*.json',False,True,False,False
+List all TCP sockets in the CLOSED state,ss -t state closed,ss -t state closing,False,True,True,True
+Chop long lines,less -S file.txt,nice -n 3 python3,False,False,False,False
+Run fdisk on SATA drive,fdisk /dev/sda,fdisk /dev/sda,True,True,True,True
+Format /dev/sde2 with ntfs,mkfs.ntfs /dev/sde2,mkfs.ext4 /dev/sdi4,False,False,False,False
+Ping google.com and set packet size to 1500 bytes,ping -s 1500 google.com,ping -s 56 google.com,False,True,True,True
+Check terminal activity,who,w | awk '{print $2}',False,False,,
+Query the AAAA (IPv6) record for google.com,host -t AAAA google.com,nslookup -query=AAAA google.com,False,False,False,False
+Run atop and show only the top 5 CPU-consuming processes,atop | head -n 10 | tail -n 5,atop | awk '$5 == 5 {print $3}',False,True,True,True
+Attach disk with noexec option,mount -o noexec /dev/sdm1 /mnt,sudo apt install nginx,False,False,False,False
+Send SIGINT to PID 91011,kill -2 91011,killall -USR1 myapp,False,False,False,False
+Background rsync and wait for it,rsync -a /src /dst & wait,rsync -avze 'ssh/ssh/@remote_host.168.1,False,True,False,False
+Check blkid for partition /dev/sdh8,blkid /dev/sdh8,blkid /dev/sdh8,True,True,True,True
+Create a file called 'test' in /tmp,touch /tmp/test,touch /tmp/test,True,True,True,True
+Change to the /var/log/user.log directory,cd /var/log/user.log,cd /var/log/apt.log,False,True,False,False
+Open fdisk for inspection of bootable partitions,fdisk /dev/sda,fdisk /dev/sda,True,True,True,True
+Show logs for a specific boot ID,journalctl --boot=abcd1234,journalctl _f1.2=f=fly.sh,False,True,False,False
+Traceroute to yahoo.com with wait time 2 seconds,traceroute -w 2 yahoo.com,traceroute -w 2 yahoo.com,True,True,True,True
+List all UDP sockets using IPv6,ss -6 -u,ss -6,False,True,True,True
+Match by session ID,pkill -s 1234 myapp,pkill -P myserver,False,True,False,False
+Remove read permission from everyone,chmod a-r data,"chmod a-r a,r ftp_r",False,True,True,True
+Create a deeply nested directory structure 'a/b/c/d/e/f',mkdir -p a/b/c/d/e/f,mkdir -p 2025/0/bak,False,True,True,True
+Display all system information except kernel name and network node hostname,uname -arvmpio,uname -arv,False,True,False,False
+"Display disk usage for all files in /var, excluding backup directory","du -a --exclude=""/var/backup"" /var","du -h --exclude=""*.log"" /var",False,True,False,False
+Run top with a custom delay of 3 seconds,top -d 3,top -n 10 & wait,False,True,False,False
+Mount remote NFS with version 3,mount -t nfs -o nfsvers=3 192.168.1.100:/data /mnt/nfs,ssh -o Protocol=1 user@hostname,False,False,False,False
+Create a directory called 'themes' in your home,mkdir ~/themes,mkdir ~/projects,False,True,False,False
+"List all files and their inode numbers, including hidden ones",ls -ai,ls -a,False,True,False,False
+Create a directory called 'backup' inside /etc/ssl,mkdir /etc/ssl/backup,mkdir /etc/ssl/cave/,False,True,False,False
+Remove helpdesk_demo account,userdel helpdesk_demo,userdel -r stag_WA_guest,False,True,False,False
+Create user_ops group,groupadd user_ops,groupadd dev_ops,False,True,False,False
+Search for 'localhost' in hosts file,grep 'localhost' /etc/hosts,grep '^[0-9]\.[0-9]+\.[0-9]+\.[0-9]+' access.log,False,True,False,False
+Add user devtest to ci group,gpasswd -a devtest ci,gpasswd -a rusers devtest,False,True,True,True
+Query the A record for google.com,nslookup google.com,nslookup google.com,True,True,True,True
+Print only unique values from the first column,awk '!seen[$1]++' data.txt,awk '{print $1}' file.txt,False,True,False,False
+Copy a directory 'backup' to /tmp and preserve all attributes,cp -a backup /tmp/,cp -r /tmp/,False,True,False,False
+Delete preet from system,userdel preet,userdel vikas,False,True,False,False
+Send custom command to running pane,tmux send-keys -t logs 'df -h' C-m,Ctrl-b :resize-pane -CAA example.com,False,False,False,False
+Launch fdisk to manage storage,fdisk /dev/sda,fdisk /dev/sda,True,True,True,True
+Enable auto updates,sudo dpkg-reconfigure unattended-upgrades,sudo apt purge --allow-file /etc/to/file.sh,False,True,False,False
+Delete final_years group,groupdel final_years,groupdel eng_team,False,True,False,False
+Display all system information except kernel name and processor type,uname -arv,uname -arv,True,True,True,True
+Remove junior_dev group,groupdel junior_dev,groupdel alpha_dev,False,True,False,False
+"Display memory usage in human-readable format with detailed stats, update every 25 seconds, 7 times",free -h -l -s 25 -c 7,free -h -s 15 -c 7,False,True,True,True
+Run database dump with niceness +11,nice -n 11 pg_dump mydb > dump.sql,nice -n 2 python3 script.py,False,True,True,True
+Delete an empty directory called 'build' in the current directory,rmdir build,rmdir -p test,False,True,False,False
+Rename user userx to user_x1,usermod -l user_x1 userx,usermod -l backup_backup_backup.sh node_x_backup,False,True,True,True
+Inspect MBR of /dev/sda,fdisk -l /dev/sda,fdisk -l /dev/sda,True,True,True,True
+Find all readme files in /opt using case-insensitive regex,"find /opt -iregex "".*/readme.*""",find /opt -type f -exec rm {} \;,False,True,True,True
+Run make with CFLAGS defined in env,env CFLAGS=-O2 make,env VAR=value=value command,False,True,False,False
+Delete a file called 'lastlog' in /var/log,rm /var/log/lastlog,rm /var/log/samba/syslog,False,True,False,False
+Identify blkid for /dev/sdh6,blkid /dev/sdh6,blkid /dev/sdh7,False,True,False,False
+Open fdisk for embedded flash storage,fdisk /dev/mmcblk0,fdisk /dev/sda,False,True,False,False
+Signal by number,pkill -2 bash,ssh-keygen -t '*.gz',False,False,False,False
+Traceroute to 8.8.8.8 using TCP SYN packets and destination port 8080,traceroute -T -p 8080 8.8.8.8,traceroute -T -p 80 example.com,False,True,True,True
+Show multicast group memberships,netstat -g,ifconfig | grep errors,False,False,False,False
+Open with case-insensitive patterns,less -I file.txt,less -Z,False,True,False,False
+"Display a detailed, human-readable list of files in the root directory",ls -lh /,ls -lh,False,True,True,True
+Create test file with pattern,yes | tr -d '\n' | dd bs=1024 count=100 of=testfile,mkdir test_gex/d/temp,False,False,False,False
+Remove albert from r&d group,gpasswd -d albert r&d,gpasswd -d ryan dev,False,True,True,True
+Change to the /var/log/boot.log directory,cd /var/log/boot.log,cd /var/log/fail2,False,True,False,False
+Delete a file called 'btmp' in /var/log,rm /var/log/btmp,rm /var/log/btmp,True,True,True,True
+Create a new ext4 filesystem on disk /dev/sdf1,mkfs.ext4 /dev/sdf1,mkfs.ext4 /dev/sdf1,True,True,True,True
+Query the TXT record for github.com with verbose output,host -v -t TXT github.com,host -t TXT github.com,False,True,False,False
+Use `type -a pwd` to find all locations of the `pwd` executable.,type -a pwd,"grep -u 'root/.pwd"" /home/pwd",False,False,False,False
+Run atop and show only the first 10 processes,atop | head -n 10,atop | grep NET | head -n 10,False,True,True,True
+Sleep for 15 seconds,sleep 15,sleep 15,True,True,True,True
+Run htop and show process tree with user 'bob',htop -t -u bob,htop --b -o nginx,False,True,False,False
+Stop the cron daemon,service cron stop,sudo cron -u root,False,False,True,False
+Set read and write permission for user on myfile,chmod u+rw myfile,chmod o+r view.txt,False,True,False,False
+Switch group legal to legal_team,groupmod -n legal_team legal,groupadd research_team,False,False,False,False
+List all UNIX sockets with process info,ss -x -p,ss -p,False,True,False,False
+Compress backup_2024.tar with bzip2,bzip2 backup_2024.tar,bzip2 backup_2023.json,False,True,False,False
+Install skipping triggers,sudo dpkg -i --skip-same-depends package.deb,sudo apt install nginx,False,True,False,False
+Copy all files in /var/log/installer to /backup/installer,cp /var/log/installer/* /backup/installer/,cp /var/log/installer/* /backup/installer/,True,True,True,True
+View logs from screen session,less screenlog.0,clear,False,False,False,False
+"Sort files by modification time, newest first",ls -t,wget -H,False,False,False,False
+Run mtr to amazon.com and set the number of pings per hop to 25,mtr -c 25 amazon.com,mtr -c 300 -c 300 amazon.com,False,True,True,True
+Interactive mode: set query type to TXT and look up yahoo.com,"nslookup
+set type=TXT
+yahoo.com","nslookup
+set type=MX
+yahoo.com",False,True,True,True
+Open file in less,less file.txt,less + file.txt file.txt file.txt,False,True,False,False
+Start a detached tmux session running top,tmux new -d -s top 'top',tmux kill-session -t '^[0-9]+\t '!%,False,True,False,False
+"Display memory usage in kilobytes, update every 4 seconds indefinitely",free -k -s 4,free -k -s 10,False,True,True,True
+Copy public key to remote server,ssh-copy-id user@hostname,wget -O user@hostname,False,False,False,False
+Sync files and specify a custom daemon fake super,rsync -avz --daemon --fake-super source_dir/ destination_dir/,rsync -avz --daemon --daemon --daemon --daemon --daemon --daemon --use-dir=/path/ destination_dir=/path/,False,True,True,True
+List all partitions of /dev/sds using parted,parted /dev/sds print,parted /dev/sda,False,True,False,False
+Connect with quiet mode,ssh -q user@hostname,ssh -O user@hostname,False,True,False,False
+Assign researchers group to paper.pdf,chgrp researchers paper.pdf,chgrp HR newsletter.pdf,False,True,False,False
+Install zip tool,sudo apt install zip,sudo apt install nginx,False,True,True,True
+Backup crontab,sudo crontab -l > backup.txt,crontab -e # 0 * * * * /path/to/script.sh,False,False,False,False
+Block mark from logging in using password,passwd -l mark,passwd -l backup_staff,False,True,True,True
+Run mtr to 8.8.8.8 and set maximum TTL to 64,mtr -m 64 8.8.8.8,mtr -m 40 facebook.com,False,True,True,True
+Query the A record for yahoo.com with 10 retries,nslookup -retry=10 yahoo.com,nslookup -retry 10 yahoo.com,False,True,False,False
+Find files in /data larger than 1GB,find /data -size +1G -type f,find /data -size +100M,False,True,True,True
+Show only listening UNIX domain sockets,netstat -lx,netstat -x,False,True,False,False
+Open multiple files,less file1.txt file2.txt,vim -c 'set file2.txt file2.txt,False,False,False,False
+Print all files in /srv and sort the list,find /srv -type f -print | sort,find /srv -type f -exec rm {} \;,False,True,True,True
+"Display memory usage in megabytes with wide output, update every 4 seconds, 2 times",free -m -w -s 4 -c 2,free -m -s 10 -c 7,False,True,True,True
+Assign ownership of folder to john,chown john folder,chown useruser backup,False,True,False,False
+Check the structure of /dev/sda1,fdisk -l /dev/sda1,fdisk /dev/sda,False,True,False,False
+Gzip the tarball.tar,gzip tarball.tar,gzip backup.tar,False,True,False,False
+Assign ankita to marketing group,gpasswd -a ankita marketing,gpasswd -a karen marketing,False,True,True,True
+Show disk usage for all filesystems in human-readable format,df -ah,"df -h --output=source,used",False,True,False,False
+Print label of /dev/sdi4,blkid /dev/sdi4,blkid /dev/sdi4,True,True,True,True
+Restart the network service,service networking restart,service cups restart,False,True,False,False
+Compress gpu_stats.txt using gzip,gzip gpu_stats.txt,gzip api.com_n,False,True,False,False
+Ping github.com with 3 second timeout and 9 times,ping -W 3 -c 9 github.com,ping -W 3 -c 29 github.com,False,True,True,True
+Keep only lines that do not contain numbers,sed -n '/[^0-9]/p' file.txt,sed 's/[0-9]/' file.txt,False,True,False,False
+Generate SSH key pair with specific filename,ssh-keygen -t rsa -f ~/.ssh/mykey,ssh-keygen -t rsa -bak,False,True,True,True
+Create an NTFS partition on /dev/sda,parted /dev/sda mkpart primary ntfs 100MiB 5GiB,mkfs.vfat /dev/sda4,False,False,False,False
+Allow group to execute test.sh,chmod g+x test.sh,chmod a+x test.sh,False,True,False,False
+Clear shell before pasting code,clear,chmod o-key.sh,False,False,,
+Traceroute to github.com using only IPv6 and max TTL 40,traceroute -6 -m 40 github.com,traceroute -6 -m 35 github.com,False,True,True,True
+Add zahir to fastapi group,gpasswd -a zahir fastapi,gpasswd -a vpn codeers,False,True,True,True
+Enable and start NetworkManager,systemctl enable --now NetworkManager,"nmcli connection add type ethernet con-name ""My Ethernet"" ifname eth0",False,False,False,False
+Make a request with multiple headers,curl -H 'Accept: application/json' -H 'User-Agent: MyApp/1.0' http://example.com/api,curl --data-binary @D.sh=value http://example.com/api.com,False,True,False,False
+Ping google.com with 7 second timeout and 135 times,ping -W 7 -c 135 google.com,ping -W 7 -c 29 google.com,False,True,True,True
+Restart the network manager,sudo systemctl restart NetworkManager,service cups restart,False,False,False,False
+Traceroute to google.com using UDP port 53,traceroute -U google.com,traceroute -U google.com,True,True,True,True
+"List all files with details, sorted by modification time, but show access time instead",ls -lt --time=atime,ls -lh,False,True,False,False
+Start MySQL service,sudo systemctl start mysql,service mysql start,False,False,False,False
+Use fdisk to manage /dev/vdd,fdisk /dev/vdd,fdisk /dev/sdd,False,True,False,False
+Delete all .bak files in the current directory,rm *.bak,rm -r src /tmp/btmp,False,True,False,False
+Change niceness of search engine processes,sudo renice +5 -p $(pgrep elasticsearch),sudo renice +5 -p $(pgrep cron),False,True,True,True
+"Show disk usage for all filesystems, display only the filesystem, size, and usage percentage","df -h --output=source,size,pcent","df -h --output=source,pcent",False,True,True,True
+Query A record for google.com and set +noall,dig google.com +noall,dig google.com +noall +answer,False,True,True,True
+Remove final_project group,groupdel final_project,groupdel project_team,False,True,False,False
+Open partition utility for SSD,fdisk /dev/nvme0n1,find /data -type f -type f,False,False,False,False
+Change niceness of systemd-journald,sudo renice +5 -p $(pgrep systemd-journald),sudo renice +5 -p $(pgrep -p $(pgrep -p 'nm +100SUSB0,False,True,True,True
+Create a bootable USB from ISO file,dd if=ubuntu.iso of=/dev/sdX bs=4M status=progress oflag=sync,dd if=/dev/sda of=512.img bs=1M count=100,False,True,False,False
+Get type of /dev/sdf7,blkid /dev/sdf7,blkid /dev/sdf6,False,True,False,False
+List users who are using bash,w | grep bash,w | grep '(',False,True,True,True
+Block login using password for log_user,passwd -l log_user,passwd -l test_user,False,True,True,True
+Display all system information except kernel name and operating system,uname -arvm,uname -arvmpo,False,True,False,False
+Remove all files in the /media directory,rm /media/*,rm /media/*,True,True,True,True
+Change to the directory /usr/share/kde4,cd /usr/share/kde4,cd /usr/share/share,False,True,False,False
+Show kernel messages related to device sda,dmesg | grep -i sda,sv /usr/sda,False,False,False,False
+Display machine hardware name and processor type,uname -mp,uname -svn,False,True,False,False
+List all sockets for destination port 5228,ss dst :5228,ss -p :3,False,True,False,False
+Install build tools,sudo apt install build-essential,sudo apt purge --json -u nginx,False,True,True,True
+Restart SSH service,sudo systemctl restart ssh,service docker reload,False,False,False,False
+Simulate remove,sudo dpkg -r --dry-run package-name,sudo apt purge --simulate nginx,False,True,False,False
+Assign an IP address and netmask to an interface,sudo ifconfig eth0 192.168.1.100 netmask 255.255.255.0,sudo ifconfig eth0 192.168.1.1.1 netmask 255.255.0.0.0.255.1,False,True,True,True
+Copy all files in /tmp to the current directory,cp /tmp/* .,cp -a * /tmp/,False,True,False,False
+Change comment of devopsteam to 'DevOps Team Member',usermod -c 'DevOps Team Member' devopsteam,usermod -c 'Temporary' backup.txt,False,True,True,True
+Change shell of user paul to /bin/zsh,usermod -s /bin/zsh paul,usermod -s /bin/zsh user@hostname,False,True,True,True
+Remove partition 1 from /dev/sdb,parted /dev/sdb rm 1,chmod 755 /dev/sdb,False,False,False,False
+Display total memory (RAM + swap) in human-readable format,free -h -t,free -h -t,True,True,True,True
+Print specific environment variable using env and grep,env | grep HOME,env | grep EDITOR,False,True,True,True
+Display all files opened by systemd,lsof -c systemd,lsof -i rsync,False,True,False,False
+Remove lucas and delete home dir,userdel -r lucas,sed 's/^/[0-[0-[\.[p' file-d\.[-d\w\.[-Z-\w\wd/' file.txt,False,False,False,False
+Enable promiscuous mode on ens33,sudo ifconfig ens33 promisc,sudo ifconfig eth0 192.168.168.1.255,False,True,True,True
+Copy all files in the /mnt directory to /backup/mnt,cp /mnt/* /backup/mnt/,cp /mnt/backup/mnt/,False,True,False,False
+Form contractors group,groupadd contractors,groupadd sys3,False,True,False,False
+Add hannah to research group,gpasswd -a hannah research,groupadd documentation,False,False,False,False
+Create a file called 'boot.log' in /var/log,touch /var/log/boot.log,touch /var/log/boot.log,True,True,True,True
+Send SIGPIPE to PID 3435,kill -PIPE 3435,kill -USR1 myapp,False,True,False,False
+Open partition table for disk /dev/sda,fdisk /dev/sda,parted /dev/sda mklabel gda mklabel gda mklabel gfs,False,False,True,False
+Remove user sam from the wheel group,gpasswd -d sam wheel,userdel jenkins,False,False,False,False
+Get the last 10 commands,history | tail -n 10,history | tail -n 10,True,True,True,True
+Extract all host IPs,who | awk '{print $5}',wget --t list-timeout=2 http://example.com/file.zip,False,False,False,False
+Compress patch.diff using bzip2,bzip2 patch.diff,bzip2 notes.zip,False,True,False,False
+Restrict login for dev_user,passwd -l dev_user,passwd -l dev_user,True,True,True,True
+"Display a detailed list of all files, sorted by time, showing access time",ls -latu,ls -l ~,False,True,False,False
+Query the PTR record for 4.2.2.2,nslookup -query=PTR 4.2.2.2,host -t PTR 8.8.8.2.2,False,False,False,False
+Create group product_research,groupadd product_research,groupadd documentation_review,False,True,False,False
+Connect with connection timeout,ssh -o ConnectTimeout=10 user@hostname,ssh -O $(date +D user@hostname,False,True,False,False
+Use bzip2 to compress diagram.svg,bzip2 diagram.svg,bzip2 function.java,False,True,False,False
+Delete buildbot_user,userdel buildbot_user,userdel backup_userbot,False,True,False,False
+Compress the logs folder recursively,zip -r logs.zip logs,zip -r archive.zip -f,False,True,True,True
+View UUID of external drive /dev/sdd7,blkid /dev/sdd7,blkid /dev/sdd6,False,True,False,False
+Open interactive session for /dev/vdf,fdisk /dev/vdf,find /dev -type f -type f,False,False,False,False
+"Show me the contents of the /opt directory, sorted oldest first",ls -tr /opt,ls -ltr -v,False,True,False,False
+Show tags index,less -t tag file.txt,ssh -f user@hostname,False,False,False,False
+Print disk layout of /dev/nvme1n1p1,fdisk -l /dev/nvme1n1p1,fdisk /dev/nvme1,False,True,False,False
+Copy all files in the current directory to /tmp and preserve all attributes,cp -a * /tmp/,cp -a -o * /tmp/,False,True,True,True
+Query MX record for google.com with +short output,dig google.com MX +short,dig google.com NS +short,False,True,True,True
+Make exfat file system on /dev/sdb5,mkfs.exfat /dev/sdb5,mkfs.vfat /dev/sda5,False,False,False,False
+Block deployuser from accessing system with password,passwd -l deployuser,passwd -l c,False,True,True,True
+Create user for cronjobs with no password,useradd -M -s /usr/sbin/nologin cronuser,usermod -l nginx -l rsync /etc/c -sbin/,False,False,False,False
+Assign AI team to inference.py,chgrp AI inference.py,chgrp data script.py,False,True,False,False
+Add a user claire with password disabled,useradd -M -s /usr/sbin/nologin claire,passwd -l c,False,False,False,False
+Find files in /home accessed more than 30 days ago,find /home -atime +30,"find /home -type f -path ""*.jpg -type f - +10 +7",False,True,True,True
+List all TCP sockets using IPv6,ss -6 -t,ss -6,False,True,True,True
+Ping 1.1.1.1 and set deadline to 30 seconds,ping -w 30 1.1.1.1,ping -w 1.1.1.1.1.1,False,True,True,True
+Assign ownership of images to user mark,chown mark images,chown user@host,False,True,False,False
+List all UDP sockets using IPv4,ss -4 -u,ss -4 -4,False,True,True,True
+Purge configs,sudo apt autoremove --purge,sudo apt purge --data-data nginx,False,True,True,True
+Update comment for dbadmin to 'Postgres DBA',usermod -c 'Postgres DBA' dbadmin,usermod -c 'Temporary' backup.txt,False,True,True,True
+Sync files and filter using multiple rules,rsync -avz --filter='- *.log' --filter='+ *.txt' --filter='- *' source_dir/ destination_dir/,rsync -avz --daemon --daemon --daemon --port=8730 source_dir/ destination_dir/,False,True,True,True
+Add a connection with a specific IPv4 DHCP use MTU,"nmcli connection add type ethernet con-name ""My Ethernet"" ifname eth0 ipv4.dhcp-use-mtu yes","nmcli connection add type ethernet con-name ""My Ethernet"" ifname eth0 ipv4.dhcp-hostname-host",False,True,True,True
+Read history from default file,history -r,history | awk '{print $1}',False,True,False,False
+Traceroute to github.com showing ICMP extensions,traceroute -e github.com,traceroute -e github.com,True,True,True,True
+"List all files recursively, with details, sorted by modification time",ls -lRt,ls -lv,False,True,False,False
+Use gzip to compress the log_report.log,gzip log_report.log,gzip data_log.log,False,True,False,False
+Assign user tony to releases group,gpasswd -a tony releases,gpasswd -d jlabel jenkins,False,True,False,False
+Reset password for tempaccount,passwd tempaccount,passwd tompasswdpasswd tomadmin,False,True,False,False
+Change niceness of sshd process to -10,sudo renice -10 -p $(pgrep sshd),sudo renice +5 -p $(pgrep cron),False,True,True,True
+Update dev_team group name to software_dev,groupmod -n software_dev dev_team,groupmod -n infra_devteam,False,True,True,True
+Send SIGBUS to PID 5455,kill -BUS 5455,kill -USR1 myapp,False,True,False,False
+Run mtr to github.com and show output in report-wide format with 50 cycles,mtr --report-wide -c 50 github.com,mtr --aslookup --report-wide -c 150 -i 10 github.com,False,True,False,False
+Show top 10 commands from the history,history | head -n 10,history | grep '{print $1}',False,True,True,True
+Gzip the file that stores feedback.txt,gzip feedback.txt,gzip output.txt,False,True,False,False
+Start the ufw firewall,service ufw start,service ufw status,False,True,True,True
+Initialize a FAT file system on /dev/sda2,mkfs.vfat /dev/sda2,mkfs.vfat /dev/sda2,True,True,True,True
+Make kate the owner of thesis.tex,chown kate thesis.tex,chown user1 logs.yml,False,True,False,False
+Edit system-wide cron jobs,sudo nano /etc/crontab,sudo cron -x,False,True,False,False
+Change to the directory /usr/share/backgrounds,cd /usr/share/backgrounds,cd /usr/share/share,False,True,False,False
+Zip a folder named demo recursively,zip -r demo.zip demo,zip -r -passzip archive.zip -l archive,False,True,True,True
+Give user12 ownership of settings.conf,chown user12 settings.conf,chown user8 backup.gz,False,True,False,False
+Create a file called 'test_output' in your home,touch ~/test_output,touch ~/test_test_test,False,True,False,False
+Create a file called 'America' in your home,touch ~/America,touch ~/America,True,True,True,True
+Sync files with a size limit (max 1MB),rsync -avz --max-size=1m source_dir/ destination_dir/,rsync -avz --daemon --temp-hosts source_dir/ destination_dir/,False,True,True,True
+Compress picture.jpg using bzip2,bzip2 picture.jpg,bzip2 chang=1234.jpg,False,True,False,False
+Print raw who output,who,"echo ""Hello""",False,False,,
+Set automatic window renaming,set -g allow-rename on,Ctrl-b :resize-pane -A -a -t C-w 10,False,False,False,False
+Show NetworkManager networking state,nmcli networking,nmcli general on,False,True,False,False
+"Display disk usage for all files in /srv, excluding .git directories","du -h --exclude="".git"" /srv","du -h --exclude=""*.html"" /srv",False,True,True,True
+Show only the IPv6 address for eth0,ifconfig eth0 | grep inet6,ifconfig eth0 | grep inet,False,True,True,True
+What files are in /var/spool? Show me all of them.,ls -a /var/spool,ls -d /var/log/sa,False,True,False,False
+Delete a file called 'user.log' in /var/log,rm /var/log/user.log,rm /var/log/user.log,True,True,True,True
+Find files in /data modified in the last hour,find /data -mmin -60,find /data -type f -exec rm {} \;,False,True,True,True
+Query the A record for example.com and display output with timestamp,date; host example.com,date; host example.com,True,True,True,True
+Download file with progress meter,curl --progress-bar -O http://example.com/file.zip,wget --no-w=10 http://example.com/file.zip,False,False,False,False
+"Show disk usage for all filesystems, display only the available space",df -h --output=avail,"df -h --output=source,fstype,avail",False,True,True,True
+List screen sessions before reconnecting,screen -ls,screen -S monitor top,False,True,False,False
+Make john a member of media group,gpasswd -a john media,chgrp developers main.yml,False,False,False,False
+Prevent lisa from using her password,passwd -l lisa,passwd -l jenkg,False,True,True,True
+Gzip the file named demo,gzip demo,gzip main.cpp,False,True,False,False
+"Set full access for user and group, none for others",chmod 770 code.py,chgrp developers script.sh,False,False,False,False
+Run atop and show only userland threads,atop -U,atop -k,False,True,False,False
+Show logs with explanations (catalog),journalctl -x,journalctl -u mysqld,False,True,False,False
+Use `pwd` in a script to ensure the user is in `/home/user` before proceeding.,"if [ $(pwd) != ""/home/user"" ]; then echo ""Please cd to /home/user""; exit 1; fi",gpasswd -d /home/passwd,False,False,False,False
+Look for authorized_keys,locate authorized_keys,grep -r 'user' access.log,False,False,False,False
+Restart docker service,service docker restart,service docker reload,False,True,True,True
+Wait for process using saved PID,cmd & pid=$!; wait $pid,wait -l 1234,False,False,False,False
+Alias to show current time,"alias now='date +""%T""'",alias='alias='echo',False,False,False,False
