@@ -18,6 +18,7 @@ train_data_file = project_dir / "data" / "processed" / "train.json"
 val_data_file = project_dir / "data" / "processed" / "val.json"
 
 checkpoint_dir = project_dir / "checkpoints"
+checkpoint_dir.mkdir(parents=True, exist_ok=True)
 
 train_data = pd.read_json(train_data_file)
 val_data = pd.read_json(val_data_file)
@@ -94,7 +95,7 @@ criterion = nn.CrossEntropyLoss(ignore_index=-100)
 
 optimizer = AdamW(params=transformer.parameters(), lr=0.001)
 
-num_epochs = 20
+num_epochs = 10
 
 train_losses = []
 val_losses = []
@@ -173,10 +174,22 @@ for epoch in range(num_epochs):
         f"Val Loss: {validation_loss:.4f}"
     )
 
-    
+
     train_losses.append(train_loss)
     val_losses.append(validation_loss)
 
+    checkpoint = {
+        "epoch": epoch + 1,
+        "model_state_dict": transformer.state_dict(),
+        "optimizer_state_dict": optimizer.state_dict(),
+        "train_loss": train_loss,
+        "val_loss": validation_loss
+    }
+
+    torch.save(
+        checkpoint,
+        checkpoint_dir / f"checkpoint_epoch_{epoch + 1}.pt"
+    )
 
 # correct = 0
 
