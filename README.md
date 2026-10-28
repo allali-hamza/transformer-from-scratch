@@ -230,11 +230,6 @@ Example output:
 ls -la
 ```
 
-The container generates a command but never executes it. Always review a
-generated command before running it. Building the image requires Internet
-access to download the published model; the resulting image runs on CPU by
-default.
-
 ## 7. Installation and Usage
 
 Clone the repository:
