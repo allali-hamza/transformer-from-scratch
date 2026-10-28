@@ -2,7 +2,5 @@
 __pycache__/
 experiments/
 
-# Training artefacts and exported weights are published separately on
-# Hugging Face and should not be committed to this repository.
 checkpoints/
 model_export/
