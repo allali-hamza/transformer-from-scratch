@@ -7,10 +7,8 @@ from torch.optim import AdamW
 from torch.nn.utils import clip_grad_norm_
 import torch
 
-from src.linux_dataset import LinuxCommandsDataset, collate_fn
-from src.mask import create_mask
-from src.model import build_transformer
-from src.generate import generate_command
+from src.data import LinuxCommandsDataset, collate_fn
+from src.model import build_transformer, create_mask, generate_command
 
 
 project_dir = Path(__file__).resolve().parent.parent

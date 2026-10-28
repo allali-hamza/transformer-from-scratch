@@ -1,4 +1,4 @@
-from src.mask import create_src_mask, create_tgt_mask
+from .masks import create_src_mask, create_tgt_mask
 import torch
 
 def generate_command(transformer, tokenizer, description, max_len):

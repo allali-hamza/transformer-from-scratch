@@ -3,8 +3,7 @@ import pandas as pd
 from pathlib import Path
 import torch
 
-from src.model import build_transformer
-from src.generate import generate_command
+from src.model import build_transformer, generate_command
 
 
 project_dir = Path(__file__).resolve().parent.parent

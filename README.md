@@ -257,7 +257,7 @@ pip install -r requirements.txt
 To train the Transformer:
 
 ```bash
-python -m src.train
+python -m scripts.train
 ```
 
 The training script monitors training and validation losses and saves model checkpoints after each epoch.
@@ -267,7 +267,7 @@ The training script monitors training and validation losses and saves model chec
 To evaluate the trained model:
 
 ```bash
-python -m src.evaluate
+python -m scripts.evaluate
 ```
 
 By default, the evaluation script loads the checkpoint from epoch 6.
@@ -276,20 +276,6 @@ It computes the four evaluation metrics and saves the predictions to:
 
 ```text
 results/evaluation_results.csv
-```
-
-### Visualizations
-
-To generate the training and evaluation figures:
-
-```bash
-python -m src.visualize
-```
-
-The figures are saved in:
-
-```text
-results/figures/
 ```
 
 ## 8. Limitations and Future Improvements

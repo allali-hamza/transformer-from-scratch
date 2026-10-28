@@ -6,8 +6,7 @@ import torch
 from huggingface_hub import snapshot_download
 from transformers import AutoTokenizer
 
-from src.generate import generate_command
-from src.model import build_transformer
+from src.model import build_transformer, generate_command
 
 
 def load_model():
