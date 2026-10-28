@@ -202,7 +202,40 @@ This figure compares command identification accuracy across Linux utilities with
 
 It helps identify which commands the model learned more reliably and which remain challenging.
 
-## 6. Installation and Usage
+## 6. Run with Docker
+
+The trained model, tokenizer, and configuration are hosted on Hugging Face:
+
+[hamza-allali/linux-command-transformer](https://huggingface.co/hamza-allali/linux-command-transformer)
+
+The Docker image downloads this model during the build process. This keeps the
+GitHub repository lightweight: users do not need local training data or
+checkpoints to generate commands.
+
+Build the image:
+
+```bash
+docker build -t linux-command-transformer .
+```
+
+Generate a Linux command:
+
+```bash
+docker run --rm linux-command-transformer "List all files including hidden files"
+```
+
+Example output:
+
+```text
+ls -la
+```
+
+The container generates a command but never executes it. Always review a
+generated command before running it. Building the image requires Internet
+access to download the published model; the resulting image runs on CPU by
+default.
+
+## 7. Installation and Usage
 
 Clone the repository:
 
@@ -264,7 +297,7 @@ The figures are saved in:
 results/figures/
 ```
 
-## 7. Limitations and Future Improvements
+## 8. Limitations and Future Improvements
 
 The main limitation of this project is the relatively small dataset, containing around 8,000 examples. This limits the model's ability to learn the diversity and complexity of Linux commands, especially when generating arguments, file paths, and longer sequences.
 
@@ -278,7 +311,7 @@ Possible improvements include:
 - Experimenting with larger Transformer architectures.
 - Applying regularization techniques to improve generalization.
 
-## 8. Acknowledgments
+## 9. Acknowledgments
 
 The Transformer architecture in this project was implemented with guidance from **Umar Jamil's [Coding a Transformer from Scratch on PyTorch](https://www.youtube.com/watch?v=ISNdQcPhsts)** walkthrough.
 
