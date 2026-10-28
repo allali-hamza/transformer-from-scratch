@@ -1,4 +1,4 @@
-# Transformer From Scratch — Natural Language to Linux Commands
+# Transformer From Scratch: Natural Language to Linux Commands
 
 A Transformer Encoder-Decoder implemented from scratch with PyTorch, trained to translate natural language descriptions into Linux commands.
 
@@ -221,13 +221,13 @@ docker build -t linux-command-transformer .
 Generate a Linux command:
 
 ```bash
-docker run --rm linux-command-transformer "List all files including hidden files"
+docker run --rm linux-transformer "List all files"
 ```
 
 Example output:
 
 ```text
-ls -la
+ls -la*
 ```
 
 ## 7. Installation and Usage
