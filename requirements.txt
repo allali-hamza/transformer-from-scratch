@@ -4,5 +4,6 @@ datasets
 pandas
 scikit-learn
 transformers
+huggingface_hub
 pytest
 matplotlib

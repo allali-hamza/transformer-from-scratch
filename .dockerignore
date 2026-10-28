@@ -1,5 +1,15 @@
-.venv/
-__pycache__/
-*.pyc
-.git/
+.git
+.venv
+__pycache__
+.pytest_cache
+*.py[cod]
 
+# Development-only assets. The published Hugging Face model is downloaded
+# during the image build instead of copying local checkpoints into the image.
+checkpoints
+model_export
+data
+notebooks
+experiments
+results
+tests
