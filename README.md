@@ -215,7 +215,7 @@ checkpoints to generate commands.
 Build the image:
 
 ```bash
-docker build -t linux-command-transformer .
+docker build -t linux-transformer .
 ```
 
 Generate a Linux command:
